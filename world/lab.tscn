@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfra3nne1g3ed"]
+
+[ext_resource type="Script" uid="uid://ohwku48n1x03" path="res://player/player_movement.gd" id="1_ubd6u"]
+[ext_resource type="Texture2D" uid="uid://cg4lmnlprlro0" path="res://assets/gui/characters/kangaroo_scientist_large.png" id="2_y82u2"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_uw7jv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3e1xo"]
+size = Vector2(638.5, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2xd3"]
+size = Vector2(63, 92)
+
+[node name="Lab" type="Node2D"]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+position = Vector2(320.26, 348.486)
+rotation = -0.000838136
+scale = Vector2(638.5, 26.655)
+texture = SubResource("CanvasTexture_uw7jv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(320.75, 348.5)
+shape = SubResource("RectangleShape2D_3e1xo")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_ubd6u")
+
+[node name="KangarooScientist" type="Sprite2D" parent="Player"]
+position = Vector2(168, 246)
+texture = ExtResource("2_y82u2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(172.5, 250)
+shape = SubResource("RectangleShape2D_e2xd3")
