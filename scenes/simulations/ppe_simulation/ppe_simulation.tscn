@@ -1,0 +1,116 @@
+[gd_scene load_steps=13 format=3 uid="uid://dda07e467jbcq"]
+
+[ext_resource type="Script" uid="uid://bo1pea4sm6f2" path="res://scenes/simulations/ppe_simulation/load_data.gd" id="1_a4dyk"]
+[ext_resource type="Texture2D" uid="uid://dr0o2sf7anoo" path="res://assets/simulations/ppe/clothings/hazmat_suit.png" id="1_yildi"]
+[ext_resource type="Texture2D" uid="uid://bup11w13oh71d" path="res://assets/simulations/ppe/clothings/lab_coat.png" id="2_3j1er"]
+[ext_resource type="Script" uid="uid://diswfh2txe0tr" path="res://scenes/simulations/ppe_simulation/ppe_selection.gd" id="3_luosq"]
+[ext_resource type="Texture2D" uid="uid://bi2f523xjt5bb" path="res://assets/simulations/ppe/clothings/apron.png" id="4_rd6jv"]
+[ext_resource type="Texture2D" uid="uid://bf0vscpwl5h3h" path="res://assets/gui/text_boxes/title_box.png" id="5_luosq"]
+[ext_resource type="FontFile" uid="uid://d35n2ag4cnf5o" path="res://font/fs-pixel-sans-unicode-regular.ttf" id="6_a4dyk"]
+[ext_resource type="Script" uid="uid://cx04y20cf0v8m" path="res://scenes/simulations/ppe_simulation/ui.gd" id="6_fey03"]
+[ext_resource type="Texture2D" uid="uid://ch3w76nhxpw2y" path="res://assets/gui/text_boxes/description_box.png" id="6_rd6jv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rd6jv"]
+size = Vector2(21, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4dyk"]
+size = Vector2(32, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3j1er"]
+size = Vector2(30, 32)
+
+[node name="PpeSimulation" type="Node2D"]
+script = ExtResource("1_a4dyk")
+
+[node name="Phase 1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ApronArea" type="Area2D" parent="Phase 1"]
+position = Vector2(-23, -39)
+script = ExtResource("3_luosq")
+id = "apron"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phase 1/ApronArea"]
+position = Vector2(68.5, 122)
+shape = SubResource("RectangleShape2D_rd6jv")
+
+[node name="Apron" type="Sprite2D" parent="Phase 1/ApronArea"]
+position = Vector2(68, 122)
+texture = ExtResource("4_rd6jv")
+
+[node name="HazmatSuitArea" type="Area2D" parent="Phase 1"]
+position = Vector2(97, 91)
+script = ExtResource("3_luosq")
+id = "hazmat"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phase 1/HazmatSuitArea"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a4dyk")
+
+[node name="HazmatSuit" type="Sprite2D" parent="Phase 1/HazmatSuitArea"]
+position = Vector2(0, -2)
+texture = ExtResource("1_yildi")
+
+[node name="LabCoatArea" type="Area2D" parent="Phase 1"]
+position = Vector2(-25, -40)
+script = ExtResource("3_luosq")
+id = "lab_coat"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phase 1/LabCoatArea"]
+position = Vector2(176, 126)
+shape = SubResource("RectangleShape2D_3j1er")
+
+[node name="LabCoat" type="Sprite2D" parent="Phase 1/LabCoatArea"]
+position = Vector2(176, 126)
+texture = ExtResource("2_3j1er")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 6.0
+offset_bottom = 5.0
+script = ExtResource("6_fey03")
+
+[node name="TitleBox" type="Sprite2D" parent="CanvasLayer/UI"]
+position = Vector2(280, 14)
+texture = ExtResource("5_luosq")
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/UI/TitleBox"]
+offset_left = -66.0
+offset_top = -9.0
+offset_right = 68.0
+offset_bottom = 7.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -6
+theme_override_constants/paragraph_spacing = 0
+theme_override_fonts/font = ExtResource("6_a4dyk")
+metadata/_edit_use_anchors_ = true
+
+[node name="DescriptionBox" type="Sprite2D" parent="CanvasLayer/UI"]
+position = Vector2(280, 76)
+texture = ExtResource("6_rd6jv")
+
+[node name="DescriptionLabel" type="Label" parent="CanvasLayer/UI/DescriptionBox"]
+offset_left = -66.0
+offset_top = -44.0
+offset_right = 67.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -6
+theme_override_constants/paragraph_spacing = 0
+theme_override_fonts/font = ExtResource("6_a4dyk")
+autowrap_mode = 2
+max_lines_visible = 10
+
+[connection signal="mouse_entered" from="Phase 1/ApronArea" to="Phase 1/ApronArea" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phase 1/ApronArea" to="Phase 1/ApronArea" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Phase 1/HazmatSuitArea" to="Phase 1/HazmatSuitArea" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phase 1/HazmatSuitArea" to="Phase 1/HazmatSuitArea" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Phase 1/LabCoatArea" to="Phase 1/LabCoatArea" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phase 1/LabCoatArea" to="Phase 1/LabCoatArea" method="_on_mouse_exited"]
