@@ -37,7 +37,7 @@ id = "apron"
 position = Vector2(68.5, 122)
 shape = SubResource("RectangleShape2D_rd6jv")
 
-[node name="Apron" type="Sprite2D" parent="Phase 1/ApronArea"]
+[node name="Sprite" type="Sprite2D" parent="Phase 1/ApronArea"]
 position = Vector2(68, 122)
 texture = ExtResource("4_rd6jv")
 
@@ -50,7 +50,7 @@ id = "hazmat"
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_a4dyk")
 
-[node name="HazmatSuit" type="Sprite2D" parent="Phase 1/HazmatSuitArea"]
+[node name="Sprite" type="Sprite2D" parent="Phase 1/HazmatSuitArea"]
 position = Vector2(0, -2)
 texture = ExtResource("1_yildi")
 
@@ -63,7 +63,7 @@ id = "lab_coat"
 position = Vector2(176, 126)
 shape = SubResource("RectangleShape2D_3j1er")
 
-[node name="LabCoat" type="Sprite2D" parent="Phase 1/LabCoatArea"]
+[node name="Sprite" type="Sprite2D" parent="Phase 1/LabCoatArea"]
 position = Vector2(176, 126)
 texture = ExtResource("2_3j1er")
 
