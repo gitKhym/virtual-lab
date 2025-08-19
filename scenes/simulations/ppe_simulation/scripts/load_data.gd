@@ -29,6 +29,8 @@ func assign_items():
 	for item_data in items:
 		for item: Area2D in get_node("Phase 1").get_children():
 			if item.id == item_data.id:
-				item.id = (item_data.id) 
-				item.item_name = (item_data.item_name) 
-				item.description = (item_data.description)
+				item.id = item_data.id
+				item.item_name = item_data.item_name
+				item.description = item_data.description
+				item.is_correct = item_data.is_correct
+				item.feedback = item_data.feedback

@@ -1,7 +1,7 @@
 extends Control
 
-@onready var title_label = $TitleBox/TitleLabel
-@onready var description_label = $DescriptionBox/DescriptionLabel
+@onready var title_label = %TitleLabel
+@onready var description_label = %DescriptionLabel
 
 func update_text(title: String, description: String):
 	title_label.text = title

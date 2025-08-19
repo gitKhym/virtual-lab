@@ -1,6 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://bquja8jyk8kbr"]
+[gd_scene load_steps=19 format=3 uid="uid://cqfxgxpa34gmm"]
 
-[ext_resource type="Script" uid="uid://mb02hv4ugo3n" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.gd" id="1_bpydr"]
+[ext_resource type="Script" uid="uid://cthnaxelo5o1o" path="res://dialogic/VisualNovelTextbox/vn_textbox_layer.gd" id="1_4icml"]
 [ext_resource type="Script" uid="uid://s77tpq60w0la" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/animations.gd" id="2_xy7a2"]
 [ext_resource type="Texture2D" uid="uid://bqon43hp23m01" path="res://assets/gui/text_boxes/speech_box.png" id="3_4gjjb"]
 [ext_resource type="Script" uid="uid://dswfasvr0xbev" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="3_4634k"]
@@ -217,10 +217,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("1_bpydr")
-box_panel = "res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_default_panel.tres"
-box_size = Vector2(550, 150)
-name_label_box_panel = "res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_name_label_panel.tres"
+script = ExtResource("1_4icml")
+box_panel = "res://dialogic/VisualNovelTextbox/vn_textbox_default_panel.tres"
+name_label_box_panel = "res://dialogic/VisualNovelTextbox/vn_textbox_name_label_panel.tres"
 name_label_box_modulate = Color(0, 0, 0, 1)
 
 [node name="Animations" type="AnimationPlayer" parent="."]
@@ -260,25 +259,20 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -150.0
-offset_top = -50.0
-offset_right = 150.0
+offset_left = -179.0
+offset_top = -180.0
+offset_right = 180.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
 
 [node name="DialogTextPanel" type="PanelContainer" parent="Anchor/AnimationParent/Sizer"]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 97.0
-offset_top = -31.0
-offset_right = 13.0
-offset_bottom = -18.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 126.0
+offset_top = 104.0
+offset_right = 342.0
+offset_bottom = 167.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_5g6th")
 metadata/_edit_layout_mode = 1
@@ -288,6 +282,7 @@ unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -4
 theme_override_fonts/normal_font = ExtResource("4_e133w")
 bbcode_enabled = true
 text = "Some default text"
@@ -313,7 +308,6 @@ metadata/_edit_layout_mode = 1
 
 [node name="AutoAdvanceProgressbar" type="ProgressBar" parent="Anchor/AnimationParent/Sizer/DialogTextPanel"]
 unique_name_in_owner = true
-visible = false
 modulate = Color(1, 1, 1, 0.188235)
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
@@ -326,7 +320,6 @@ show_percentage = false
 script = ExtResource("6_07xym")
 
 [node name="NameLabelHolder" type="Control" parent="Anchor/AnimationParent/Sizer/DialogTextPanel"]
-visible = false
 layout_mode = 2
 mouse_filter = 2
 
@@ -334,9 +327,10 @@ mouse_filter = 2
 unique_name_in_owner = true
 self_modulate = Color(0.00784314, 0.00784314, 0.00784314, 0.843137)
 layout_mode = 1
-offset_top = -50.0
-offset_right = 9.0
-offset_bottom = -25.0
+offset_left = 64.0
+offset_top = -45.0
+offset_right = 93.0
+offset_bottom = -13.0
 mouse_filter = 2
 theme_override_styles/panel = ExtResource("9_yg8ig")
 metadata/_edit_layout_mode = 1

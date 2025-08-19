@@ -5,26 +5,26 @@
         {
           "id": "lab_coat",
           "item_name": "Lab Coat",
-          "description": "Protective clothing commonly used in laboratories to shield the body from spills and hazards.",
-          "isCorrect": true,
+          "description": "A long-sleeved protective garment used in various scientific and medical environments.",
+          "is_correct": true,
           "feedback": "Great choice! A full-length cotton lab coat protects your skin and clothes from spills."
         },
         {
           "id": "hazmat",
           "item_name": "Hazmat Suit",
           "description": "A full-body protective garment designed to safeguard against hazardous materials, chemicals, or infectious agents.",
-          "isCorrect": false,
+          "is_correct": false,
           "feedback": "Not quite. Hazmat suits are overkill for general lab work and can be cumbersome for everyday experiments."
         },
         {
           "id": "apron",
           "item_name": "Fire Apron",
-          "description": "A heavy-duty apron made from flame-resistant material, used to shield the body from sparks, heat, and open flames.",
-          "isCorrect": false,
+          "description": "A heavy-duty apron made from flame-resistant material, often used in high-heat or flame-intensive environments.",
+          "is_correct": false,
           "feedback": "Close, but fire aprons are mainly for welding or flame-intensive tasks, not typical lab experiments."
         }
-      ]
+      ],
+      "tip": "Did you know? Lab coats are flame-resistant and protect against minor chemical splashes."
     }
-  ],
-  "tip": "Did you know? Lab coats are flame-resistant and protect against minor chemical splashes."
+  ]
 }
