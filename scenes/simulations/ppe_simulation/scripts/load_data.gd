@@ -25,12 +25,14 @@ func load_json():
 
 
 func assign_items():
-	var items = data.get("phases")[0].get("items")
-	for item_data in items:
-		for item: Area2D in get_node("Phase 1").get_children():
-			if item.id == item_data.id:
-				item.id = item_data.id
-				item.item_name = item_data.item_name
-				item.description = item_data.description
-				item.is_correct = item_data.is_correct
-				item.feedback = item_data.feedback
+	var items := {}
+	for control_phase in %Phases.get_children():
+		for item: Area2D in control_phase.get_children():
+			items[item.id] = item
+
+	for phase in data.phases:
+		for item_data in phase.items:
+			if item_data.id in items:
+				var item = items[item_data.id]
+				for k in item_data.keys():
+					item.set(k, item_data[k])

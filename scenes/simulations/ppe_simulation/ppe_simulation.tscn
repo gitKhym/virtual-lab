@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dda07e467jbcq"]
+[gd_scene load_steps=14 format=3 uid="uid://dda07e467jbcq"]
 
 [ext_resource type="Script" uid="uid://bo1pea4sm6f2" path="res://scenes/simulations/ppe_simulation/scripts/load_data.gd" id="1_a4dyk"]
 [ext_resource type="Texture2D" uid="uid://dr0o2sf7anoo" path="res://assets/simulations/ppe/clothings/hazmat_suit.png" id="1_yildi"]
 [ext_resource type="Texture2D" uid="uid://bup11w13oh71d" path="res://assets/simulations/ppe/clothings/lab_coat.png" id="2_3j1er"]
+[ext_resource type="Script" uid="uid://bmpt7pih6tp7v" path="res://scenes/simulations/ppe_simulation/phase_controller.gd" id="2_7ecp0"]
 [ext_resource type="Script" uid="uid://diswfh2txe0tr" path="res://scenes/simulations/ppe_simulation/scripts/ppe_selection.gd" id="3_luosq"]
 [ext_resource type="Texture2D" uid="uid://bi2f523xjt5bb" path="res://assets/simulations/ppe/clothings/apron.png" id="4_rd6jv"]
 [ext_resource type="Texture2D" uid="uid://bf0vscpwl5h3h" path="res://assets/gui/text_boxes/title_box.png" id="5_luosq"]
@@ -22,48 +23,197 @@ size = Vector2(30, 32)
 [node name="PpeSimulation" type="Node2D"]
 script = ExtResource("1_a4dyk")
 
-[node name="Phase 1" type="Control" parent="."]
+[node name="Phases" type="Node2D" parent="." node_paths=PackedStringArray("phases")]
+unique_name_in_owner = true
+script = ExtResource("2_7ecp0")
+phases = [NodePath("Phase1"), NodePath("Phase2"), NodePath("Phase3"), NodePath("Phase4")]
+
+[node name="Phase1" type="Control" parent="Phases"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 5.0
+offset_bottom = 5.0
 
-[node name="ApronArea" type="Area2D" parent="Phase 1"]
-position = Vector2(-23, -39)
+[node name="Apron" type="Area2D" parent="Phases/Phase1"]
+position = Vector2(-32, -31)
 script = ExtResource("3_luosq")
 id = "apron"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Phase 1/ApronArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase1/Apron"]
 position = Vector2(68.5, 122)
 shape = SubResource("RectangleShape2D_rd6jv")
 
-[node name="Sprite" type="Sprite2D" parent="Phase 1/ApronArea"]
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase1/Apron"]
 position = Vector2(68, 122)
 texture = ExtResource("4_rd6jv")
 
-[node name="HazmatSuitArea" type="Area2D" parent="Phase 1"]
-position = Vector2(98, 91)
+[node name="Hazmat" type="Area2D" parent="Phases/Phase1"]
+position = Vector2(82, 94)
 script = ExtResource("3_luosq")
 id = "hazmat"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Phase 1/HazmatSuitArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase1/Hazmat"]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_a4dyk")
 
-[node name="Sprite" type="Sprite2D" parent="Phase 1/HazmatSuitArea"]
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase1/Hazmat"]
 position = Vector2(0, -2)
 texture = ExtResource("1_yildi")
 
-[node name="LabCoatArea" type="Area2D" parent="Phase 1"]
-position = Vector2(-25, -43)
+[node name="LabCoat" type="Area2D" parent="Phases/Phase1"]
+position = Vector2(-40, -34)
 script = ExtResource("3_luosq")
 id = "lab_coat"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Phase 1/LabCoatArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase1/LabCoat"]
 position = Vector2(176, 126)
 shape = SubResource("RectangleShape2D_3j1er")
 
-[node name="Sprite" type="Sprite2D" parent="Phase 1/LabCoatArea"]
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase1/LabCoat"]
+position = Vector2(176, 126)
+texture = ExtResource("2_3j1er")
+
+[node name="Phase2" type="Control" parent="Phases"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = -49.0
+offset_right = 6.0
+offset_bottom = -44.0
+
+[node name="SafetyGoggles" type="Area2D" parent="Phases/Phase2"]
+position = Vector2(-32, -31)
+script = ExtResource("3_luosq")
+id = "safety_goggles"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase2/SafetyGoggles"]
+position = Vector2(68.5, 122)
+shape = SubResource("RectangleShape2D_rd6jv")
+
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase2/SafetyGoggles"]
+position = Vector2(68, 122)
+texture = ExtResource("4_rd6jv")
+
+[node name="Sunglasses" type="Area2D" parent="Phases/Phase2"]
+position = Vector2(82, 94)
+script = ExtResource("3_luosq")
+id = "sunglasses"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase2/Sunglasses"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a4dyk")
+
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase2/Sunglasses"]
+position = Vector2(0, -2)
+texture = ExtResource("1_yildi")
+
+[node name="PrescriptionGlasses" type="Area2D" parent="Phases/Phase2"]
+position = Vector2(-40, -34)
+script = ExtResource("3_luosq")
+id = "prescription_glasses"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase2/PrescriptionGlasses"]
+position = Vector2(176, 126)
+shape = SubResource("RectangleShape2D_3j1er")
+
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase2/PrescriptionGlasses"]
+position = Vector2(176, 126)
+texture = ExtResource("2_3j1er")
+
+[node name="Phase3" type="Control" parent="Phases"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 41.0
+offset_right = 9.0
+offset_bottom = 46.0
+
+[node name="NitrileGloves" type="Area2D" parent="Phases/Phase3"]
+position = Vector2(-32, -31)
+script = ExtResource("3_luosq")
+id = "nitrile_gloves"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase3/NitrileGloves"]
+position = Vector2(68.5, 122)
+shape = SubResource("RectangleShape2D_rd6jv")
+
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase3/NitrileGloves"]
+position = Vector2(68, 122)
+texture = ExtResource("4_rd6jv")
+
+[node name="WoolGloves" type="Area2D" parent="Phases/Phase3"]
+position = Vector2(82, 94)
+script = ExtResource("3_luosq")
+id = "wool_gloves"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase3/WoolGloves"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a4dyk")
+
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase3/WoolGloves"]
+position = Vector2(0, -2)
+texture = ExtResource("1_yildi")
+
+[node name="Rawdog" type="Area2D" parent="Phases/Phase3"]
+position = Vector2(-40, -34)
+script = ExtResource("3_luosq")
+id = "rawdog"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase3/Rawdog"]
+position = Vector2(176, 126)
+shape = SubResource("RectangleShape2D_3j1er")
+
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase3/Rawdog"]
+position = Vector2(176, 126)
+texture = ExtResource("2_3j1er")
+
+[node name="Phase4" type="Control" parent="Phases"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 24.0
+offset_top = -49.0
+offset_right = 29.0
+offset_bottom = -44.0
+
+[node name="Sneakers" type="Area2D" parent="Phases/Phase4"]
+position = Vector2(-32, -31)
+script = ExtResource("3_luosq")
+id = "sneakers"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase4/Sneakers"]
+position = Vector2(68.5, 122)
+shape = SubResource("RectangleShape2D_rd6jv")
+
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase4/Sneakers"]
+position = Vector2(68, 122)
+texture = ExtResource("4_rd6jv")
+
+[node name="Sandals" type="Area2D" parent="Phases/Phase4"]
+position = Vector2(82, 94)
+script = ExtResource("3_luosq")
+id = "sandals"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase4/Sandals"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a4dyk")
+
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase4/Sandals"]
+position = Vector2(0, -2)
+texture = ExtResource("1_yildi")
+
+[node name="HighHeels" type="Area2D" parent="Phases/Phase4"]
+position = Vector2(-40, -34)
+script = ExtResource("3_luosq")
+id = "high_heels"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase4/HighHeels"]
+position = Vector2(176, 126)
+shape = SubResource("RectangleShape2D_3j1er")
+
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase4/HighHeels"]
 position = Vector2(176, 126)
 texture = ExtResource("2_3j1er")
 
@@ -116,7 +266,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = -6
 theme_override_constants/paragraph_spacing = 0
 theme_override_fonts/font = ExtResource("6_a4dyk")
-text = "Hover an item"
+text = "Hover over an item"
 metadata/_edit_use_anchors_ = true
 
 [node name="Description" type="Control" parent="CanvasLayer/UI/TitleDescriptionContainer"]
@@ -148,12 +298,39 @@ text = "..."
 autowrap_mode = 2
 max_lines_visible = 10
 
-[connection signal="input_event" from="Phase 1/ApronArea" to="Phase 1/ApronArea" method="_on_input_event"]
-[connection signal="mouse_entered" from="Phase 1/ApronArea" to="Phase 1/ApronArea" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Phase 1/ApronArea" to="Phase 1/ApronArea" method="_on_mouse_exited"]
-[connection signal="input_event" from="Phase 1/HazmatSuitArea" to="Phase 1/HazmatSuitArea" method="_on_input_event"]
-[connection signal="mouse_entered" from="Phase 1/HazmatSuitArea" to="Phase 1/HazmatSuitArea" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Phase 1/HazmatSuitArea" to="Phase 1/HazmatSuitArea" method="_on_mouse_exited"]
-[connection signal="input_event" from="Phase 1/LabCoatArea" to="Phase 1/LabCoatArea" method="_on_input_event"]
-[connection signal="mouse_entered" from="Phase 1/LabCoatArea" to="Phase 1/LabCoatArea" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Phase 1/LabCoatArea" to="Phase 1/LabCoatArea" method="_on_mouse_exited"]
+[connection signal="input_event" from="Phases/Phase1/Apron" to="Phases/Phase1/Apron" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase1/Apron" to="Phases/Phase1/Apron" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase1/Apron" to="Phases/Phase1/Apron" method="_on_mouse_exited"]
+[connection signal="input_event" from="Phases/Phase1/Hazmat" to="Phases/Phase1/Hazmat" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase1/Hazmat" to="Phases/Phase1/Hazmat" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase1/Hazmat" to="Phases/Phase1/Hazmat" method="_on_mouse_exited"]
+[connection signal="input_event" from="Phases/Phase1/LabCoat" to="Phases/Phase1/LabCoat" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase1/LabCoat" to="Phases/Phase1/LabCoat" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase1/LabCoat" to="Phases/Phase1/LabCoat" method="_on_mouse_exited"]
+[connection signal="input_event" from="Phases/Phase2/SafetyGoggles" to="Phases/Phase2/SafetyGoggles" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase2/SafetyGoggles" to="Phases/Phase2/SafetyGoggles" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase2/SafetyGoggles" to="Phases/Phase2/SafetyGoggles" method="_on_mouse_exited"]
+[connection signal="input_event" from="Phases/Phase2/Sunglasses" to="Phases/Phase2/Sunglasses" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase2/Sunglasses" to="Phases/Phase2/Sunglasses" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase2/Sunglasses" to="Phases/Phase2/Sunglasses" method="_on_mouse_exited"]
+[connection signal="input_event" from="Phases/Phase2/PrescriptionGlasses" to="Phases/Phase2/PrescriptionGlasses" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase2/PrescriptionGlasses" to="Phases/Phase2/PrescriptionGlasses" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase2/PrescriptionGlasses" to="Phases/Phase2/PrescriptionGlasses" method="_on_mouse_exited"]
+[connection signal="input_event" from="Phases/Phase3/NitrileGloves" to="Phases/Phase3/NitrileGloves" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase3/NitrileGloves" to="Phases/Phase3/NitrileGloves" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase3/NitrileGloves" to="Phases/Phase3/NitrileGloves" method="_on_mouse_exited"]
+[connection signal="input_event" from="Phases/Phase3/WoolGloves" to="Phases/Phase3/WoolGloves" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase3/WoolGloves" to="Phases/Phase3/WoolGloves" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase3/WoolGloves" to="Phases/Phase3/WoolGloves" method="_on_mouse_exited"]
+[connection signal="input_event" from="Phases/Phase3/Rawdog" to="Phases/Phase3/Rawdog" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase3/Rawdog" to="Phases/Phase3/Rawdog" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase3/Rawdog" to="Phases/Phase3/Rawdog" method="_on_mouse_exited"]
+[connection signal="input_event" from="Phases/Phase4/Sneakers" to="Phases/Phase4/Sneakers" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase4/Sneakers" to="Phases/Phase4/Sneakers" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase4/Sneakers" to="Phases/Phase4/Sneakers" method="_on_mouse_exited"]
+[connection signal="input_event" from="Phases/Phase4/Sandals" to="Phases/Phase4/Sandals" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase4/Sandals" to="Phases/Phase4/Sandals" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase4/Sandals" to="Phases/Phase4/Sandals" method="_on_mouse_exited"]
+[connection signal="input_event" from="Phases/Phase4/HighHeels" to="Phases/Phase4/HighHeels" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase4/HighHeels" to="Phases/Phase4/HighHeels" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase4/HighHeels" to="Phases/Phase4/HighHeels" method="_on_mouse_exited"]
