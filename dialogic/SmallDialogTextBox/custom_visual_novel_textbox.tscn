@@ -1,16 +1,16 @@
-[gd_scene load_steps=19 format=3 uid="uid://bquja8jyk8kbr"]
+[gd_scene load_steps=19 format=3 uid="uid://cso7iw8yyfk5p"]
 
-[ext_resource type="Script" uid="uid://mb02hv4ugo3n" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.gd" id="1_bpydr"]
-[ext_resource type="Script" uid="uid://s77tpq60w0la" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/animations.gd" id="2_xy7a2"]
-[ext_resource type="Texture2D" uid="uid://bqon43hp23m01" path="res://assets/gui/text_boxes/speech_box.png" id="3_4gjjb"]
-[ext_resource type="Script" uid="uid://dswfasvr0xbev" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="3_4634k"]
-[ext_resource type="FontFile" uid="uid://d35n2ag4cnf5o" path="res://font/fs-pixel-sans-unicode-regular.ttf" id="4_e133w"]
-[ext_resource type="Script" uid="uid://cip5bbem0ihsv" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="4_ma5mw"]
-[ext_resource type="Script" uid="uid://646d5eocx5tk" path="res://addons/dialogic/Modules/Text/node_next_indicator.gd" id="5_40a50"]
-[ext_resource type="Script" uid="uid://dtrm1hcnbhjbl" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/autoadvance_indicator.gd" id="6_07xym"]
-[ext_resource type="Texture2D" uid="uid://b0rpqfg4fhebk" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/next.svg" id="6_uch03"]
-[ext_resource type="Script" uid="uid://c0niw4syt2kv6" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="7_bi7sh"]
-[ext_resource type="StyleBox" uid="uid://m7gyepkysu83" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_name_label_panel.tres" id="9_yg8ig"]
+[ext_resource type="Script" uid="uid://cthnaxelo5o1o" path="res://dialogic/VisualNovelTextbox/vn_textbox_layer.gd" id="1_1cx0o"]
+[ext_resource type="Script" uid="uid://s77tpq60w0la" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/animations.gd" id="2_epgbn"]
+[ext_resource type="Texture2D" uid="uid://dvb6nhob4ymye" path="res://assets/gui/text_boxes/small_dialog.png" id="3_1cx0o"]
+[ext_resource type="FontFile" uid="uid://d35n2ag4cnf5o" path="res://font/fs-pixel-sans-unicode-regular.ttf" id="4_hvo4x"]
+[ext_resource type="Script" uid="uid://dswfasvr0xbev" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="5_f72kg"]
+[ext_resource type="Script" uid="uid://cip5bbem0ihsv" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="6_yx4g5"]
+[ext_resource type="Script" uid="uid://646d5eocx5tk" path="res://addons/dialogic/Modules/Text/node_next_indicator.gd" id="7_781ti"]
+[ext_resource type="Texture2D" uid="uid://b0rpqfg4fhebk" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/next.svg" id="8_81bj0"]
+[ext_resource type="Script" uid="uid://dtrm1hcnbhjbl" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/autoadvance_indicator.gd" id="9_rif4y"]
+[ext_resource type="StyleBox" uid="uid://m7gyepkysu83" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_name_label_panel.tres" id="10_57w7v"]
+[ext_resource type="Script" uid="uid://c0niw4syt2kv6" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="11_dnvma"]
 
 [sub_resource type="Animation" id="Animation_au0a2"]
 length = 0.001
@@ -201,11 +201,10 @@ _data = {
 &"textbox_pop": SubResource("Animation_htbgc")
 }
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5g6th"]
-content_margin_left = 10.0
-content_margin_top = 0.0
-content_margin_right = 10.0
-texture = ExtResource("3_4gjjb")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_epgbn"]
+content_margin_left = 38.0
+content_margin_top = 12.0
+texture = ExtResource("3_1cx0o")
 
 [sub_resource type="FontVariation" id="FontVariation_v8y64"]
 
@@ -217,10 +216,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("1_bpydr")
-box_panel = "res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_default_panel.tres"
-box_size = Vector2(550, 150)
-name_label_box_panel = "res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_name_label_panel.tres"
+script = ExtResource("1_1cx0o")
+box_panel = "res://dialogic/VisualNovelTextbox/vn_textbox_default_panel.tres"
+name_label_box_panel = "res://dialogic/VisualNovelTextbox/vn_textbox_name_label_panel.tres"
 name_label_box_modulate = Color(0, 0, 0, 1)
 
 [node name="Animations" type="AnimationPlayer" parent="."]
@@ -229,7 +227,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_c14kh")
 }
 autoplay = "RESET"
-script = ExtResource("2_xy7a2")
+script = ExtResource("2_epgbn")
 
 [node name="Anchor" type="Control" parent="."]
 layout_mode = 1
@@ -238,6 +236,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 116.0
+offset_right = -2.0
+offset_bottom = 116.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -260,27 +262,22 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -150.0
-offset_top = -50.0
-offset_right = 150.0
+offset_left = -179.0
+offset_top = -180.0
+offset_right = 180.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
 
 [node name="DialogTextPanel" type="PanelContainer" parent="Anchor/AnimationParent/Sizer"]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 97.0
-offset_top = -31.0
-offset_right = 13.0
-offset_bottom = -18.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 5.0
+offset_top = 8.0
+offset_right = 223.0
+offset_bottom = 59.0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_5g6th")
+theme_override_styles/panel = SubResource("StyleBoxTexture_epgbn")
 metadata/_edit_layout_mode = 1
 
 [node name="DialogicNode_DialogText" type="RichTextLabel" parent="Anchor/AnimationParent/Sizer/DialogTextPanel" node_paths=PackedStringArray("textbox_root")]
@@ -288,17 +285,36 @@ unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("4_e133w")
+theme_override_constants/line_separation = -7
+theme_override_fonts/normal_font = ExtResource("4_hvo4x")
+theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "Some default text"
+text = "Goggles protect your eyes from chemicals and broken glass."
+scroll_active = false
 visible_characters_behavior = 1
-script = ExtResource("3_4634k")
+script = ExtResource("5_f72kg")
 textbox_root = NodePath("..")
 
 [node name="DialogicNode_TypeSounds" type="AudioStreamPlayer" parent="Anchor/AnimationParent/Sizer/DialogTextPanel/DialogicNode_DialogText"]
 unique_name_in_owner = true
-script = ExtResource("4_ma5mw")
+script = ExtResource("6_yx4g5")
 play_every_character = 0
+
+[node name="DescriptionLabel" type="Label" parent="Anchor/AnimationParent/Sizer/DialogTextPanel/DialogicNode_DialogText"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 85)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 51.0
+offset_right = 133.0
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -6
+theme_override_constants/paragraph_spacing = 0
+theme_override_fonts/font = ExtResource("4_hvo4x")
+text = "hello"
+autowrap_mode = 2
+max_lines_visible = 10
 
 [node name="NextIndicator" type="Control" parent="Anchor/AnimationParent/Sizer/DialogTextPanel"]
 unique_name_in_owner = true
@@ -306,14 +322,13 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 mouse_filter = 2
-script = ExtResource("5_40a50")
+script = ExtResource("7_781ti")
 show_on_questions = true
-texture = ExtResource("6_uch03")
+texture = ExtResource("8_81bj0")
 metadata/_edit_layout_mode = 1
 
 [node name="AutoAdvanceProgressbar" type="ProgressBar" parent="Anchor/AnimationParent/Sizer/DialogTextPanel"]
 unique_name_in_owner = true
-visible = false
 modulate = Color(1, 1, 1, 0.188235)
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
@@ -323,7 +338,7 @@ max_value = 1.0
 step = 0.001
 value = 0.5
 show_percentage = false
-script = ExtResource("6_07xym")
+script = ExtResource("9_rif4y")
 
 [node name="NameLabelHolder" type="Control" parent="Anchor/AnimationParent/Sizer/DialogTextPanel"]
 visible = false
@@ -334,11 +349,12 @@ mouse_filter = 2
 unique_name_in_owner = true
 self_modulate = Color(0.00784314, 0.00784314, 0.00784314, 0.843137)
 layout_mode = 1
-offset_top = -50.0
-offset_right = 9.0
-offset_bottom = -25.0
+offset_left = 64.0
+offset_top = -45.0
+offset_right = 93.0
+offset_bottom = -13.0
 mouse_filter = 2
-theme_override_styles/panel = ExtResource("9_yg8ig")
+theme_override_styles/panel = ExtResource("10_57w7v")
 metadata/_edit_layout_mode = 1
 metadata/_edit_use_custom_anchors = true
 metadata/_edit_group_ = true
@@ -350,5 +366,5 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_v8y64")
 theme_override_font_sizes/font_size = 15
 text = "S"
-script = ExtResource("7_bi7sh")
+script = ExtResource("11_dnvma")
 name_label_root = NodePath("..")

@@ -24,12 +24,19 @@ directories/dch_directory={
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
+"ppe_selection_dialog": "res://dialogic/dialogs/simulations/ppe/ppe_selection_dialog.dtl",
 "timeline": "res://timeline.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://dialogic/dialogic_style.tres"]
-layout/default_style="res://dialogic/dialogic_style.tres"
-variables={}
+layout/style_list=["res://dialogic/default_style.tres", "res://dialogic/small_dialog_style.tres"]
+layout/default_style="res://dialogic/default_style.tres"
+variables={
+"Simulations": {
+"PPE": {
+"selected_item_id": ""
+}
+}
+}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
@@ -58,6 +65,7 @@ window/size/viewport_height=180
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
 
 [dotnet]
 
@@ -84,7 +92,13 @@ dialogic_default_action={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+left_click={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+2d/snap/snap_2d_transforms_to_pixel=true
