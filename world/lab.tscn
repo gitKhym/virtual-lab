@@ -1,7 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfra3nne1g3ed"]
+[gd_scene load_steps=8 format=3 uid="uid://cfra3nne1g3ed"]
 
 [ext_resource type="Script" uid="uid://ohwku48n1x03" path="res://player/player_movement.gd" id="1_ubd6u"]
+[ext_resource type="Script" uid="uid://c5htlulkwlc7s" path="res://world/lab.gd" id="1_y82u2"]
 [ext_resource type="Texture2D" uid="uid://cg4lmnlprlro0" path="res://assets/gui/characters/kangaroo_scientist_large.png" id="2_y82u2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ubd6u"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_uw7jv"]
 
@@ -12,16 +20,26 @@ size = Vector2(638.5, 27)
 size = Vector2(63, 92)
 
 [node name="Lab" type="Node2D"]
+script = ExtResource("1_y82u2")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 240.0
+offset_top = 11.0
+offset_right = 319.0
+offset_bottom = 112.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ubd6u")
 
 [node name="Floor" type="StaticBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor"]
-position = Vector2(320.26, 348.486)
+visible = false
+position = Vector2(320.226, 307.491)
 rotation = -0.000838136
-scale = Vector2(638.5, 26.655)
+scale = Vector2(638.5, 108.644)
 texture = SubResource("CanvasTexture_uw7jv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+visible = false
 position = Vector2(320.75, 348.5)
 shape = SubResource("RectangleShape2D_3e1xo")
 
@@ -29,9 +47,11 @@ shape = SubResource("RectangleShape2D_3e1xo")
 script = ExtResource("1_ubd6u")
 
 [node name="KangarooScientist" type="Sprite2D" parent="Player"]
-position = Vector2(168, 246)
+position = Vector2(279, 58)
 texture = ExtResource("2_y82u2")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(172.5, 250)
+visible = false
+position = Vector2(170, 253)
 shape = SubResource("RectangleShape2D_e2xd3")

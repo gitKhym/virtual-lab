@@ -1,0 +1,64 @@
+label scenario1 (scenario1)
+label return1
+\--Narrator\
+The intern notices a small chemical spill near their workstation.
+- Wipe it quickly with tissues
+	\--Narrator\
+pills must never be ignored. Tissues won’t neutralize chemicals and can spread contamination.
+- Inform supervisor & follow spill protocol
+	\--Narrator\
+Well done. Reporting and following protocol ensures everyone’s safety.
+	[signal arg="spill_correct"]
+	[end_timeline]
+label scenario2 (scenario2)
+label return2
+\--Narrator\
+Later, the intern sees a classmate about to throw used gloves into the recycling bin.
+- Stop them and direct waste into biohazard bin
+	Right! Contaminated gloves go in the biohazard waste bin.
+	[signal arg="waste_correct"]
+	[end_timeline]
+- Throw your gloves in the trash as well.
+	That spreads contamination even further.
+	jump return2
+jump return2
+label scenario3
+label return3
+someone starts snacking at the workstation.
+- Pretend not to see
+	Ignoring unsafe behavior puts everyone at risk.
+	jump return3
+- Eat with them.
+	Food and labs don’t mix—cross-contamination is dangerous.
+	jump return3
+- Politely remind them that eating is not allowed
+	Yes! Eating in the lab can cause accidental ingestion of hazardous substances
+	[signal arg="eat_correct"]
+	[end_timeline]
+
+label scenario4
+label return4
+The intern sees another carrying a microscope with one hand
+- Pretend not to see
+	Copying unsafe behavior is never the answer
+	jump return4
+- Ignore it
+	One wrong move and the microscope could fall or break
+	jump return4
+- Tell them to use both hands, supporting the base
+	Exactly! Proper handling prevents damage to expensive equipment
+	[signal arg="handling_correct"]
+	[end_timeline]
+
+label scenario5
+label return5
+Suddenly, the fire alarm goes off
+- Grab your bag and run.
+	In emergencies, panic causes more danger
+	jump return5
+- Follow evacuation protocol calmly
+	Perfect. Staying calm and following protocol ensures safety for everyone
+	[end_timeline]
+- Stay inside and wait
+	Staying inside is never safe during a fire alarm
+	jump return5

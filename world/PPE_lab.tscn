@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://42r71j8v7r2r"]
+
+[ext_resource type="Script" uid="uid://5hvxovwu8nyw" path="res://world/ppe_lab.gd" id="1_2baw1"]
+[ext_resource type="Texture2D" uid="uid://cnf2npq26dywm" path="res://PPE_LABv2.png" id="2_2baw1"]
+[ext_resource type="Script" uid="uid://b8sbh28sgwrf2" path="res://world/clothes_hotspot.gd" id="2_cio6v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cio6v"]
+size = Vector2(120, 133.625)
+
+[node name="PPELab_root" type="Node2D"]
+position = Vector2(-10, -10)
+script = ExtResource("1_2baw1")
+
+[node name="World" type="Node2D" parent="."]
+position = Vector2(12, 7)
+
+[node name="Background" type="Sprite2D" parent="World"]
+position = Vector2(179, 93)
+texture = ExtResource("2_2baw1")
+
+[node name="ClothesHotspot" type="Area2D" parent="World"]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(144, 94)
+script = ExtResource("2_cio6v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/ClothesHotspot"]
+position = Vector2(122, 13.8125)
+shape = SubResource("RectangleShape2D_cio6v")

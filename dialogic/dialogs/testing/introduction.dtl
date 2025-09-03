@@ -1,0 +1,21 @@
+It’s your very first day as a lab intern.  You feel nervousness, eagerness, confusion and everything. \
+You also forgot your lunch........................
+The Lab Supervisor hops into view.  \
+Yes — *hops.* Because the Supervisor is a kangaroo.
+join harvey center [animation="Slide In Left"]
+…Wait.  \
+You’re a kangaroo???
+harvey: Sharp eyes, intern. That’s why I hired you.
+No, seriously. You’re a kangaroo with a coat.\
+With pockets too. \
+…How is that even?
+harvey: Relax. Perfectly normal.  See I got my license. *Its rough drawing of himself and some gibberish words like scientist*
+…I feel like I’m in the wrong place.
+harvey: Wrong or right, I am in charge here.  \
+Now listen up, before you *hop* to conclusions.  hehe, get it?
+harvey: All right, intern. Before you start, you need to suit up\
+properly.  PPE is your first line of defense in the lab.
+harvey: Check the wardrobe on your right. Now go, clock's ticking,,
+leave harvey [animation="Slide Out Left"]
+He left abruptly,  he muttered somthing about coffee and some mess across the room.
+[signal arg="timeline_end"]
