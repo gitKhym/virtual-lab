@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://cc1fgc8s2fwei"]
+
+[sub_resource type="GDScript" id="GDScript_ojcxw"]
+script/source = "extends Node2D
+
+func _on_intro_button_pressed():
+	get_tree().change_scene_to_file(\"res://scenes/simulations/microscope_handling/microscope_parts.tscn\")
+
+func _on_practice_button_pressed():
+	get_tree().change_scene_to_file(\"res://scenes/simulations/microscope_handling/microscope_practice.tscn\")
+"
+
+[node name="MicroscopeHandling" type="Node2D"]
+script = SubResource("GDScript_ojcxw")
+
+[node name="IntroButton" type="Button" parent="."]
+offset_left = 95.0
+offset_top = 18.0
+offset_right = 295.0
+offset_bottom = 68.0
+text = "Introduction"
+
+[node name="PracticeButton" type="Button" parent="."]
+offset_left = 95.0
+offset_top = 118.0
+offset_right = 295.0
+offset_bottom = 168.0
+text = "Practice"
+
+[connection signal="pressed" from="IntroButton" to="." method="_on_intro_button_pressed"]
+[connection signal="pressed" from="PracticeButton" to="." method="_on_practice_button_pressed"]

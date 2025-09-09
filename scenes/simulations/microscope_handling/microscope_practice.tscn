@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=3 uid="uid://r2c5r5pnaqj"]
+
+[ext_resource type="Script" uid="uid://dxj6tlxnx6an2" path="res://scenes/simulations/microscope_handling/microscope_practice.gd" id="1_abcde"]
+
+[node name="MicroscopePractice" type="Node2D"]
+script = ExtResource("1_abcde")
+
+[node name="Microscope" type="Sprite2D" parent="."]
+position = Vector2(200, 324)
+scale = Vector2(0.5, 0.5)
+
+[node name="StageArea" type="Area2D" parent="Microscope"]
+position = Vector2(0, 150)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Microscope/StageArea"]
+
+[node name="Slide" type="Sprite2D" parent="."]
+position = Vector2(800, 100)
+scale = Vector2(0.1, 0.1)
+
+[node name="View" type="Sprite2D" parent="."]
+position = Vector2(800, 324)
+scale = Vector2(0.5, 0.5)
+
+[node name="Objective4xButton" type="Button" parent="."]
+offset_left = 21.0
+offset_top = 55.0
+offset_right = 121.0
+offset_bottom = 86.0
+text = "4x"
+
+[node name="Objective10xButton" type="Button" parent="."]
+offset_left = 131.0
+offset_top = 55.0
+offset_right = 231.0
+offset_bottom = 86.0
+text = "10x"
+
+[node name="Objective40xButton" type="Button" parent="."]
+offset_left = 241.0
+offset_top = 55.0
+offset_right = 341.0
+offset_bottom = 86.0
+text = "40x"
+
+[node name="CoarseKnob" type="Button" parent="."]
+offset_left = 21.0
+offset_top = 105.0
+offset_right = 127.0
+offset_bottom = 136.0
+text = "Coarse Knob"
+
+[node name="FineKnob" type="Button" parent="."]
+offset_left = 131.0
+offset_top = 105.0
+offset_right = 231.0
+offset_bottom = 136.0
+text = "Fine Knob"
+
+[node name="DiaphragmSlider" type="HSlider" parent="."]
+offset_left = 21.0
+offset_top = 155.0
+offset_right = 231.0
+offset_bottom = 171.0
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="FeedbackLabel" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 420.0
+offset_bottom = 120.0
+text = "Drag the microscope to the center of the screen."
+autowrap_mode = 3
+
+[connection signal="pressed" from="Objective4xButton" to="." method="_on_objective_button_pressed" binds= ["4x"]]
+[connection signal="pressed" from="Objective10xButton" to="." method="_on_objective_button_pressed" binds= ["10x"]]
+[connection signal="pressed" from="Objective40xButton" to="." method="_on_objective_button_pressed" binds= ["40x"]]
+[connection signal="pressed" from="CoarseKnob" to="." method="_on_knob_pressed" binds= ["coarse"]]
+[connection signal="pressed" from="FineKnob" to="." method="_on_knob_pressed" binds= ["fine"]]
+[connection signal="value_changed" from="DiaphragmSlider" to="." method="_on_diaphragm_slider_changed"]

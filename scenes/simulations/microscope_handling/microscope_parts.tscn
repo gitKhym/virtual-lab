@@ -1,0 +1,133 @@
+[gd_scene load_steps=3 format=3 uid="uid://7kvsbok0k88u"]
+
+[ext_resource type="Script" uid="uid://cqtblxfw7e5fv" path="res://scenes/simulations/microscope_handling/microscope_parts.gd" id="1_gq2wj"]
+[ext_resource type="FontFile" uid="uid://d35n2ag4cnf5o" path="res://font/fs-pixel-sans-unicode-regular.ttf" id="2_7ei0r"]
+
+[node name="MicroscopeParts" type="Node2D"]
+script = ExtResource("1_gq2wj")
+
+[node name="MicroscopeSprite" type="Sprite2D" parent="."]
+position = Vector2(185, 118)
+scale = Vector2(0.5, 0.5)
+
+[node name="InfoLabel" type="Label" parent="."]
+offset_left = 14.0
+offset_top = 11.0
+offset_right = 211.0
+offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("2_7ei0r")
+text = "Click on a part to learn more about it."
+autowrap_mode = 3
+
+[node name="EyepieceButton" type="Button" parent="."]
+offset_left = 6.0
+offset_top = 44.0
+offset_right = 106.0
+offset_bottom = 75.0
+text = "Eyepiece"
+
+[node name="TubeButton" type="Button" parent="."]
+offset_left = 117.0
+offset_top = 44.0
+offset_right = 217.0
+offset_bottom = 75.0
+text = "Tube"
+
+[node name="ArmButton" type="Button" parent="."]
+offset_left = 232.0
+offset_top = 44.0
+offset_right = 332.0
+offset_bottom = 75.0
+text = "Arm"
+
+[node name="BaseButton" type="Button" parent="."]
+offset_left = 288.0
+offset_top = 94.0
+offset_right = 388.0
+offset_bottom = 125.0
+text = "Base"
+
+[node name="IlluminatorButton" type="Button" parent="."]
+offset_left = 52.0
+offset_top = 269.0
+offset_right = 152.0
+offset_bottom = 300.0
+text = "Illuminator"
+
+[node name="StageButton" type="Button" parent="."]
+offset_left = 158.0
+offset_top = 119.0
+offset_right = 258.0
+offset_bottom = 150.0
+text = "Stage"
+
+[node name="MechanicalStageKnobsButton" type="Button" parent="."]
+offset_left = 2.0
+offset_top = 165.0
+offset_right = 197.0
+offset_bottom = 196.0
+text = "Mechanical Stage Knobs"
+
+[node name="RevolvingNosepieceButton" type="Button" parent="."]
+offset_left = 5.0
+offset_top = 80.0
+offset_right = 172.0
+offset_bottom = 111.0
+text = "Revolving Nosepiece"
+
+[node name="ObjectiveLensesButton" type="Button" parent="."]
+offset_left = 3.0
+offset_top = 119.0
+offset_right = 153.0
+offset_bottom = 150.0
+text = "Objective Lenses"
+
+[node name="RackStopButton" type="Button" parent="."]
+offset_left = 186.0
+offset_top = 82.0
+offset_right = 286.0
+offset_bottom = 113.0
+text = "Rack Stop"
+
+[node name="CondenserLensButton" type="Button" parent="."]
+offset_left = 205.0
+offset_top = 172.0
+offset_right = 337.0
+offset_bottom = 203.0
+text = "Condenser Lens"
+
+[node name="DiaphragmButton" type="Button" parent="."]
+offset_left = 265.0
+offset_top = 133.0
+offset_right = 390.0
+offset_bottom = 164.0
+text = "Diaphragm/Iris"
+
+[node name="CoarseAdjustmentKnobButton" type="Button" parent="."]
+offset_left = 295.0
+offset_top = 5.0
+offset_right = 495.0
+offset_bottom = 36.0
+text = "Coarse Adjustment Knob"
+
+[node name="FineAdjustmentKnobButton" type="Button" parent="."]
+offset_left = 22.0
+offset_top = 217.0
+offset_right = 222.0
+offset_bottom = 248.0
+text = "Fine Adjustment Knob"
+
+[connection signal="pressed" from="EyepieceButton" to="." method="_on_part_button_pressed" binds= ["Eyepiece"]]
+[connection signal="pressed" from="TubeButton" to="." method="_on_part_button_pressed" binds= ["Tube"]]
+[connection signal="pressed" from="ArmButton" to="." method="_on_part_button_pressed" binds= ["Arm"]]
+[connection signal="pressed" from="BaseButton" to="." method="_on_part_button_pressed" binds= ["Base"]]
+[connection signal="pressed" from="IlluminatorButton" to="." method="_on_part_button_pressed" binds= ["Illuminator"]]
+[connection signal="pressed" from="StageButton" to="." method="_on_part_button_pressed" binds= ["Stage"]]
+[connection signal="pressed" from="MechanicalStageKnobsButton" to="." method="_on_part_button_pressed" binds= ["Mechanical Stage Knobs"]]
+[connection signal="pressed" from="RevolvingNosepieceButton" to="." method="_on_part_button_pressed" binds= ["Revolving Nosepiece"]]
+[connection signal="pressed" from="ObjectiveLensesButton" to="." method="_on_part_button_pressed" binds= ["Objective Lenses"]]
+[connection signal="pressed" from="RackStopButton" to="." method="_on_part_button_pressed" binds= ["Rack Stop"]]
+[connection signal="pressed" from="CondenserLensButton" to="." method="_on_part_button_pressed" binds= ["Condenser Lens"]]
+[connection signal="pressed" from="DiaphragmButton" to="." method="_on_part_button_pressed" binds= ["Diaphragm/Iris"]]
+[connection signal="pressed" from="CoarseAdjustmentKnobButton" to="." method="_on_part_button_pressed" binds= ["Coarse Adjustment Knob"]]
+[connection signal="pressed" from="FineAdjustmentKnobButton" to="." method="_on_part_button_pressed" binds= ["Fine Adjustment Knob"]]
