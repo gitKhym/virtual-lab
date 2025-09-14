@@ -53,7 +53,21 @@ func _on_dialog_finished():
 	var selected_id = Dialogic.VAR.Simulations.PPE.selected_item_id
 	if selected_id != id:
 		return
+	
 	if is_correct:
 		phase_controller.handle_correct()
 	else:
 		phase_controller.handle_incorrect()
+	
+	# ADD THIS: Check if the selected item is "sneakers" and go to next scene
+	if selected_id == "sneakers":
+		# Wait a moment for any animations to finish
+		go_to_next_scene()
+
+func go_to_next_scene():
+	var next_scene_path = "res://scenes/simulations/ppe_simulation/ppe_scenarios.tscn"
+	await get_tree().create_timer(1.5).timeout
+	SceneTransistion.change_scene(next_scene_path)
+
+		
+		

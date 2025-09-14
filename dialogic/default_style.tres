@@ -11,9 +11,7 @@
 [sub_resource type="Resource" id="Resource_qwa44"]
 script = ExtResource("1_031iu")
 scene = ExtResource("1_6ct5k")
-overrides = {
-"global_font_size": "15.0"
-}
+overrides = {}
 
 [sub_resource type="Resource" id="Resource_17pf1"]
 script = ExtResource("1_031iu")
@@ -39,17 +37,15 @@ overrides = {
 "next_indicator_enabled": "false",
 "next_indicator_size": "Vector2(2, 2)",
 "text_custom_color": "Color(0, 0, 0, 1)",
-"text_size": "2.0",
-"text_use_global_color": "false"
+"text_size": "12.0",
+"text_use_global_color": "false",
+"text_use_global_size": "false"
 }
 
 [sub_resource type="Resource" id="Resource_fabki"]
 script = ExtResource("1_031iu")
 scene = ExtResource("7_a05uk")
-overrides = {
-"font_size_custom": "2.0",
-"text_color_custom": "Color(0, 0, 0, 1)"
-}
+overrides = {}
 
 [resource]
 script = ExtResource("10_uitln")
@@ -64,4 +60,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("1_031iu")]([])
-metadata/_latest_layer = "15"
+metadata/_latest_layer = "13"

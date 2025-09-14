@@ -9,6 +9,7 @@ func _ready():
 	assign_items()
 
 
+
 func load_json():
 	var f = FileAccess.open(data_path, FileAccess.READ)
 	if not f:
@@ -36,3 +37,6 @@ func assign_items():
 				var item = items[item_data.id]
 				for k in item_data.keys():
 					item.set(k, item_data[k])
+					
+					
+					

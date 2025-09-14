@@ -1,0 +1,21 @@
+join HarveryTheRoo leftmost [animation="Slide In Left"]
+HarveryTheRoo: What’s the safest way to carry a microscope?
+
+- A. By the eyepiece
+	HarveryTheRoo: Nah mate, that’s asking for trouble.
+	jump 
+
+- B. Holding the base only
+	HarveryTheRoo: Close, but not quite, you’re missing half the grip.
+	jump question6/
+
+- C. Holding the arm and supporting the base with both hands
+	HarveryTheRoo: Deadset, that’s the way!
+	[wait time="0.5"]
+	HarveryTheRoo: Always carry with two hands — one hand on the arm, the other under the base.
+	HarveryTheRoo: Righto, Question 7 coming your way.
+	jump question7/
+
+- D. By the stage clip
+	HarveryTheRoo: Oof, you’ll bust it quicker than a kangaroo in a china shop.
+	jump 

@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://tv36e2duymgu"]
+[gd_scene load_steps=11 format=3 uid="uid://bwsl576wnigwp"]
 
-[ext_resource type="Texture2D" uid="uid://cngrkr2dglo1b" path="res://PPE_scenarios1.png" id="1_5s0wc"]
-[ext_resource type="Script" uid="uid://bn020il2nukc4" path="res://scenes/simulations/ppe_simulation/ppe_scenarios.gd" id="1_vpoud"]
+[ext_resource type="Script" uid="uid://bupfx7vy6i3yy" path="res://scenes/simulations/ppe_simulation/ppe_scenarios.gd" id="1_1rx4b"]
+[ext_resource type="Texture2D" uid="uid://cngrkr2dglo1b" path="res://assets/backgrounds/PPE_scenarios1.png" id="1_5s0wc"]
 [ext_resource type="Texture2D" uid="uid://cxk7tl47c0sox" path="res://assets/simulations/ppe/scenarios/spilll.png" id="3_74a3e"]
 [ext_resource type="Texture2D" uid="uid://bjjs2vwu40mri" path="res://assets/simulations/ppe/scenarios/crumpled_gloves.png" id="4_n27wm"]
 [ext_resource type="Texture2D" uid="uid://1frd3qnm3h3d" path="res://assets/simulations/ppe/scenarios/snack pack.png" id="5_n27wm"]
@@ -17,9 +17,10 @@ size = Vector2(15, 13)
 size = Vector2(33, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c242u"]
+size = Vector2(48, 50)
 
 [node name="ppe_scenarios" type="Node2D"]
-script = ExtResource("1_vpoud")
+script = ExtResource("1_1rx4b")
 
 [node name="world" type="Node2D" parent="."]
 
@@ -72,5 +73,5 @@ position = Vector2(240, 134)
 texture = ExtResource("6_1rx4b")
 
 [node name="scenario4area" type="CollisionShape2D" parent="world/scenario4"]
-position = Vector2(223, 119)
+position = Vector2(240, 134)
 shape = SubResource("RectangleShape2D_c242u")

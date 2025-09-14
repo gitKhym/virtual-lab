@@ -1,0 +1,21 @@
+join HarveryTheRoo leftmost [animation="Slide In Left"]
+HarveryTheRoo: What should you do first in case of a spill?
+
+- A. Leave it and continue working
+	HarveryTheRoo: That’s rough, mate, safety first, not last.
+	jump 
+
+- B. Clean it with your bare hands
+	HarveryTheRoo: Crikey! That’s the worst thing you could do.
+	jump 
+
+- C. Inform others and follow spill protocol
+	HarveryTheRoo: Too easy, nailed it!
+	[wait time="0.5"]
+	HarveryTheRoo: Safety comes first, alert others, contain safely, and follow proper spill procedures.
+	HarveryTheRoo: Next up, Question 9.
+	jump question9/
+
+- D. Ignore it if it’s small
+	HarveryTheRoo: Nah, mate — that’s asking for an accident.
+	jump 

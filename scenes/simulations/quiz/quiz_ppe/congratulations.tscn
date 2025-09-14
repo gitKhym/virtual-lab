@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd3a6glk52su"]
+
+[ext_resource type="Texture2D" uid="uid://cf8dotgb4s7v" path="res://Assets/QuizBackground.png" id="1_1hpse"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_10emx"]
+texture = ExtResource("1_1hpse")
+
+[node name="Congratulations" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1157.0
+offset_bottom = 653.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_10emx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

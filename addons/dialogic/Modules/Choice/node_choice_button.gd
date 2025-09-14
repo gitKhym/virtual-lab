@@ -13,7 +13,7 @@ extends Button
 
 
 ## Used to identify what choices to put on. If you leave it at -1, choices will be distributed automatically.
-@export var choice_index: int = -4
+@export var choice_index: int = -1
 
 ## Can be set to play this sound when pressed. Requires a sibling DialogicNode_ButtonSound node.
 @export var sound_pressed: AudioStream

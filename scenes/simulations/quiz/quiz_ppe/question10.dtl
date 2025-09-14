@@ -1,0 +1,21 @@
+join HarveryTheRoo leftmost [animation="Slide In Left"]
+HarveryTheRoo: What’s the first step during a fire alarm in the lab?
+
+- A. Pack your belongings
+	HarveryTheRoo: Mate, your stuff’s not worth that risk.
+	jump 
+
+- B. Continue experiment until it’s safe
+	HarveryTheRoo: Strewth — that’s a shocking idea.
+	jump 
+
+- C. Shut down equipment (if safe) and evacuate immediately
+	HarveryTheRoo: Spot on, legend, you’ve got it!
+	[wait time="0.5"]
+	HarveryTheRoo: Prioritize safety — stop work, turn off equipment if possible, then exit the lab quickly.
+	HarveryTheRoo: That’s the end of the quiz, mate — well played!
+	# You can end here or jump to a “QuizEnd” timeline/scene
+
+- D. Call a friend
+	HarveryTheRoo: Nah, this isn’t a social catch-up, get out safe first.
+	jump question10/

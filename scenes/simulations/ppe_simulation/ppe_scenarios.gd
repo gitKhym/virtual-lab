@@ -2,8 +2,8 @@ extends Node2D
 
 # Camera
 @onready var cam: Camera2D = $world/Camera2D
+@onready var world: Node2D= $world
 
-# Scenario nodes organized in a dictionary for better management
 @onready var scenarios := {
 	"scenario1": {
 		"area": $world/scenario1,
@@ -53,8 +53,23 @@ var _finale_duration := 1.0     # Duration of the zoom animation
 
 func _ready() -> void:
 	_setup_camera()
-	_setup_scenarios()
 	_connect_dialogic_signals()
+	await get_tree().create_timer(1.5).timeout
+	var background_sprite = world 
+	var original_modulate = background_sprite.modulate if background_sprite else Color.WHITE
+	
+	if background_sprite:
+		var fade_tween = create_tween()
+		fade_tween.tween_property(background_sprite, "modulate", Color(0.5, 0.5, 0.5, 1.0), 0.5)
+	var dlg_ui := Dialogic.start("res://dialogic/dialogs/testing/ppe_scenario_1file.dtl", "intro")
+	if dlg_ui:
+		await Dialogic.timeline_ended
+		if background_sprite:
+			var restore_tween = create_tween()
+			restore_tween.tween_property(background_sprite, "modulate", original_modulate, 0.5)
+			await restore_tween.finished
+			_setup_scenarios()
+	
 
 func _setup_camera() -> void:
 	_original_pos = cam.global_position
@@ -74,8 +89,6 @@ func _setup_scenarios() -> void:
 			scenario.area.input_pickable = true
 			if not scenario.area.input_event.is_connected(_on_scenario_input):
 				scenario.area.input_event.connect(_on_scenario_input.bind(scenario_key))
-		
-
 		if not scenario.has("target_position"):
 			scenario["target_position"] = null
 		if not scenario.has("move_duration"):
@@ -93,9 +106,7 @@ func _on_scenario_input(_viewport: Node, event: InputEvent, _shape_idx: int, sce
 		return
 	_busy = true
 	await _zoom_to_cursor(0.6, 1.7)
-	
 	await _start_dialog(scenario_key)
-	
 	_busy = false
 
 func _is_left_click(event: InputEvent) -> bool:
@@ -106,7 +117,6 @@ func _is_left_click(event: InputEvent) -> bool:
 func _start_dialog(scenario_label: String) -> void:
 	var dlg = Dialogic.start("res://dialogic/dialogs/testing/ppe_scenario_1file.dtl", scenario_label)
 	if dlg:
-		add_child(dlg)
 		await dlg.tree_exited
 		
 func _on_dialogic_signal(argument: String) -> void:
@@ -119,39 +129,28 @@ func _on_dialogic_signal(argument: String) -> void:
 	
 	if argument in signal_handlers:
 		await signal_handlers[argument].call()
-		
-		# Check if all scenarios are completed after handling this one
 		_check_all_scenarios_complete()
 
 func _check_all_scenarios_complete() -> void:
-	# Check if all scenarios are done
 	var all_completed := true
 	for scenario_key in scenarios:
 		if not scenarios[scenario_key]["done"]:
 			all_completed = false
 			break
-	
-	# If all scenarios are completed, trigger the finale
 	if all_completed:
-		print("All scenarios completed! Triggering finale...")
-		await _zoom_to_finale()  # Zoom to finale coordinates first
+		await _zoom_to_finale()
 		_start_finale()
 
+
 func _start_finale() -> void:
-	# Start the finale dialog (jump to "finale" label in the same timeline file)
 	var finale_dlg = Dialogic.start("res://dialogic/dialogs/testing/ppe_scenario_1file.dtl", "scenario5")
 	if finale_dlg:
-		add_child(finale_dlg)
 		await finale_dlg.tree_exited
-		print("Finale completed!")
-		# Optionally zoom back after finale if needed
-		# await _zoom_back(_original_pos, _original_zoom, 1.0)
+		var next_scene_path = "res://scenes/simulations/quiz/quiz_ppe/main_menu_quiz.tscn"
+		SceneTransistion.change_scene(next_scene_path)
 
 func _zoom_to_finale() -> void:
-	print("Zooming to finale coordinates: ", _finale_target_pos)
-	
 	var target_zoom := Vector2(_finale_zoom_factor, _finale_zoom_factor)
-	
 	var tw := create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	tw.tween_property(cam, "zoom", target_zoom, _finale_duration)
 	tw.parallel().tween_property(cam, "global_position", _finale_target_pos, _finale_duration)
@@ -159,21 +158,14 @@ func _zoom_to_finale() -> void:
 
 func _handle_scenario_complete(scenario_key: String) -> void:
 	var scenario = scenarios[scenario_key]
-	
 	if scenario.area and scenario.sprite:
 		scenario.done = true
 		scenario.area.input_pickable = false
 		scenario.area.monitoring = false
-		
-		# MOVE SPRITE FIRST (before texture change)
 		await _move_sprite_to_target(scenario)
-		
-		# THEN HANDLE VISUAL CHANGES BASED ON SCENARIO TYPE
 		if scenario.get("make_empty_on_complete", false):
-			# Make sprite empty/transparent for scenario2
 			_make_sprite_empty(scenario)
 		else:
-			# Normal texture change for scenario1
 			scenario.sprite.texture = load(scenario.complete_texture)
 	
 	await _zoom_back(_original_pos, _original_zoom, 0.6)
@@ -182,19 +174,14 @@ func _make_sprite_empty(scenario: Dictionary) -> void:
 	if scenario.sprite:
 		scenario.sprite.modulate = Color(1, 1, 1, 0)
 		scenario.sprite.texture = null
-		print("Sprite made empty for scenario")
 
 func _move_sprite_to_target(scenario: Dictionary) -> void:
 	if scenario.get("target_position") is Vector2 and scenario.sprite:
 		var target_pos: Vector2 = scenario.target_position
 		var duration: float = scenario.get("move_duration", 0.6)
-		
-		print("Moving sprite to position: ", target_pos)
 		var tw = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 		tw.tween_property(scenario.sprite, "position", target_pos, duration)
 		await tw.finished
-	else:
-		print("No target position specified for this scenario, sprite remains in place")
 
 func _zoom_to_cursor(duration: float, zoom_factor: float) -> void:
 	var cursor_world_pos: Vector2 = cam.get_global_mouse_position()

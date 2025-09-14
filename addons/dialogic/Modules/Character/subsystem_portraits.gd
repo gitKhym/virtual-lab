@@ -293,11 +293,23 @@ func get_character_portrait(character: DialogicCharacter) -> DialogicPortrait:
 	return null
 
 
-func z_sort_portrait_containers(con1: DialogicNode_PortraitContainer, con2: DialogicNode_PortraitContainer) -> bool:
-	if con1.get_meta('z_index', 0) < con2.get_meta('z_index', 0):
-		return true
+func z_sort_portrait_containers(con1, con2) -> bool:
+	# Guard against null or freed nodes
+	if con1 == null or not is_instance_valid(con1):
+		return true   # invalid goes first
+	if con2 == null or not is_instance_valid(con2):
+		return false
 
-	return false
+	# Use get_meta safely
+	var z1 = 0
+	var z2 = 0
+	if con1.has_meta("z_index"):
+		z1 = con1.get_meta("z_index")
+	if con2.has_meta("z_index"):
+		z2 = con2.get_meta("z_index")
+
+	return z1 < z2
+
 
 
 ## Private method to remove a [param portrait_node].

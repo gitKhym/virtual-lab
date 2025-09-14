@@ -1,4 +1,4 @@
-[style name="small_dialog_style"]
+[style name="default_style"]
 if {Simulations.PPE.selected_item_id} == "apron":
 	Close, but fire aprons are mainly for flammable tasks...
 	...Not for typical lab experiments.
@@ -36,9 +36,11 @@ if {Simulations.PPE.selected_item_id} == "rawdog":
 	Exposing bare hands to chemicals or broken glass is extremely dangerous.
 	Always use proper gloves to prevent serious injuries.
 if {Simulations.PPE.selected_item_id} == "sneakers":
-	Okay!
+	Right on!
 	Sneakers cover most of your foot, but be careful as they can let liquids seep through if not waterproof.
-	Closed-toe, chemical-resistant shoes are preferred.
+	Perfect! you’re suited up correctly. \
+Lab coat\: check. Goggles\: check. Nitrile gloves\: check. Sneakers\: check.\
+Remember ; safety is always the first priority in every lab. Never forget that.
 if {Simulations.PPE.selected_item_id} == "sandals":
 	Incorrect!
 	Sandals leave your feet exposed to spills, broken glass, or dropped equipment.

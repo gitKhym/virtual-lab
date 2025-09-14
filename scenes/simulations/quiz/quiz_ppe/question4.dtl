@@ -1,0 +1,21 @@
+join HarveryTheRoo leftmost [animation="Slide In Left"]
+HarveryTheRoo: Where should used gloves be disposed?
+
+- A. Recycling bin
+	HarveryTheRoo: Nope, mate, gloves aren’t going in with the milk cartons.
+	jump 
+
+- B. General trash can
+	HarveryTheRoo: That’s dodgy — not the right bin, champ.
+	jump 
+
+- C. Designated biohazard/chemical waste bin
+	HarveryTheRoo: Spot on, legend!
+	[wait time="0.5"]
+	HarveryTheRoo: Gloves may contain hazardous substances; they must be discarded in appropriate waste containers.
+	HarveryTheRoo: Alright, let’s roll into Question 5.
+	jump question5/
+
+- D. Desk drawer
+	HarveryTheRoo: Oi! That’s crook — don’t stash dirty gloves in your desk.
+	jump 
