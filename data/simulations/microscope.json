@@ -1,0 +1,45 @@
+
+{
+  "parts": [
+    {
+      "id": "eyepiece_lens",
+      "name": "Eyepiece Lens",
+      "description": "The lens at the top that you look through. They are usually 10x or 15x power."
+    },
+    {
+      "id": "tube",
+      "name": "Tube",
+      "description": "Connects the eyepiece to the objective lenses."
+    },
+    {
+      "id": "arm",
+      "name": "Arm",
+      "description": "Supports the tube and connects it to the base."
+    },
+    {
+      "id": "base",
+      "name": "Base",
+      "description": "The bottom of the microscope, used for support."
+    },
+    {
+      "id": "illuminator",
+      "name": "Illuminator",
+      "description": "A steady light source that shines up through the slide."
+    },
+    {
+      "id": "stage",
+      "name": "Stage",
+      "description": "The flat platform where you place your slides."
+    },
+    {
+      "id": "coarse_adjustment_knob",
+      "name": "Coarse Adjustment Knob",
+      "description": "Moves the stage up and down for focusing."
+    },
+    {
+      "id": "knob_area",
+      "name": "Fine Adjustment Knob",
+      "description": "Small, round knob on the side of the microscope used to fine-tune the focus of the specimen."
+    }
+  ]
+}
