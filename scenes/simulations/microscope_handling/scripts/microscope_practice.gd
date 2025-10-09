@@ -1,82 +1,112 @@
 extends Node2D
 
-@onready var microscope = $Microscope
-@onready var slide = $Slide
-@onready var view = $View
-@onready var feedback_label = $FeedbackLabel
+@onready var sample40x = $Sample40x
+@onready var sample90x = $Sample90x
+@onready var sample130x = $Sample130x
+@onready var coarse_adjustment_knob = $CoarseAdjustmentKnob
+@onready var button40x = $"40xButton"
+@onready var button90x = $"90xButton"
+@onready var button130x = $"130xButton"
+@onready var observe_sample_button = $ObserveSampleButton
+@onready var specimen_border = $SpecimenBorder
+@onready var next_button = $Next
 
-var dragging_microscope = false
-var dragging_slide = false
-
-var current_objective = "4x"
+var current_objective = ""
 var focus = 0.0
-var diaphragm = 0.5
-
-
-var blurry_texture = null # load("res://assets/blurry_view.png")
-var sharp_texture = null # load("res://assets/sharp_view.png")
 
 func _ready():
-	feedback_label.text = "Click and drag the hand on the arm and base to carry the microscope."
-	view.texture = blurry_texture
+	coarse_adjustment_knob.value_changed.connect(_on_coarse_knob_value_changed)
+	observe_sample_button.pressed.connect(_on_observe_sample_pressed)
+	button40x.pressed.connect(_on_objective_button_pressed.bind("40x"))
+	button90x.pressed.connect(_on_objective_button_pressed.bind("90x"))
+	button130x.pressed.connect(_on_objective_button_pressed.bind("130x"))
+	next_button.pressed.connect(_on_next_pressed)
+
+	sample40x.visible = false
+	sample90x.visible = false
+	sample130x.visible = false
+	
+	button40x.visible = false
+	button90x.visible = false
+	button130x.visible = false
+	
+	specimen_border.visible = false
+	next_button.visible = false
+
+	update_view()
+	Dialogic.start("microscope_practice_start")
+
 
 func _input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.pressed:
-				if microscope.get_rect().has_point(to_local(event.position)):
-					dragging_microscope = true
-					feedback_label.text = "Carrying the microscope correctly!"
-				elif slide.get_rect().has_point(to_local(event.position)):
-					dragging_slide = true
-				else:
-					feedback_label.text = "Incorrect. Always carry with one hand on the arm, one under the base."
-			else:
-				dragging_microscope = false
-				dragging_slide = false
+	pass
 
-	if event is InputEventMouseMotion:
-		if dragging_microscope:
-			microscope.position = event.position
-		if dragging_slide:
-			slide.position = event.position
-			# Check if the slide is over the stage
-			if $Microscope/StageArea.get_rect().has_point(to_local(event.position)):
-				feedback_label.text = "Slide is on the stage. Secure with clips."
-				slide.position = microscope.position + Vector2(0, 150) # Snap to stage
-				dragging_slide = false
+func _on_observe_sample_pressed():
+	observe_sample_button.visible = false
+	sample40x.visible = true
+	specimen_border.visible = true
+	next_button.visible = true
+	current_objective = "40x"
+	
+	Dialogic.timeline_ended.connect(_on_dialogic_intro_ended)
+	Dialogic.start("microscope_practice_40x_intro")
+
+func _on_dialogic_intro_ended(timeline_name):
+	Dialogic.timeline_ended.disconnect(_on_dialogic_intro_ended)
+	if timeline_name == "microscope_practice_40x_intro":
+		button90x.visible = true
+	elif timeline_name == "microscope_practice_90x_intro":
+		button130x.visible = true
 
 func _on_objective_button_pressed(objective):
 	current_objective = objective
-	feedback_label.text = "Switched to " + objective + " objective."
-	update_view()
 
-func _on_knob_pressed(knob_type):
-	if knob_type == "coarse":
-		focus += 0.2
-		feedback_label.text = "Using coarse adjustment knob."
-	elif knob_type == "fine":
-		focus += 0.05
-		feedback_label.text = "Using fine adjustment knob."
+	sample40x.visible = false
+	sample90x.visible = false
+	sample130x.visible = false
+
+	if objective == "40x":
+		sample40x.visible = true
+	elif objective == "90x":
+		sample90x.visible = true
+	elif objective == "130x":
+		sample130x.visible = true
+
+	update_view()
+	
+func _on_coarse_knob_value_changed(value):
+	focus += value
 	focus = clamp(focus, 0.0, 1.0)
+	print(focus)
 	update_view()
+	
+func _on_next_pressed():
+	if focus >= 0.66:
+		match current_objective:
+			"40x":
+				focus = 0
+				current_objective = "90x"
+				_on_objective_button_pressed("90x")
+				Dialogic.start("microscope_practice_90x_intro")
+			"90x":
+				focus = 0
+				current_objective = "130x"
+				_on_objective_button_pressed("130x")
+				Dialogic.start("microscope_practice_130x_intro")
+			"130x":
+				focus = 0
+				next_button.visible = false
+				Dialogic.start("microscope_practice_complete")
+				button40x.visible = true
+				button90x.visible = true	
+				button130x.visible = true
+	else:
+		Dialogic.start("microscope_practice_focus_incorrect")
 
-func _on_diaphragm_slider_changed(value):
-	diaphragm = value
-	feedback_label.text = "Adjusting diaphragm."
-	update_view()
 
 func update_view():
-	# Assume 0.8 is the perfect focus
-	var focus_quality = 1.0 - abs(focus - 0.8) 
-	# Assume 0.6 is the perfect light
-	var light_quality = 1.0 - abs(diaphragm - 0.6) 
-
-	var total_quality = focus_quality * light_quality
-
-	if total_quality > 0.8:
-		view.texture = sharp_texture
-	else:
-		view.texture = blurry_texture
-
-	view.modulate.a = total_quality
+	var focus_quality = 1.0 - abs(focus - 0.8)
+	var blur_amount = 1.0 - focus_quality
+	
+	sample40x.material.set_shader_parameter("blur_amount", blur_amount)
+	sample90x.material.set_shader_parameter("blur_amount", blur_amount)
+	sample130x.material.set_shader_parameter("blur_amount", blur_amount)

@@ -12,11 +12,12 @@ config_version=5
 
 config/name="virtual_lab"
 run/main_scene="uid://dpiwwv867vp1y"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+SceneTransistion="*res://scenes/simulations/transistion/scene_transistion.tscn"
 
 [dialogic]
 
@@ -24,7 +25,20 @@ directories/dch_directory={
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
+"all_parts_clicked": "res://dialogic/dialogs/simulations/microscope/all_parts_clicked.dtl",
+"microscope_parts": "res://dialogic/dialogs/simulations/microscope/microscope_parts.dtl",
+"microscope_practice_130x_intro": "res://dialogic/dialogs/simulations/microscope/microscope_practice_130x_intro.dtl",
+"microscope_practice_40x_intro": "res://dialogic/dialogs/simulations/microscope/microscope_practice_40x_intro.dtl",
+"microscope_practice_90x_intro": "res://dialogic/dialogs/simulations/microscope/microscope_practice_90x_intro.dtl",
+"microscope_practice_complete": "res://dialogic/dialogs/simulations/microscope/microscope_practice_complete.dtl",
+"microscope_practice_focus_130x": "res://dialogic/dialogs/simulations/microscope/microscope_practice_focus_130x.dtl",
+"microscope_practice_focus_40x": "res://dialogic/dialogs/simulations/microscope/microscope_practice_focus_40x.dtl",
+"microscope_practice_focus_90x": "res://dialogic/dialogs/simulations/microscope/microscope_practice_focus_90x.dtl",
+"microscope_practice_focus_incorrect": "res://dialogic/dialogs/simulations/microscope/microscope_practice_focus_incorrect.dtl",
+"microscope_practice_start": "res://dialogic/dialogs/simulations/microscope/microscope_practice_start.dtl",
+"microscope_stage_start": "res://dialogic/dialogs/simulations/microscope/microscope_stage_start.dtl",
 "ppe_selection_dialog": "res://dialogic/dialogs/simulations/ppe/ppe_selection_dialog.dtl",
+"slide_prepared": "res://dialogic/dialogs/simulations/microscope/slide_prepared.dtl",
 "timeline": "res://timeline.dtl"
 }
 glossary/default_case_sensitive=true
@@ -32,6 +46,9 @@ layout/style_list=["res://dialogic/default_style.tres", "res://dialogic/small_di
 layout/default_style="res://dialogic/default_style.tres"
 variables={
 "Simulations": {
+"Microscope": {
+"all_items_selected": false
+},
 "PPE": {
 "selected_item_id": ""
 }
