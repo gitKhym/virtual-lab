@@ -58,8 +58,8 @@ directories/dtl_directory={
 "timeline": "res://timeline.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://dialogic/default_style.tres", "res://dialogic/small_dialog_style.tres", "res://dialogic/test.tres"]
-layout/default_style="res://dialogic/default_style.tres"
+layout/style_list=["res://dialogic/small_dialog_style.tres", "res://dialogic/test.tres", "res://dialogic/default_style.tres"]
+layout/default_style=""
 variables={
 "Simulations": {
 "PPE": {

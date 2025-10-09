@@ -4,24 +4,21 @@
 [ext_resource type="Script" uid="uid://cvi1vlluegdut" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_hwy7e"]
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_f667r"]
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="3_mea35"]
-[ext_resource type="PackedScene" uid="uid://cso7iw8yyfk5p" path="res://dialogic/SmallDialogTextBox/custom_visual_novel_textbox.tscn" id="4_hwy7e"]
+[ext_resource type="PackedScene" uid="uid://bynp2oiq62d45" path="res://dialogic/SmallDialogTextBox/custom_visual_novel_textbox.tscn" id="4_hwy7e"]
 [ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="5_matr8"]
 [ext_resource type="Script" uid="uid://c4jaqmghy6sgn" path="res://addons/dialogic/Resources/dialogic_style.gd" id="6_hect7"]
 
 [sub_resource type="Resource" id="Resource_3tx7i"]
 script = ExtResource("1_hwy7e")
 scene = ExtResource("1_f667r")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_e4wbj"]
 script = ExtResource("1_hwy7e")
 scene = ExtResource("2_f667r")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_omimf"]
 script = ExtResource("1_hwy7e")
 scene = ExtResource("3_mea35")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_66nl6"]
 script = ExtResource("1_hwy7e")
@@ -44,7 +41,6 @@ overrides = {
 [sub_resource type="Resource" id="Resource_n6g5v"]
 script = ExtResource("1_hwy7e")
 scene = ExtResource("5_matr8")
-overrides = {}
 
 [resource]
 script = ExtResource("6_hect7")
@@ -57,6 +53,4 @@ layer_info = {
 "13": SubResource("Resource_66nl6"),
 "15": SubResource("Resource_n6g5v")
 }
-base_overrides = {}
-layers = Array[ExtResource("1_hwy7e")]([])
 metadata/_latest_layer = "13"
