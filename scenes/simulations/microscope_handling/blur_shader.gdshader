@@ -8,7 +8,7 @@ void fragment() {
     
     if (blur_amount > 0.0) {
         vec4 sum = vec4(0.0);
-        int steps = int(blur_amount * 3.0); // 0–3
+        int steps = int(blur_amount * 5.0); // 0–3
         for (int x = -steps; x <= steps; x++) {
             for (int y = -steps; y <= steps; y++) {
                 vec2 offset = vec2(float(x), float(y)) * pixel_size;
