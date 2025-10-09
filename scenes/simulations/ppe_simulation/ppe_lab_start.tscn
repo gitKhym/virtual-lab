@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://c35mpphvsksbo"]
+
+[ext_resource type="Script" uid="uid://bbf8j66g4ldd7" path="res://scenes/simulations/ppe_simulation/ppe_lab_start.gd" id="1_6ejk2"]
+[ext_resource type="Texture2D" uid="uid://cnf2npq26dywm" path="res://assets/backgrounds/PPE_LABv2.png" id="1_vcy34"]
+[ext_resource type="Script" uid="uid://byklrwf4cx1jc" path="res://scenes/simulations/ppe_simulation/clothes_hotspot.gd" id="3_bq2xi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fycbh"]
+size = Vector2(123, 135)
+
+[node name="PPE_labStart" type="Node2D"]
+script = ExtResource("1_6ejk2")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(181, 91)
+texture = ExtResource("1_vcy34")
+
+[node name="ClothesHotspot" type="Area2D" parent="."]
+script = ExtResource("3_bq2xi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClothesHotspot"]
+position = Vector2(267, 107)
+shape = SubResource("RectangleShape2D_fycbh")

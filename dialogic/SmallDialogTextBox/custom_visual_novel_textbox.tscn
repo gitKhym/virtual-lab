@@ -1,6 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://cso7iw8yyfk5p"]
+[gd_scene load_steps=19 format=3 uid="uid://bynp2oiq62d45"]
 
-[ext_resource type="Script" uid="uid://cthnaxelo5o1o" path="res://dialogic/VisualNovelTextbox/vn_textbox_layer.gd" id="1_1cx0o"]
+[ext_resource type="Script" uid="uid://cthnaxelo5o1o" path="res://dialogic/QuizTextBox/vn_textbox_layer.gd" id="1_1cx0o"]
 [ext_resource type="Script" uid="uid://s77tpq60w0la" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/animations.gd" id="2_epgbn"]
 [ext_resource type="Texture2D" uid="uid://dvb6nhob4ymye" path="res://assets/gui/text_boxes/small_dialog.png" id="3_1cx0o"]
 [ext_resource type="FontFile" uid="uid://d35n2ag4cnf5o" path="res://font/fs-pixel-sans-unicode-regular.ttf" id="4_hvo4x"]

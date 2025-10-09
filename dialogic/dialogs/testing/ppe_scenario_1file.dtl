@@ -1,0 +1,100 @@
+label intro
+join HarveryTheRoo center [animation="Slide In Left"]
+Harvey\
+Looking like a true scientist right there, intern. Always remember; proper attire and full PPE are the first steps to safety.
+Harvey\
+Before we begin, a few ground rules. No eating or drinking in the lab like ever. Follow the protocol for all spills, even the small ones. It’s about protecting you and everyone else.
+Harvey\
+Handle every piece of equipment with the utmost care. Treat it like it’s the only one we have because sometimes, it is.
+Harvey\
+All lab rubbish, including gloves, must go into the hazardous waste bins. Don’t leave them lying around.
+Harvey\
+In case of any emergency, follow the instructor’s lead immediately. No exceptions.
+Harvey\
+If you need a reminder, you can check the rules again on that board over there
+Harvey\
+Anyway, we’ll be starting shortly. Please take a moment to familiarize yourself with the lab, and do be careful.
+leave HarveryTheRoo [animation="Slide Out Left"]
+Narrator\
+Across the room, you notice a fluffy figure perched quietly. Wait.. is that… a koala?
+join henry center [animation="Slide In Left"]
+???\
+Hey there, fellow intern. First day too, huh? Yeah, me too. A bit nervous… haha.
+Henry\
+Oh the name’s Henry. Nice to meet you. I hope we can be friends. Ah, hold on!!my chips!
+Player\
+Hi there----
+Henry\
+Sorry! Gotta run! Catch you later!
+leave henry [animation="Slide Out Left"]
+Narrator\
+With surprising speed, his little legs scramble away, leaving you in silence.
+Narrator\
+But then your eyes drift back across the room. Something feels… off. The place is messy. Full of litter, tipped-over equipment, and the faint smell of a spill
+Player\
+Hmm. This room is quite a mess. There must be something I can do…
+[end_timeline]
+label scenario1 (scenario1)
+label return1
+Narrator\
+The intern notices a small chemical spill near their workstation.
+- Wipe it quickly with tissues
+	Narrator\
+spills must never be ignored. Tissues won’t neutralize chemicals and can spread contamination.
+	jump return1
+- Inform supervisor & follow spill protocol
+	Narrator\
+Well done. Reporting and following protocol ensures everyone’s safety.
+	[signal arg="spill_correct"]
+	[end_timeline]
+label scenario2 (scenario2)
+label return2
+Narrator\
+Later, the intern sees a classmate about to throw used gloves into the recycling bin.
+- Stop them and direct waste into biohazard bin
+	Right! Contaminated gloves go in the biohazard waste bin.
+	[signal arg="waste_correct"]
+	[end_timeline]
+- Throw your gloves in the trash as well.
+	That spreads contamination even further.
+	jump return2
+label scenario3
+label return3
+someone starts snacking at the workstation.
+- Pretend not to see
+	Ignoring unsafe behavior puts everyone at risk.
+	jump return3
+- Eat with them.
+	Food and labs don’t mix—cross-contamination is dangerous.
+	jump return3
+- Politely remind them that eating is not allowed
+	Yes! Eating in the lab can cause accidental ingestion of hazardous substances
+	[signal arg="eat_correct"]
+	[end_timeline]
+
+label scenario4
+label return4
+The intern sees another carrying a microscope with one hand
+- Pretend not to see
+	Copying unsafe behavior is never the answer
+	jump return4
+- Ignore it
+	One wrong move and the microscope could fall or break
+	jump return4
+- Tell them to use both hands, supporting the base
+	Exactly! Proper handling prevents damage to expensive equipment
+	[signal arg="handling_correct"]
+	[end_timeline]
+
+label scenario5
+label return5
+Suddenly, the fire alarm goes off
+- Grab your bag and run.
+	In emergencies, panic causes more danger
+	jump return5
+- Follow evacuation protocol calmly
+	Perfect. Staying calm and following protocol ensures safety for everyone
+	[end_timeline]
+- Stay inside and wait
+	Staying inside is never safe during a fire alarm
+	jump return5

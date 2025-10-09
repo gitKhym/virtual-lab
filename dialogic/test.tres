@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="DialogicStyle" load_steps=12 format=3 uid="uid://erjto8e77hbm"]
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=12 format=3 uid="uid://cfblxbpee55eb"]
 
 [ext_resource type="Script" uid="uid://cvi1vlluegdut" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_phjq2"]
 [ext_resource type="Script" uid="uid://c4jaqmghy6sgn" path="res://addons/dialogic/Resources/dialogic_style.gd" id="2_3gbif"]
-[ext_resource type="PackedScene" path="res://dialogic/QuizTextBox/custom_quiz_textbox.tscn" id="2_px7hy"]
+[ext_resource type="PackedScene" uid="uid://d4jjqqhu2ssji" path="res://dialogic/QuizTextBox/custom_quiz_textbox.tscn" id="2_px7hy"]
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="3_px7hy"]
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="4_kyhvr"]
 [ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="5_s56pl"]

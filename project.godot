@@ -22,10 +22,15 @@ SceneTransistion="*res://scenes/simulations/transistion/scene_transistion.tscn"
 [dialogic]
 
 directories/dch_directory={
+"HarveryTheRoo": "res://assets/characters/harvey/HarveryTheRoo.dch",
+"henry": "res://assets/characters/Henry/henry.dch",
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
+"QuizStartMenu": "res://scenes/simulations/quiz/quiz_ppe/QuizStartMenu.dtl",
 "all_parts_clicked": "res://dialogic/dialogs/simulations/microscope/all_parts_clicked.dtl",
+"congratsmenu": "res://scenes/simulations/quiz/quiz_ppe/congratsmenu.dtl",
+"introduction": "res://dialogic/dialogs/testing/introduction.dtl",
 "microscope_parts": "res://dialogic/dialogs/simulations/microscope/microscope_parts.dtl",
 "microscope_practice_130x_intro": "res://dialogic/dialogs/simulations/microscope/microscope_practice_130x_intro.dtl",
 "microscope_practice_40x_intro": "res://dialogic/dialogs/simulations/microscope/microscope_practice_40x_intro.dtl",
@@ -37,20 +42,34 @@ directories/dtl_directory={
 "microscope_practice_focus_incorrect": "res://dialogic/dialogs/simulations/microscope/microscope_practice_focus_incorrect.dtl",
 "microscope_practice_start": "res://dialogic/dialogs/simulations/microscope/microscope_practice_start.dtl",
 "microscope_stage_start": "res://dialogic/dialogs/simulations/microscope/microscope_stage_start.dtl",
+"ppe_scenario_1file": "res://dialogic/dialogs/testing/ppe_scenario_1file.dtl",
 "ppe_selection_dialog": "res://dialogic/dialogs/simulations/ppe/ppe_selection_dialog.dtl",
+"question1": "res://scenes/simulations/quiz/quiz_ppe/question1.dtl",
+"question10": "res://scenes/simulations/quiz/quiz_ppe/question10.dtl",
+"question2": "res://scenes/simulations/quiz/quiz_ppe/question2.dtl",
+"question3": "res://scenes/simulations/quiz/quiz_ppe/question3.dtl",
+"question4": "res://scenes/simulations/quiz/quiz_ppe/question4.dtl",
+"question5": "res://scenes/simulations/quiz/quiz_ppe/question5.dtl",
+"question6": "res://scenes/simulations/quiz/quiz_ppe/question6.dtl",
+"question7": "res://scenes/simulations/quiz/quiz_ppe/question7.dtl",
+"question8": "res://scenes/simulations/quiz/quiz_ppe/question8.dtl",
+"question9": "res://scenes/simulations/quiz/quiz_ppe/question9.dtl",
 "slide_prepared": "res://dialogic/dialogs/simulations/microscope/slide_prepared.dtl",
 "timeline": "res://timeline.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://dialogic/default_style.tres", "res://dialogic/small_dialog_style.tres"]
+layout/style_list=["res://dialogic/default_style.tres", "res://dialogic/small_dialog_style.tres", "res://dialogic/test.tres"]
 layout/default_style="res://dialogic/default_style.tres"
 variables={
 "Simulations": {
-"Microscope": {
-"all_items_selected": false
-},
 "PPE": {
 "selected_item_id": ""
+}
+},
+"quiz": {
+"quiz_ppe": {
+"current_q": 1,
+"score": 0
 }
 }
 }
@@ -67,7 +86,7 @@ animations/join_default_wait=true
 animations/leave_default_length=0.5
 animations/leave_default_wait=true
 animations/cross_fade_default_length=0.5
-choices/autofocus_first=true
+choices/autofocus_first=false
 choices/delay=0.2
 choices/reveal_delay=0
 choices/reveal_by_input=false

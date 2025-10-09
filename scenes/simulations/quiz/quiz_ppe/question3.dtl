@@ -1,0 +1,21 @@
+join HarveryTheRoo leftmost [animation="Slide In Left"]
+Which PPE protects against spills and flames?
+
+- A. Surgical mask
+	Strewth… not that one, mate.
+	jump question3/
+
+- B. Lab coat
+	Bang on, you beauty!
+	[wait time="0.5"]
+	Lab coats are flame-retardant and resist chemicals, protecting clothing and skin.
+	Righto, Question 4 comin’ at ya.
+	jump question4/
+
+- C. Hair tie
+	Nah, won’t help with spills or flames.
+	jump question3/
+
+- D. Earplugs
+	Earplugs won’t save your lab coat, mate.
+	jump question3/

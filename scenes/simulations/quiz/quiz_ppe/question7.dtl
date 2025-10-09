@@ -1,0 +1,21 @@
+join HarveryTheRoo leftmost [animation="Slide In Left"]
+HarveryTheRoo: Why is nitrile preferred over latex gloves sometimes?
+
+- A. Cheaper cost
+	HarveryTheRoo: Nah, it’s not about the dollars here.
+	jump 
+
+- B. Less slippery
+	HarveryTheRoo: Not the main reason, champ.
+	jump 
+
+- C. Latex allergies & better chemical resistance
+	HarveryTheRoo: Spot on, you legend!
+	[wait time="0.5"]
+	HarveryTheRoo: Nitrile gloves prevent allergic reactions and are more resistant to chemicals.
+	HarveryTheRoo: Alright, let’s push into Question 8.
+	jump question8/
+
+- D. Easier to remove
+	HarveryTheRoo: Ha! If only it was that simple.
+	jump 

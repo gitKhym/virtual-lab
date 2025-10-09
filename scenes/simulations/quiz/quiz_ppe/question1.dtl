@@ -1,0 +1,25 @@
+join HarveryTheRoo center [animation="Slide In Left"]
+set {quiz.quiz_ppe.current_q} = 1.0
+Question {quiz.quiz_ppe.current_q}/10 — What’s the correct footwear for labs?
+
+- A: Open-toe sandals
+	Strewth—feet on display? Not in the lab, mate.
+	jump question1/
+
+- B: Closed Toe Shoes
+	set {quiz.quiz_ppe.score} += 1
+	set {quiz.quiz_ppe.current_q} += 1
+	Nice one!
+	[wait time="0.5"]
+	Closed-toe shoes protect feet from chemical spills, falling glass, and sharp objects.
+	Ready for Question {quiz.quiz_ppe.current_q}, mate?
+	jump question2/
+
+
+- C: Flip-flops
+	Nah, try again champ.
+	jump question1/
+
+- D: Barefoot
+	Not unless you fancy a trip to first aid.
+	jump question1/
