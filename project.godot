@@ -54,6 +54,7 @@ directories/dtl_directory={
 "question7": "res://scenes/simulations/quiz/quiz_ppe/question7.dtl",
 "question8": "res://scenes/simulations/quiz/quiz_ppe/question8.dtl",
 "question9": "res://scenes/simulations/quiz/quiz_ppe/question9.dtl",
+"sample_secured": "res://dialogic/dialogs/simulations/microscope/sample_secured.dtl",
 "slide_prepared": "res://dialogic/dialogs/simulations/microscope/slide_prepared.dtl",
 "timeline": "res://timeline.dtl"
 }

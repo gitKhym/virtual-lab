@@ -105,4 +105,25 @@ text = "Prepare Slides"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Next" type="TextureButton" parent="."]
+visible = false
+offset_left = 254.0
+offset_top = 148.0
+offset_right = 354.0
+offset_bottom = 172.0
+texture_normal = ExtResource("7_vtbww")
+texture_pressed = ExtResource("8_0d0ku")
+texture_hover = ExtResource("9_vf8ku")
+
+[node name="Label" type="Label" parent="Next"]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 100.0
+offset_bottom = 20.0
+theme_override_fonts/font = ExtResource("8_sms7k")
+text = "Next"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="body_entered" from="SampleAreaDestination" to="." method="_on_slide_area_body_entered"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
