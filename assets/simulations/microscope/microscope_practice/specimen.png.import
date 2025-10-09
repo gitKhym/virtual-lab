@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhwjj4uidj8n8"
-path="res://.godot/imported/sample.png-13849bdb7f9cc956ede8a884d61cb74f.ctex"
+uid="uid://doaiywgyvu5"
+path="res://.godot/imported/specimen.png-2dcee144f4f95ab74309fab5eba8b785.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/simulations/microscope/sample.png"
-dest_files=["res://.godot/imported/sample.png-13849bdb7f9cc956ede8a884d61cb74f.ctex"]
+source_file="res://assets/simulations/microscope/microscope_practice/specimen.png"
+dest_files=["res://.godot/imported/specimen.png-2dcee144f4f95ab74309fab5eba8b785.ctex"]
 
 [params]
 
