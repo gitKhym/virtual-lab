@@ -3,11 +3,11 @@ join HarveryTheRoo center [animation="Slide In Left"]
 set {quiz.quiz_ppe.current_q} = 1.0
 Question {quiz.quiz_ppe.current_q}/10 — What’s the correct footwear for labs?
 
-- A: Open-toe sandals
+- Open-toe sandals
 	Strewth—feet on display? Not in the lab, mate.
 	jump question1/
 
-- B: Closed Toe Shoes
+- Closed Toe Shoes
 	set {quiz.quiz_ppe.score} += 1
 	set {quiz.quiz_ppe.current_q} += 1
 	Nice one!
@@ -17,10 +17,10 @@ Question {quiz.quiz_ppe.current_q}/10 — What’s the correct footwear for labs
 	jump question2/
 
 
-- C: Flip-flops
+- Flip-flops
 	Nah, try again champ.
 	jump question1/
 
-- D: Barefoot
+- Barefoot
 	Not unless you fancy a trip to first aid.
 	jump question1/
