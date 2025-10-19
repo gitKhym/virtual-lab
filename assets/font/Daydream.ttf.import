@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://drb66rshqh6ft"
-path="res://.godot/imported/VCR_OSD_MONO_1.001.ttf-67d186d3f032d6e16500b43d141b9052.fontdata"
+uid="uid://buankjhtmr26k"
+path="res://.godot/imported/Daydream.ttf-c7af67d0bd057d9b1514245456a86309.fontdata"
 
 [deps]
 
-source_file="res://font/VCR_OSD_MONO_1.001.ttf"
-dest_files=["res://.godot/imported/VCR_OSD_MONO_1.001.ttf-67d186d3f032d6e16500b43d141b9052.fontdata"]
+source_file="res://assets/font/Daydream.ttf"
+dest_files=["res://.godot/imported/Daydream.ttf-c7af67d0bd057d9b1514245456a86309.fontdata"]
 
 [params]
 

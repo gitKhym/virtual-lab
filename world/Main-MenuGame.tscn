@@ -1,0 +1,244 @@
+[gd_scene load_steps=19 format=3 uid="uid://dpiwwv867vp1y"]
+
+[ext_resource type="Script" uid="uid://d2mvbem4qjqc" path="res://code/main_menu_game.gd" id="1_ulg1n"]
+[ext_resource type="Texture2D" uid="uid://d17jdx0fcuyni" path="res://assets/image.png" id="2_x4b73"]
+[ext_resource type="FontFile" uid="uid://drb66rshqh6ft" path="res://assets/font/VCR_OSD_MONO_1.001.ttf" id="3_4vpae"]
+[ext_resource type="AudioStream" uid="uid://dtknt0jpfo3v0" path="res://assets/music/Jubilife City (Day) (From Pokémon Diamond & Pearl).mp3" id="4_3m1d1"]
+[ext_resource type="Script" uid="uid://ddvha7dihptii" path="res://code/audio_control.gd" id="5_lph0k"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xrpmv"]
+texture = ExtResource("2_x4b73")
+modulate_color = Color(0.404511, 0.404511, 0.404511, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xrpmv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrpmv"]
+bg_color = Color(1, 0.596078, 0.2, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxq3r"]
+bg_color = Color(0.679355, 0.373916, 2.88785e-07, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8i2so"]
+bg_color = Color(1, 0.595232, 0.198381, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fnjer"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67anm"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q50cm"]
+bg_color = Color(0.968627, 0.576471, 0.192157, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ulg1n"]
+bg_color = Color(0.588235, 0.376471, 0.196078, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0h1ej"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_kxq3r"]
+color = Color(1, 1, 1, 1)
+thickness = 8
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_xrpmv"]
+color = Color(0.286275, 0.501961, 1, 1)
+thickness = 8
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_8i2so"]
+color = Color(0.286275, 0.501961, 1, 1)
+thickness = 8
+
+[node name="Main-menuGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ulg1n")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_xrpmv")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 48.0
+offset_right = 4.0
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_4vpae")
+theme_override_font_sizes/font_size = 36
+text = "Food Microbiology Academy"
+horizontal_alignment = 1
+
+[node name="MainButtons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.636
+anchor_right = 0.5
+anchor_bottom = 0.636
+offset_left = -100.0
+offset_top = -75.96
+offset_right = 98.0
+offset_bottom = 95.04
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="START" type="Button" parent="MainButtons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4vpae")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xrpmv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xrpmv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kxq3r")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8i2so")
+text = "START"
+
+[node name="SETTINGS" type="Button" parent="MainButtons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4vpae")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fnjer")
+theme_override_styles/hover = SubResource("StyleBoxFlat_67anm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kxq3r")
+theme_override_styles/normal = SubResource("StyleBoxFlat_67anm")
+text = "SETTINGS"
+
+[node name="EXIT" type="Button" parent="MainButtons"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4vpae")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fnjer")
+theme_override_styles/hover = SubResource("StyleBoxFlat_67anm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kxq3r")
+theme_override_styles/normal = SubResource("StyleBoxFlat_67anm")
+text = "EXIT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3m1d1")
+volume_db = -20.0
+autoplay = true
+bus = &"BG MUSIC"
+
+[node name="Options" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.0
+offset_top = -62.0
+offset_right = 149.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q50cm")
+
+[node name="Label" type="Label" parent="Options"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -103.5
+offset_top = 9.0
+offset_right = 104.5
+offset_bottom = 67.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4vpae")
+theme_override_font_sizes/font_size = 20
+text = "Settings
+"
+horizontal_alignment = 1
+
+[node name="BACK" type="Button" parent="Options/Label"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 152.0
+offset_right = 203.0
+offset_bottom = 204.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4vpae")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = SubResource("StyleBoxFlat_ulg1n")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0h1ej")
+text = "BACK"
+
+[node name="AudioControl" type="HSlider" parent="Options"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 16.0
+offset_right = 241.0
+offset_bottom = 99.0
+theme_override_styles/slider = SubResource("StyleBoxLine_kxq3r")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_xrpmv")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_8i2so")
+min_value = -80.0
+max_value = 0.0
+script = ExtResource("5_lph0k")
+
+[connection signal="pressed" from="Options/Label/BACK" to="." method="_on_back_options_pressed"]
+[connection signal="value_changed" from="Options/AudioControl" to="Options/AudioControl" method="_on_value_changed"]

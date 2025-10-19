@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dtknt0jpfo3v0"
+path="res://.godot/imported/Jubilife City (Day) (From Pokémon Diamond & Pearl).mp3-4d199a274bf6346d6bb255fe1bced2a0.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Jubilife City (Day) (From Pokémon Diamond & Pearl).mp3"
+dest_files=["res://.godot/imported/Jubilife City (Day) (From Pokémon Diamond & Pearl).mp3-4d199a274bf6346d6bb255fe1bced2a0.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
