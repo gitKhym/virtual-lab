@@ -130,7 +130,7 @@ func _apply_export_overrides() -> void:
 	_apply_box_animations_settings()
 
 	## NAME LABEL SETTINGS
-	_apply_name_label_settings()
+	#_apply_name_label_settings()
 
 	## NEXT INDICATOR SETTINGS
 	_apply_indicator_settings()

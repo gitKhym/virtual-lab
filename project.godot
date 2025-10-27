@@ -31,6 +31,11 @@ directories/dtl_directory={
 "all_parts_clicked": "res://dialogic/dialogs/simulations/microscope/all_parts_clicked.dtl",
 "congratsmenu": "res://scenes/simulations/quiz/quiz_ppe/congratsmenu.dtl",
 "introduction": "res://dialogic/dialogs/testing/introduction.dtl",
+"measuring_volume_attempt_again": "res://dialogic/dialogs/measurement/measuring_volume_attempt_again.dtl",
+"measuring_volume_finished": "res://dialogic/dialogs/measurement/measuring_volume_finished.dtl",
+"measuring_volume_good": "res://dialogic/dialogs/measurement/measuring_volume_good.dtl",
+"measuring_volume_intro": "res://dialogic/dialogs/measurement/measuring_volume_intro.dtl",
+"measuring_volume_needs_practice": "res://dialogic/dialogs/measurement/measuring_volume_needs_practice.dtl",
 "microscope_parts": "res://dialogic/dialogs/simulations/microscope/microscope_parts.dtl",
 "microscope_practice_130x_intro": "res://dialogic/dialogs/simulations/microscope/microscope_practice_130x_intro.dtl",
 "microscope_practice_40x_intro": "res://dialogic/dialogs/simulations/microscope/microscope_practice_40x_intro.dtl",
@@ -63,6 +68,9 @@ layout/style_list=["res://dialogic/small_dialog_style.tres", "res://dialogic/tes
 layout/default_style=""
 variables={
 "Simulations": {
+"Measurement": {
+"measured_ml": 0
+},
 "PPE": {
 "selected_item_id": ""
 }

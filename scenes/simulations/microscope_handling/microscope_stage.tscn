@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://6cfbps6eh044" path="res://assets/gui/buttons/big_button_pressed.png" id="8_0d0ku"]
 [ext_resource type="FontFile" uid="uid://d35n2ag4cnf5o" path="res://font/fs-pixel-sans-unicode-regular.ttf" id="8_sms7k"]
 [ext_resource type="Texture2D" uid="uid://cchvqyrwd1cxg" path="res://assets/gui/buttons/big_button_hover.png" id="9_vf8ku"]
-[ext_resource type="Script" uid="uid://b2c61m1c7a0kf" path="res://scenes/simulations/microscope_handling/scripts/prepare_slide_button.gd" id="11_361q2"]
+[ext_resource type="Script" uid="uid://b2c61m1c7a0kf" path="res://scenes/simulations/measurements/prepare_slide_button.gd" id="11_361q2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0d0ku"]
 radius = 5.09373
