@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://chub1v50taqti" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.gd" id="1_7ahrn"]
 [ext_resource type="Script" uid="uid://c1wrdn556sws4" path="res://addons/dialogic/Modules/TextInput/node_text_input.gd" id="1_mxdep"]
 [ext_resource type="FontFile" uid="uid://d35n2ag4cnf5o" path="res://font/fs-pixel-sans-unicode-regular.ttf" id="4_cixq5"]
-[ext_resource type="Texture2D" uid="uid://bqon43hp23m01" path="res://assets/gui/text_boxes/speech_box.png" id="4_yykk3"]
+[ext_resource type="Texture2D" uid="uid://bqon43hp23m01" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/speech_box.png" id="4_yykk3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yykk3"]
 texture = ExtResource("4_yykk3")

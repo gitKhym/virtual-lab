@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://mb02hv4ugo3n" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.gd" id="1_bpydr"]
 [ext_resource type="Script" uid="uid://s77tpq60w0la" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/animations.gd" id="2_xy7a2"]
-[ext_resource type="Texture2D" uid="uid://bqon43hp23m01" path="res://assets/gui/text_boxes/speech_box.png" id="3_4gjjb"]
+[ext_resource type="Texture2D" uid="uid://bqon43hp23m01" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/speech_box.png" id="3_4gjjb"]
 [ext_resource type="Script" uid="uid://dswfasvr0xbev" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="3_4634k"]
 [ext_resource type="FontFile" uid="uid://d35n2ag4cnf5o" path="res://font/fs-pixel-sans-unicode-regular.ttf" id="4_e133w"]
 [ext_resource type="Script" uid="uid://cip5bbem0ihsv" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="4_ma5mw"]
