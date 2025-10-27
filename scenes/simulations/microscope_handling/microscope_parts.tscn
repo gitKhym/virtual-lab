@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dw5dfyaopnq1m" path="res://assets/gui/buttons/big_button.png" id="14_15qst"]
 [ext_resource type="Texture2D" uid="uid://6cfbps6eh044" path="res://assets/gui/buttons/big_button_pressed.png" id="15_una1a"]
 [ext_resource type="Texture2D" uid="uid://cchvqyrwd1cxg" path="res://assets/gui/buttons/big_button_hover.png" id="16_r3rr4"]
-[ext_resource type="Script" uid="uid://b2c61m1c7a0kf" path="res://scenes/simulations/microscope_handling/scripts/prepare_slide_button.gd" id="17_tjxgp"]
+[ext_resource type="Script" uid="uid://b2c61m1c7a0kf" path="res://scenes/simulations/measurements/prepare_slide_button.gd" id="17_tjxgp"]
 
 [node name="MicroscopeParts" type="Node2D"]
 script = ExtResource("1_gq2wj")
