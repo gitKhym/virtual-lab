@@ -17,6 +17,7 @@ shader_parameter/fill_amount = 0.0
 shader_parameter/water_texture = ExtResource("3_386t4")
 
 [node name="MeasuringPipette" type="Node2D"]
+metadata/_edit_group_ = true
 
 [node name="CheckButton" type="TextureButton" parent="."]
 unique_name_in_owner = true
