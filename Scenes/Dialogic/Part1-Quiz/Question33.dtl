@@ -1,0 +1,14 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: Which PPE protects ya from spills and flames?
+- A. Surgical mask
+	HarveyTheKangaroo: Mask won’t help ya when your shirt’s on fire, mate. Try again.
+	jump 
+- B. Lab coat
+	HarveyTheKangaroo: Dead set right! Nice work!
+	jump Question34/
+- C. Hair tie
+	HarveyTheKangaroo: Useful, but not the answer here. Try again.
+	jump 
+- D. Earplugs
+	HarveyTheKangaroo: We’re not at a metal concert, mate. Try again.
+	jump

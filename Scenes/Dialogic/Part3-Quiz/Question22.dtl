@@ -1,0 +1,8 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: True or False. A beaker is more accurate than a pipette.
+- True
+	HarveyTheKangaroo: Not a chance. A beaker’s as rough as it gets.
+	jump 
+- False
+	HarveyTheKangaroo: Too right, the pipette wins for accuracy every time.
+	jump Question28/

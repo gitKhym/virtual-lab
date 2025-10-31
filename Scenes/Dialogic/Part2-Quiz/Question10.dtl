@@ -1,0 +1,16 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: Why should you always start focusing while looking from the side?
+- A. To check if the light is working
+	HarveyTheKangaroo: That comes later!
+	jump 
+- B. To avoid lowering the lens into the slide
+	HarveyTheKangaroo: Correct, that keeps your slide safe!
+	jump Results
+	join HarveyTheKangaroo center
+	HarveyTheKangaroo: Congrats, Champ! you passed the quiz, good on ya!
+- C. To make it faster
+	HarveyTheKangaroo: Patience is key!
+	jump 
+- D. To adjust the eyepiece
+	HarveyTheKangaroo: Not that one!
+	jump

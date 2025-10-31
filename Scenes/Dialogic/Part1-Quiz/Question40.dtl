@@ -1,0 +1,14 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: Fire alarm goes off — what’s the first move?
+- A. Pack your belongings
+	HarveyTheKangaroo: You can buy new stuff, mate. Try again.
+	jump 
+- B. Continue the experiment
+	HarveyTheKangaroo: Science can wait — safety can’t. Try again.
+	jump 
+- C. Shut down equipment (if safe) and evacuate immediately
+	HarveyTheKangaroo: Legend! That’s proper lab safety!
+	jump 
+- D. Call a friend
+	HarveyTheKangaroo: Ain’t the time for a yarn, champ. Try again.
+	jump

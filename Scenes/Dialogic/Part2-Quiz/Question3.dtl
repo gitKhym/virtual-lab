@@ -1,0 +1,14 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: Which lens has the highest magnification?
+- A. 4x
+	HarveyTheKangaroo: That is the lowest one!
+	jump 
+- B. 10x
+	HarveyTheKangaroo: A bit higher than that!
+	jump 
+- C. 40x
+	HarveyTheKangaroo: Close, but not quite the top!
+	jump 
+- D. 100x
+	HarveyTheKangaroo: Correct, that is the big one!
+	jump Question4/

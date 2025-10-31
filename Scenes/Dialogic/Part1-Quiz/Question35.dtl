@@ -1,0 +1,8 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: True or False — Food is allowed in lab areas.
+- A. True
+	HarveyTheKangaroo: Unless ya like chemical-flavoured snacks… Try again.
+	jump 
+- B. False
+	HarveyTheKangaroo: Good on ya! No snacking in the danger zone.
+	jump Question36/

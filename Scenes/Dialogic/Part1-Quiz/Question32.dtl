@@ -1,0 +1,14 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: Why do we use safety goggles instead of regular glasses?
+- A. Goggles look more professional
+	HarveyTheKangaroo: Fashion isn’t gonna save ya eyes, mate. Try again.
+	jump 
+- B. Glasses only protect from dust
+	HarveyTheKangaroo: Not quite — give it another go.
+	jump 
+- C. Goggles fully cover the eyes and sides from splashes
+	HarveyTheKangaroo: You beauty! That’s the one!
+	jump Question33/
+- D. Regular glasses are harder to clean
+	HarveyTheKangaroo: Nah that’s not it. Try again.
+	jump

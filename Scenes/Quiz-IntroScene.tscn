@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi0bx2ju4hi1k"]
+
+[ext_resource type="Texture2D" uid="uid://8kbt7dw4cqsp" path="res://Assets/font/Background/Quiz-2_Background.png" id="1_3f0lf"]
+[ext_resource type="Script" uid="uid://duy6oehhif3kb" path="res://Scenes/quiz_intro_scene.gd" id="1_882i8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xd84j"]
+texture = ExtResource("1_3f0lf")
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_882i8")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1154.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_xd84j")

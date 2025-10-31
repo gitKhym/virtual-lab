@@ -1,0 +1,14 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: The diaphragm or iris controls what?
+- A. Magnification
+	HarveyTheKangaroo: That is not its job!
+	jump 
+- B. Light intensity
+	HarveyTheKangaroo: Correct!
+	jump Question9/
+- C. Stage movement
+	HarveyTheKangaroo: That is done by knobs!
+	jump 
+- D. Power supply
+	HarveyTheKangaroo: Not that one!
+	jump

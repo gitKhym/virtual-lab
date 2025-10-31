@@ -1,0 +1,14 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: Where should your hand be when carrying a microscope?
+- A. Eyepiece and Stage
+	HarveyTheKangaroo: That is not safe!
+	jump 
+- B. Arm and Base
+	HarveyTheKangaroo: Correct, that is the safe hold!
+	jump Question8/
+- C. Objective and Light
+	HarveyTheKangaroo: Not those parts!
+	jump 
+- D. Nosepiece and Diaphragm
+	HarveyTheKangaroo: That would slip easily!
+	jump

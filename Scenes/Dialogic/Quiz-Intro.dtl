@@ -1,0 +1,11 @@
+join HarveyTheKangaroo left
+HarveyTheKangaroo: G’day, mate!  Welcome to Part 4\: Microscope Quiz your chance to show what you know about microscopes.
+HarveyTheKangaroo: There are 10 quick questions ahead, a mix of multiple-choice and true-or-false.
+HarveyTheKangaroo: Whether you aced it or picked up a few new tips along the way, you’re now one step closer to mastering your lab skills.
+HarveyTheKangaroo: Ready to give it a crack?
+- Yes!
+	jump Question1/
+- No
+	jump 
+HarveyTheKangaroo: Let’s jump in!
+leave HarveyTheKangaroo
