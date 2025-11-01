@@ -68,8 +68,8 @@ func _show_question(index: int) -> void:
 	processing_answer = false
 
 func _finish_game() -> void:
-	question_label.text = "You've finished the warm-up!"
-	feedback_label.text = "All questions completed!"
+	question_label.text = "Congratulation!"
+	feedback_label.text = "You've finished the warm-up Quiz!"
 	for cbox in choice_boxes:
 		cbox.visible = false
 	await get_tree().create_timer(2.0).timeout
