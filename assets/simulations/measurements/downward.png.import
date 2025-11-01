@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j03iii42nwoc"
-path="res://.godot/imported/graduated_cylinder.png-f18d7d787883b92228a6cacf953782c4.ctex"
+uid="uid://bxprm1sbdk3m"
+path="res://.godot/imported/downward.png-e28a54ea911129bc76b9cc1758ec825f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/simulations/measurement/graduated_cylinder.png"
-dest_files=["res://.godot/imported/graduated_cylinder.png-f18d7d787883b92228a6cacf953782c4.ctex"]
+source_file="res://assets/simulations/measurements/downward.png"
+dest_files=["res://.godot/imported/downward.png-e28a54ea911129bc76b9cc1758ec825f.ctex"]
 
 [params]
 

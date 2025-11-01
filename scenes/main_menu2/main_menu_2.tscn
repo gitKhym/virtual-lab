@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3vv6ludj1ewf"]
+
+[ext_resource type="Script" uid="uid://cvtiks52pu6qj" path="res://scenes/main_menu2/main_menu_2.gd" id="1_7aj3u"]
+[ext_resource type="Texture2D" uid="uid://ckq3717nsrphh" path="res://assets/main_menu/Checklist_mainmenu.png" id="1_ujxi7"]
+[ext_resource type="Script" uid="uid://bf8etdh6agjf" path="res://scenes/main_menu2/hover.gd" id="3_uuxmy"]
+[ext_resource type="Texture2D" uid="uid://gimo2cjncn1e" path="res://assets/main_menu/Confirm.png" id="4_uuxmy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wtvm"]
+size = Vector2(134.297, 28.3929)
+
+[node name="MainMenu2" type="Node2D"]
+script = ExtResource("1_7aj3u")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(178.5, 92)
+scale = Vector2(1.08611, 0.933333)
+texture = ExtResource("1_ujxi7")
+
+[node name="PPE" type="Area2D" parent="Background"]
+position = Vector2(6.0486, -38.0357)
+script = ExtResource("3_uuxmy")
+
+[node name="PPE" type="CollisionShape2D" parent="Background/PPE"]
+shape = SubResource("RectangleShape2D_5wtvm")
+
+[node name="hoverarea" type="Polygon2D" parent="Background/PPE"]
+color = Color(0, 0, 0, 0)
+polygon = PackedVector2Array(-67.2762, -14.4643, -67.2762, 13.3929, 68.0691, 14.4643, 68.0691, -14.4643)
+
+[node name="CheckMark" type="Sprite2D" parent="Background/PPE"]
+position = Vector2(-54.3862, 0.535714)
+texture = ExtResource("4_uuxmy")
+
+[node name="Microscope" type="Area2D" parent="Background"]
+position = Vector2(6.0486, -38.0357)
+script = ExtResource("3_uuxmy")
+
+[node name="PPE" type="CollisionShape2D" parent="Background/Microscope"]
+position = Vector2(-0.0639511, 34.8214)
+shape = SubResource("RectangleShape2D_5wtvm")
+
+[node name="hoverarea" type="Polygon2D" parent="Background/Microscope"]
+position = Vector2(0.856765, 34.8214)
+color = Color(0, 0, 0, 0)
+polygon = PackedVector2Array(-67.2762, -14.4643, -67.2762, 13.3929, 68.0691, 14.4643, 68.0691, -14.4643)
+
+[node name="CheckMark" type="Sprite2D" parent="Background/Microscope"]
+position = Vector2(-54.3862, 34.8214)
+texture = ExtResource("4_uuxmy")
+
+[node name="Measurement" type="Area2D" parent="Background"]
+position = Vector2(6.0486, -38.0357)
+script = ExtResource("3_uuxmy")
+
+[node name="PPE" type="CollisionShape2D" parent="Background/Measurement"]
+position = Vector2(-0.0639511, 72.3214)
+shape = SubResource("RectangleShape2D_5wtvm")
+
+[node name="hoverarea" type="Polygon2D" parent="Background/Measurement"]
+position = Vector2(-0.0639511, 72.3214)
+color = Color(0, 0, 0, 0)
+polygon = PackedVector2Array(-67.2762, -14.4643, -67.2762, 13.3929, 68.0691, 14.4643, 68.0691, -14.4643)
+
+[node name="CheckMark" type="Sprite2D" parent="Background/Measurement"]
+position = Vector2(-54.3862, 72.3214)
+texture = ExtResource("4_uuxmy")

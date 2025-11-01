@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csq6jxdmsw2"
-path="res://.godot/imported/pipette.png-8f994a90013d125bad96c78be623b674.ctex"
+uid="uid://ckq3717nsrphh"
+path="res://.godot/imported/Checklist_mainmenu.png-1c742d99461fc6ac5e9d1099f5b29fbc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/simulations/measurement/pipette.png"
-dest_files=["res://.godot/imported/pipette.png-8f994a90013d125bad96c78be623b674.ctex"]
+source_file="res://assets/main_menu/Checklist_mainmenu.png"
+dest_files=["res://.godot/imported/Checklist_mainmenu.png-1c742d99461fc6ac5e9d1099f5b29fbc.ctex"]
 
 [params]
 

@@ -15,7 +15,7 @@ extends Node2D
 	},
 	"scenario2": {
 		"area": $world/scenario2, 
-		"sprite": $world/scenario2/test2,
+		"sprite": $world/scenario2/test,
 		"done": false,
 		"complete_texture": "res://assets/simulations/ppe/scenarios/crumpled_gloves.png",
 		"target_position": Vector2(39, 118),  
@@ -24,7 +24,7 @@ extends Node2D
 	},
 	"scenario3": {
 		"area": $world/scenario3, 
-		"sprite": $world/scenario3/test3,
+		"sprite": $world/scenario3/test,
 		"done": false,
 		"complete_texture": "res://assets/simulations/ppe/scenarios/crumpled_gloves.png",
 		"target_position": null,  
@@ -33,7 +33,7 @@ extends Node2D
 	},
 	"scenario4": {
 		"area": $world/scenario4, 
-		"sprite": $world/scenario4/test4,
+		"sprite": $world/scenario4/test,
 		"done": false,
 		"complete_texture": "res://assets/simulations/ppe/scenarios/microscopeafter.png",
 		"target_position": null,  

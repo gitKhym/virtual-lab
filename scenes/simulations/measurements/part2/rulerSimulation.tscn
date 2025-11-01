@@ -1,0 +1,198 @@
+[gd_scene load_steps=14 format=3 uid="uid://u7doe3dn00a"]
+
+[ext_resource type="Texture2D" uid="uid://pt5ewmxe1nda" path="res://assets/simulations/measurements/metalwasher.png" id="1_35nps"]
+[ext_resource type="Script" uid="uid://bv6h7ry8mupeq" path="res://scenes/simulations/measurements/part2/ruler_simulation.gd" id="1_tuobm"]
+[ext_resource type="Script" uid="uid://bjp5ou3yaj3i1" path="res://scenes/simulations/measurements/part2/ruler.gd" id="2_tuobm"]
+[ext_resource type="Texture2D" uid="uid://c8pngyjxmjn55" path="res://assets/backgrounds/bg.png" id="2_w00sd"]
+[ext_resource type="Texture2D" uid="uid://brgooc1nrrc3n" path="res://assets/simulations/measurements/ruler.png" id="3_jwtf2"]
+[ext_resource type="FontFile" uid="uid://d35n2ag4cnf5o" path="res://font/fs-pixel-sans-unicode-regular.ttf" id="3_u3xh1"]
+[ext_resource type="Texture2D" uid="uid://dw5dfyaopnq1m" path="res://assets/gui/buttons/big_button.png" id="4_xa3xp"]
+[ext_resource type="Texture2D" uid="uid://ch3w76nhxpw2y" path="res://assets/gui/text_boxes/description_box.png" id="5_t3avr"]
+[ext_resource type="FontFile" uid="uid://drb66rshqh6ft" path="res://font/VCR_OSD_MONO_1.001.ttf" id="6_6xuku"]
+[ext_resource type="Texture2D" uid="uid://bxprm1sbdk3m" path="res://assets/simulations/measurements/downward.png" id="6_b1hgu"]
+[ext_resource type="Texture2D" uid="uid://6cfbps6eh044" path="res://assets/gui/buttons/big_button_pressed.png" id="7_0i7d1"]
+[ext_resource type="Texture2D" uid="uid://cchvqyrwd1cxg" path="res://assets/gui/buttons/big_button_hover.png" id="8_laxtf"]
+[ext_resource type="Texture2D" uid="uid://cv103wcfp6wu8" path="res://assets/simulations/measurements/bronzewasher.png" id="11_laxtf"]
+
+[node name="RulerSimulation" type="Node2D"]
+script = ExtResource("1_tuobm")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(179.5, 89.5)
+scale = Vector2(1.00843, 1.01705)
+texture = ExtResource("2_w00sd")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="uibackground" type="Sprite2D" parent="UI"]
+position = Vector2(261.4023, 56.9975)
+scale = Vector2(1.1946257, 1.10875)
+texture = ExtResource("5_t3avr")
+
+[node name="InstructionLabel" type="Label" parent="UI/uibackground"]
+anchors_preset = -1
+anchor_left = 0.49300003
+anchor_top = 0.256
+anchor_right = 0.49300003
+anchor_bottom = 0.256
+offset_left = -140.76035
+offset_top = -62.978077
+offset_right = -7.1412125
+offset_bottom = -26.97807
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_u3xh1")
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FeedbackLabel" type="Label" parent="UI/uibackground"]
+anchors_preset = -1
+anchor_left = 0.51600003
+anchor_top = 0.694
+anchor_right = 0.51600003
+anchor_bottom = 0.694
+offset_left = -144.18735
+offset_top = -64.95558
+offset_right = -8.580017
+offset_bottom = -24.97474
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_u3xh1")
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="measurementbackground" type="Sprite2D" parent="UI"]
+position = Vector2(83, 160)
+scale = Vector2(1.24, 0.833333)
+texture = ExtResource("4_xa3xp")
+
+[node name="MeasurementLabel" type="Label" parent="UI/measurementbackground"]
+offset_left = -44.0
+offset_top = -12.0
+offset_right = 46.0
+offset_bottom = 12.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_u3xh1")
+theme_override_font_sizes/font_size = 16
+
+[node name="Millimetres" type="Sprite2D" parent="UI"]
+position = Vector2(220, 126.00001)
+scale = Vector2(0.67, 0.750002)
+texture = ExtResource("4_xa3xp")
+
+[node name="MillimetresLabel" type="LineEdit" parent="UI/Millimetres"]
+offset_left = 4.0
+offset_top = -9.0
+offset_right = 47.0
+offset_bottom = 10.0
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_6xuku")
+theme_override_font_sizes/font_size = 12
+
+[node name="title" type="Label" parent="UI/Millimetres"]
+offset_left = -44.7761
+offset_top = -9.33331
+offset_right = 13.2239
+offset_bottom = 9.66669
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_u3xh1")
+text = "Millimetres"
+
+[node name="Meters" type="Sprite2D" parent="UI"]
+position = Vector2(309, 126.00001)
+scale = Vector2(0.67, 0.791668)
+texture = ExtResource("4_xa3xp")
+
+[node name="MetersLabel" type="LineEdit" parent="UI/Meters"]
+offset_left = 6.0
+offset_top = -9.0
+offset_right = 47.0
+offset_bottom = 10.0
+mouse_force_pass_scroll_events = false
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_6xuku")
+theme_override_font_sizes/font_size = 12
+
+[node name="title2" type="Label" parent="UI/Meters"]
+offset_left = -42.0
+offset_top = -9.0
+offset_right = -6.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_u3xh1")
+text = "Meters"
+
+[node name="Confirm" type="TextureButton" parent="UI"]
+offset_left = 214.0
+offset_top = 146.0
+offset_right = 314.0
+offset_bottom = 170.0
+texture_normal = ExtResource("4_xa3xp")
+texture_pressed = ExtResource("7_0i7d1")
+texture_hover = ExtResource("8_laxtf")
+
+[node name="check" type="Label" parent="UI/Confirm"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 1.0
+offset_right = 80.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("3_u3xh1")
+text = "Check"
+
+[node name="washercontainer" type="Node2D" parent="."]
+
+[node name="washersmall" type="Sprite2D" parent="washercontainer"]
+position = Vector2(87, 83)
+scale = Vector2(0.580785, 0.754386)
+texture = ExtResource("1_35nps")
+
+[node name="hitmarker" type="Marker2D" parent="washercontainer/washersmall"]
+position = Vector2(-49.2892, -1.32558)
+
+[node name="downarrow" type="Sprite2D" parent="washercontainer/washersmall"]
+position = Vector2(48.2106, -19.8837)
+scale = Vector2(1.37534, 1.5666)
+texture = ExtResource("6_b1hgu")
+
+[node name="washermedium" type="Sprite2D" parent="washercontainer"]
+position = Vector2(87, 83)
+scale = Vector2(0.762967, 0.754386)
+texture = ExtResource("1_35nps")
+
+[node name="hitmarker" type="Marker2D" parent="washercontainer/washermedium"]
+position = Vector2(-49.2892, -1.32558)
+
+[node name="downarrow" type="Sprite2D" parent="washercontainer/washermedium"]
+position = Vector2(47.1842, -15.907)
+scale = Vector2(1.37534, 1.5666)
+texture = ExtResource("6_b1hgu")
+
+[node name="washerlarge" type="Sprite2D" parent="washercontainer"]
+position = Vector2(88.8526, 83)
+scale = Vector2(0.900731, 0.754386)
+texture = ExtResource("11_laxtf")
+
+[node name="hitmarker" type="Marker2D" parent="washercontainer/washerlarge"]
+position = Vector2(-48.9589, -1.32558)
+
+[node name="downarrow" type="Sprite2D" parent="washercontainer/washerlarge"]
+position = Vector2(47.9026, -17.2326)
+scale = Vector2(1.37534, 1.5666)
+texture = ExtResource("6_b1hgu")
+
+[node name="ruler" type="Node2D" parent="."]
+script = ExtResource("2_tuobm")
+
+[node name="asset" type="Sprite2D" parent="ruler"]
+position = Vector2(83, 133)
+scale = Vector2(0.732639, 0.695139)
+texture = ExtResource("3_jwtf2")
+
+[node name="zeromark" type="Marker2D" parent="ruler/asset"]
+position = Vector2(-75.0711, -18.7013)
+scale = Vector2(1.36493, 1.43856)

@@ -1,0 +1,7 @@
+{
+  "washers": {
+	"washersmall":  { "size_cm": 2.6, "size_m": 0.026, "size_mm": 26.0 },
+	"washermedium": { "size_cm": 3.4, "size_m": 0.034, "size_mm": 34.0 },
+	"washerlarge":  { "size_cm": 4.0, "size_m": 0.04,  "size_mm": 40.0 }
+  }
+}

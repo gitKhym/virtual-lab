@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bpphys63480ue"]
+[gd_scene load_steps=12 format=3 uid="uid://bpphys63480ue"]
 
 [ext_resource type="Script" uid="uid://bupfx7vy6i3yy" path="res://scenes/simulations/ppe_simulation/ppe_scenarios.gd" id="1_1rx4b"]
 [ext_resource type="Texture2D" uid="uid://cngrkr2dglo1b" path="res://assets/backgrounds/PPE_scenarios1.png" id="1_5s0wc"]
 [ext_resource type="Texture2D" uid="uid://cxk7tl47c0sox" path="res://assets/simulations/ppe/scenarios/spilll.png" id="3_74a3e"]
+[ext_resource type="Script" uid="uid://nrb5ak7rdm4t" path="res://scenes/simulations/ppe_simulation/hover.gd" id="3_c242u"]
 [ext_resource type="Texture2D" uid="uid://bjjs2vwu40mri" path="res://assets/simulations/ppe/scenarios/crumpled_gloves.png" id="4_n27wm"]
 [ext_resource type="Texture2D" uid="uid://1frd3qnm3h3d" path="res://assets/simulations/ppe/scenarios/snack pack.png" id="5_n27wm"]
 [ext_resource type="Texture2D" uid="uid://2tdgvgpheik" path="res://assets/simulations/ppe/scenarios/microscope.png" id="6_1rx4b"]
@@ -34,6 +35,7 @@ texture = ExtResource("1_5s0wc")
 offset = Vector2(-135.007, -114.224)
 
 [node name="scenario1" type="Area2D" parent="world"]
+script = ExtResource("3_c242u")
 
 [node name="test" type="Sprite2D" parent="world/scenario1"]
 position = Vector2(108.75, 156.25)
@@ -45,8 +47,9 @@ position = Vector2(109, 155.5)
 shape = SubResource("RectangleShape2D_vpoud")
 
 [node name="scenario2" type="Area2D" parent="world"]
+script = ExtResource("3_c242u")
 
-[node name="test2" type="Sprite2D" parent="world/scenario2"]
+[node name="test" type="Sprite2D" parent="world/scenario2"]
 position = Vector2(80, 120)
 scale = Vector2(0.5, 0.375)
 texture = ExtResource("4_n27wm")
@@ -56,8 +59,9 @@ position = Vector2(80.5, 120)
 shape = SubResource("RectangleShape2D_74a3e")
 
 [node name="scenario3" type="Area2D" parent="world"]
+script = ExtResource("3_c242u")
 
-[node name="test3" type="Sprite2D" parent="world/scenario3"]
+[node name="test" type="Sprite2D" parent="world/scenario3"]
 position = Vector2(326, 142)
 scale = Vector2(1.5, 0.90625)
 texture = ExtResource("5_n27wm")
@@ -67,8 +71,9 @@ position = Vector2(325.5, 141)
 shape = SubResource("RectangleShape2D_1rx4b")
 
 [node name="scenario4" type="Area2D" parent="world"]
+script = ExtResource("3_c242u")
 
-[node name="test4" type="Sprite2D" parent="world/scenario4"]
+[node name="test" type="Sprite2D" parent="world/scenario4"]
 position = Vector2(240, 134)
 texture = ExtResource("6_1rx4b")
 

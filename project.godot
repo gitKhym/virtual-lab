@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 SceneTransistion="*res://scenes/simulations/transistion/scene_transistion.tscn"
+SceneReset="*res://scenes/Reset/scene_reset.tscn"
 
 [dialogic]
 
@@ -27,6 +28,8 @@ directories/dch_directory={
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
+"Main_Menu2": "res://dialogic/dialogs/Main Menu/Main_Menu2.dtl",
+"MeasurementIntroduction": "res://dialogic/dialogs/measurement/MeasurementIntroduction.dtl",
 "QuizStartMenu": "res://scenes/simulations/quiz/quiz_ppe/QuizStartMenu.dtl",
 "all_parts_clicked": "res://dialogic/dialogs/simulations/microscope/all_parts_clicked.dtl",
 "congratsmenu": "res://scenes/simulations/quiz/quiz_ppe/congratsmenu.dtl",
@@ -71,7 +74,7 @@ directories/dtl_directory={
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://dialogic/small_dialog_style.tres", "res://dialogic/test.tres", "res://dialogic/default_style.tres"]
-layout/default_style=""
+layout/default_style="res://dialogic/default_style.tres"
 variables={
 "Simulations": {
 "Measurement": {

@@ -1,0 +1,191 @@
+[gd_scene load_steps=19 format=3 uid="uid://d0ekj35mjd2gu"]
+
+[ext_resource type="Texture2D" uid="uid://c8pngyjxmjn55" path="res://assets/backgrounds/bg.png" id="1_8clne"]
+[ext_resource type="Script" uid="uid://da4rm040k1ugr" path="res://scenes/simulations/measurements/part3/balance_game.gd" id="1_s232o"]
+[ext_resource type="Texture2D" uid="uid://e01pfv416d7l" path="res://assets/simulations/measurements/Scale.png" id="2_rqn5y"]
+[ext_resource type="FontFile" uid="uid://d35n2ag4cnf5o" path="res://font/fs-pixel-sans-unicode-regular.ttf" id="3_btqut"]
+[ext_resource type="Texture2D" uid="uid://cfbwib5c1gne0" path="res://assets/buttons/ScaleButton.png" id="4_k65l7"]
+[ext_resource type="Texture2D" uid="uid://ejbatppafjdo" path="res://assets/buttons/ScaleButton_pressed.png" id="5_n6xft"]
+[ext_resource type="Texture2D" uid="uid://b1no06kyb6s5l" path="res://assets/buttons/ScaleButton_hover.png" id="6_gmh3q"]
+[ext_resource type="Texture2D" uid="uid://ch3w76nhxpw2y" path="res://assets/gui/text_boxes/description_box.png" id="7_owwun"]
+[ext_resource type="Script" uid="uid://x3wifn4o5wqc" path="res://scenes/simulations/measurements/part3/itemcontainer.gd" id="8_5ih6d"]
+[ext_resource type="Texture2D" uid="uid://sau1fddmydlo" path="res://assets/simulations/measurements/scale_bronzewasher.png" id="8_8i1c6"]
+[ext_resource type="Texture2D" uid="uid://dw5dfyaopnq1m" path="res://assets/gui/buttons/big_button.png" id="9_s232o"]
+[ext_resource type="Texture2D" uid="uid://cfp4d7g180imu" path="res://assets/simulations/measurements/scale_metalwasher.png" id="10_1w7lj"]
+[ext_resource type="Script" uid="uid://ddkteuafjxtou" path="res://scenes/simulations/measurements/part3/ui.gd" id="10_5ih6d"]
+[ext_resource type="FontFile" uid="uid://drb66rshqh6ft" path="res://font/VCR_OSD_MONO_1.001.ttf" id="10_8i1c6"]
+[ext_resource type="Texture2D" uid="uid://6cfbps6eh044" path="res://assets/gui/buttons/big_button_pressed.png" id="11_5ih6d"]
+[ext_resource type="Texture2D" uid="uid://c1o0qxxlmmvn6" path="res://assets/simulations/measurements/scale_metalwasherstacked.png" id="11_6sgnd"]
+[ext_resource type="Texture2D" uid="uid://cchvqyrwd1cxg" path="res://assets/gui/buttons/big_button_hover.png" id="12_1w7lj"]
+[ext_resource type="Texture2D" uid="uid://2105nugkaddc" path="res://assets/simulations/measurements/scale_weight.png" id="12_n28d0"]
+
+[node name="BalanceGame" type="Node2D"]
+script = ExtResource("1_s232o")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(179.5, 89.7498)
+scale = Vector2(1.00843, 1.02557)
+texture = ExtResource("1_8clne")
+
+[node name="Scale" type="Node2D" parent="."]
+
+[node name="asset" type="Sprite2D" parent="Scale"]
+position = Vector2(83, 76)
+texture = ExtResource("2_rqn5y")
+
+[node name="Display" type="Label" parent="Scale"]
+offset_left = 32.0
+offset_top = 89.0
+offset_right = 79.0
+offset_bottom = 117.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_btqut")
+theme_override_font_sizes/font_size = 25
+
+[node name="Tare" type="TextureButton" parent="Scale"]
+offset_left = 92.0
+offset_top = 89.0
+offset_right = 135.0
+offset_bottom = 106.0
+texture_normal = ExtResource("4_k65l7")
+texture_pressed = ExtResource("5_n6xft")
+texture_hover = ExtResource("6_gmh3q")
+
+[node name="name" type="Label" parent="Scale/Tare"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -1.0
+offset_right = 34.0
+offset_bottom = 15.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_btqut")
+theme_override_font_sizes/font_size = 16
+text = "Tare"
+
+[node name="itemcontainer" type="Node2D" parent="."]
+script = ExtResource("8_5ih6d")
+
+[node name="washersmall" type="Sprite2D" parent="itemcontainer"]
+position = Vector2(79, 157)
+scale = Vector2(0.378264, 0.350877)
+texture = ExtResource("8_8i1c6")
+
+[node name="target" type="Marker2D" parent="itemcontainer/washersmall"]
+
+[node name="washermedium" type="Sprite2D" parent="itemcontainer"]
+position = Vector2(79, 157)
+scale = Vector2(0.43719, 0.385965)
+texture = ExtResource("10_1w7lj")
+
+[node name="target" type="Marker2D" parent="itemcontainer/washermedium"]
+visible = false
+
+[node name="washerstacked" type="Sprite2D" parent="itemcontainer"]
+position = Vector2(79, 157)
+scale = Vector2(0.43719, 0.385965)
+texture = ExtResource("11_6sgnd")
+
+[node name="target" type="Marker2D" parent="itemcontainer/washerstacked"]
+
+[node name="weight" type="Sprite2D" parent="itemcontainer"]
+position = Vector2(79, 153)
+scale = Vector2(1.0104, 0.526042)
+texture = ExtResource("12_n28d0")
+
+[node name="target" type="Marker2D" parent="itemcontainer/weight"]
+position = Vector2(0.989709, 7.60396)
+
+[node name="hitmarker" type="Marker2D" parent="."]
+position = Vector2(83, 46)
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("10_5ih6d")
+
+[node name="uibackground" type="Sprite2D" parent="UI"]
+position = Vector2(254.477, 63)
+scale = Vector2(1.04698, 1)
+texture = ExtResource("7_owwun")
+
+[node name="instructionlabel" type="Label" parent="UI/uibackground"]
+offset_left = -67.0
+offset_top = -40.0
+offset_right = 69.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_btqut")
+theme_override_font_sizes/font_size = 8
+
+[node name="feedbacklabel" type="Label" parent="UI/uibackground"]
+offset_left = -67.0
+offset_top = 4.0
+offset_right = 71.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_btqut")
+theme_override_font_sizes/font_size = 8
+
+[node name="Kilograms" type="Sprite2D" parent="UI"]
+position = Vector2(214, 124)
+scale = Vector2(0.67, 0.750002)
+texture = ExtResource("9_s232o")
+
+[node name="Kilogramslabel" type="LineEdit" parent="UI/Kilograms"]
+offset_left = 4.0
+offset_top = -9.0
+offset_right = 47.0
+offset_bottom = 10.0
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_8i1c6")
+theme_override_font_sizes/font_size = 8
+
+[node name="title" type="Label" parent="UI/Kilograms"]
+offset_left = -46.2686
+offset_top = -9.33331
+offset_right = 11.7314
+offset_bottom = 9.66669
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_btqut")
+text = "Kilograms"
+
+[node name="Milligrams" type="Sprite2D" parent="UI"]
+position = Vector2(293, 123.75)
+scale = Vector2(0.67, 0.770834)
+texture = ExtResource("9_s232o")
+
+[node name="Milligramslabel" type="LineEdit" parent="UI/Milligrams"]
+offset_left = 6.0
+offset_top = -9.0
+offset_right = 47.0
+offset_bottom = 10.0
+mouse_force_pass_scroll_events = false
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_8i1c6")
+theme_override_font_sizes/font_size = 8
+
+[node name="title2" type="Label" parent="UI/Milligrams"]
+offset_left = -42.0
+offset_top = -9.0
+offset_right = 3.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_btqut")
+text = "Milligrams
+"
+
+[node name="Confirm" type="TextureButton" parent="UI"]
+offset_left = 203.0
+offset_top = 140.0
+offset_right = 303.0
+offset_bottom = 164.0
+texture_normal = ExtResource("9_s232o")
+texture_pressed = ExtResource("11_5ih6d")
+texture_hover = ExtResource("12_1w7lj")
+
+[node name="check" type="Label" parent="UI/Confirm"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 1.0
+offset_right = 80.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("3_btqut")
+text = "Check"

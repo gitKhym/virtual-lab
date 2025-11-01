@@ -11,8 +11,6 @@ All lab rubbish, including gloves, must go into the hazardous waste bins. Don’
 Harvey\
 In case of any emergency, follow the instructor’s lead immediately. No exceptions.
 Harvey\
-If you need a reminder, you can check the rules again on that board over there
-Harvey\
 Anyway, we’ll be starting shortly. Please take a moment to familiarize yourself with the lab, and do be careful.
 leave HarveryTheRoo [animation="Slide Out Left"]
 Narrator\
@@ -28,73 +26,147 @@ Henry\
 Sorry! Gotta run! Catch you later!
 leave henry [animation="Slide Out Left"]
 Narrator\
-With surprising speed, his little legs scramble away, leaving you in silence.
+With surprising speed, his little legs scrambling away, leaving you in silence.
 Narrator\
 But then your eyes drift back across the room. Something feels… off. The place is messy. Full of litter, tipped-over equipment, and the faint smell of a spill
 Player\
 Hmm. This room is quite a mess. There must be something I can do…
 [end_timeline]
 label scenario1 (scenario1)
-label return1
 Narrator\
 The intern notices a small chemical spill near their workstation.
+label return1
+Player\
+Hmm, what’s this? Looks like a small chemical spill. It looks like paint. I better do something about it
 - Wipe it quickly with tissues
 	Narrator\
-spills must never be ignored. Tissues won’t neutralize chemicals and can spread contamination.
+That seems dangerous.
+	Narrator\
+Tissues won’t neutralize chemicals and can spread  further contamination.
 	jump return1
 - Inform supervisor & follow spill protocol
-	Narrator\
-Well done. Reporting and following protocol ensures everyone’s safety.
+	Player\
+um hello Mr Harvey! I got something here!
+	join HarveryTheRoo center [animation="Slide In Left"]
+	Harvey\
+Oh hey is everything good? *as he dashes towards you.
+	Player \
+There is a spill here, I think we should do something about it.
+	Harvey\
+Would you look at that! Thanks for notfying me. Hmm this little sign should do. 
 	[signal arg="spill_correct"]
 	[end_timeline]
+- Do nothing
+	Narrator\
+That seems far off.  I feel like we should definitely not ignore it. 
+	jump return1
 label scenario2 (scenario2)
-label return2
 Narrator\
 Later, the intern sees a classmate about to throw used gloves into the recycling bin.
+join henry center [animation="Slide In Left"]
+Henry\
+Hmm that was a good excercise!
+label return2
+Henry\
+Hmm I wonder whats for lunch? These gloves are annoying. It makes my hands clammy! *He is about to throw his gloves in the recycle bin
 - Stop them and direct waste into biohazard bin
-	Right! Contaminated gloves go in the biohazard waste bin.
+	Player\
+Wait!! Henry!
+	Henry\
+Woah what! You just gave me a heart attack! 
+	Player\
+I am so sorry! But your gloves dosen't go over there. It should be in that red bin right over there.
+	Henry\
+Wait! Haha, my bad. I almost didnt notice it. Thanks for that! *He finally threw his gloves in the right bin.
 	[signal arg="waste_correct"]
 	[end_timeline]
 - Throw your gloves in the trash as well.
-	That spreads contamination even further.
+	Narrator\
+Wait! I don think that is very wise my friend and spreads contamination even further.
 	jump return2
+- Ignore it.
+	Narrator\
+That seems far off.  I feel like we should definitely not ignore it. 
 label scenario3
+Narrator\
+There is large packet of Smiff's BBQ chips right next to your workstation
+join henry center [animation="Slide In Left"]
+Henry\
+Finally, Smiff's limited chips is in my hands! I waited for so long to finally try them
 label return3
-someone starts snacking at the workstation.
+Narrator\
+You could see the gleam in his eyes as he is about to open the packet. But you know this is wrong.
 - Pretend not to see
-	Ignoring unsafe behavior puts everyone at risk.
+	Narrator\
+Really are we really ignore it?
 	jump return3
 - Eat with them.
-	Food and labs don’t mix—cross-contamination is dangerous.
+	Narrator\
+Tempting I know, but food and labs don’t really mix. Remember cross-contamination is dangerous.
 	jump return3
 - Politely remind them that eating is not allowed
-	Yes! Eating in the lab can cause accidental ingestion of hazardous substances
+	Player \
+Uh Henry, I dont we should eat in the lab.
+	Henry\
+Uh what! but I am really eager to try them right now.
+	Player \
+I know its tempting but there are rules we must uphold to have a safe environment. You could always wait.
+	Henry\
+I suppose you are right. *He placed his packet of chips in his bag. 
+	Henry\
+Come on Henry! you can wait a few hours.
 	[signal arg="eat_correct"]
 	[end_timeline]
 
 label scenario4
+Narrator\
+Oh dear, look at Henry. He is carrying the microscope with one hand
+join henry center [animation="Slide In Left"]
+Henry\
+Haha look at me. I can carry this thing with one hand! I knew lifting those bamboos paid off!
 label return4
-The intern sees another carrying a microscope with one hand
-- Pretend not to see
-	Copying unsafe behavior is never the answer
+Narrator\
+Sigh* At least he is happy but you know this is very improper in the lab. 
+- Try carrying it with one hand too
+	Narrator\
+Wait?! is this some weightlifting competition? One wrong move and the microscope could fall or break.
 	jump return4
 - Ignore it
-	One wrong move and the microscope could fall or break
+	Narrator\
+Oh ho, you are doing this in purpose arent you?
 	jump return4
 - Tell them to use both hands, supporting the base
-	Exactly! Proper handling prevents damage to expensive equipment
+	Player\
+Hey Henry. I am sure that you are very strong, but remember Microscopes are very delicate. You must hold them both at the base and at the bottom.
+	Player\
+Remember proper handling of equipment prevents damage to expensive equipment like the Microscope.
+	Henry\
+Expensive?! oh uh *He stabiliizes the microscope with both of his hands. Thanks for reminding me!
 	[signal arg="handling_correct"]
 	[end_timeline]
 
 label scenario5
-label return5
+Narrator\
 Suddenly, the fire alarm goes off
+Narrator\
+You can see at the teacher's desk, a large chemical reaction is overflowing!
+join HarveryTheRoo center [animation="Slide In Left"]
+Harvey\
+Woah I didnt expect that to happen! Class, Please calm yourselves!
+label return5
+Narrator\
+Ok, take a breather here. Remember to always follows rules and protocols in time like this
 - Grab your bag and run.
-	In emergencies, panic causes more danger
+	Narrator\
+Hold on buckeroo. I know you are fast but In emergencies, panic causes more danger.
 	jump return5
 - Follow evacuation protocol calmly
-	Perfect. Staying calm and following protocol ensures safety for everyone
+	Harvey\
+Class, follow me and please do be carefull *as he opens the emegency door and gestures to students to leave one by one.
+	Harvey\
+Alright! 1, 2, 3... arlight look like everyone’s out safely. Excellent work everyone!
 	[end_timeline]
 - Stay inside and wait
-	Staying inside is never safe during a fire alarm
+	Narrator\
+Yeah right, being a sitting duck can put you and others at risk!
 	jump return5

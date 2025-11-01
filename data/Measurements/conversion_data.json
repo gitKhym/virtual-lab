@@ -1,0 +1,55 @@
+{
+  "questions": [
+	{
+	  "question": "50 mm = ___ cm",
+	  "choices": ["5", "500", "50"],
+	  "answer": "5",
+	  "feedback_correct": "Great! You moved the decimal correctly.",
+	  "feedback_wrong": "10 mm = 1 cm. Divide by 10."
+	},
+	{
+	  "question": "3 m = ___ cm",
+	  "choices": ["300", "30", "3"],
+	  "answer": "300",
+	  "feedback_correct": "Excellent! 1 m = 100 cm, 
+	  so 3 m = 300 cm.",
+	  "feedback_wrong": "Multiply by 100 to go 
+	  from meters to centimeters."
+	},
+	{
+	  "question": "5 km = ___ m",
+	  "choices": ["500", "5000", "50000"],
+	  "answer": "5000",
+	  "feedback_correct": "Nice! 1 km = 1000 m, 
+	so multiply by 1000.",
+	  "feedback_wrong": "Move the decimal 3 places 
+	  to the right for kilo to base."
+	},
+	{
+	  "question": "2000 g = ___ kg",
+	  "choices": ["0.2", "2", "20"],
+	  "answer": "2",
+	  "feedback_correct": "Perfect! 1000 g = 1 kg, 
+	  so divide by 1000.",
+	  "feedback_wrong": "Move the decimal 3 places left 
+	  to convert grams to kilograms."
+	},
+	{
+	  "question": "1 L = ___ mL",
+	  "choices": ["100", "1000", "10000"],
+	  "answer": "1000",
+	  "feedback_correct": "Correct! 1 L = 1000 mL, 
+	  so multiply by 1000.",
+	  "feedback_wrong": "Multiply by 1000 to go 
+	  from liters to milliliters."
+	},
+	{
+	  "question": "100 cm = ___ m",
+	  "choices": ["1", "0.1", "10"],
+	  "answer": "1",
+	  "feedback_correct": "Great! 100 cm = 1 m.",
+	  "feedback_wrong": "Divide by 100 to go 
+	  from centimeters to meters."
+	}
+  ]
+}

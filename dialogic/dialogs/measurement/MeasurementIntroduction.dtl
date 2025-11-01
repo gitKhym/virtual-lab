@@ -1,0 +1,45 @@
+label Conversion_intro
+join HarveryTheRoo center [animation="Slide In Right"]
+Harvey\
+Alright, before we continue with our lab excercise. Its time for a quick challenge!
+Harvey\
+You’ll be working with measurements like millimeters, grams, and kilometers.  Just drag the correct value into the answer box.
+Harvey\
+Take your time, think it through, and watch for helpful hints along the way.
+Harvey\
+Ready? Let’s begin!
+leave HarveryTheRoo [animation="Slide Out Left"]
+[end_timeline]
+label Ruler_Introduction
+join HarveryTheRoo left [animation="Slide In Right"]
+Harvey \
+Great job finishing that conversion quiz! Now that you’re comfortable with numbers, it’s time to move on to measuring length.
+Harvey\
+Hmm… let’s see, where did I put those measuring samples?
+Narrator \
+Harvey rummages through his desk.  You hear clattering tools, springs bouncing, and the sound of something metallic rolling away.
+Harvey\
+Ah, here we go! These washers from my toolbox should work just fine.
+Harvey\
+Alright, here’s the plan! You’ll use ruler to measure the diameter of each washer. The ruler is in centimeters, but you’ll need to convert your answers into millimeters and meters.
+Harvey\
+Remember to always start measuring from zero, not the edge of the ruler. That’s a classic beginner’s mistake!
+Harvey\
+Sounds Good?\
+Alright here we go!
+leave HarveryTheRoo [animation="Slide Out Left"]
+[end_timeline]
+label Balance_introduction
+join HarveryTheRoo center [animation="Slide In Right"]
+Harvey\
+Great Job yet again! OK now its time to weight some items.
+Harvey\
+This here’s a digital balance press the Tare button first to reset it before weighing.\
+Trust me, you don’t want to weigh my leftover sandwich crumbs.
+Harvey\
+Once it’s zeroed out, place each item on the balance and note the weight in grams. Then, convert it to kilograms and milligrams.
+Harvey\
+Take your time and focus.  Precision is what makes a great scientist!
+Harvey\
+Goodluck!
+leave HarveryTheRoo [animation="Slide Out Left"]

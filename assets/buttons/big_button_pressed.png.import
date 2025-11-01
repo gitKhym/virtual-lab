@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1qldbasx2sf7"
-path="res://.godot/imported/pipette_water.png-144cf7691b1813dddfbb7f12480ab46f.ctex"
+uid="uid://6cfbps6eh044"
+path="res://.godot/imported/big_button_pressed.png-9f1b8fdb489439e5934a5c4cf5f294ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/simulations/measurement/pipette_water.png"
-dest_files=["res://.godot/imported/pipette_water.png-144cf7691b1813dddfbb7f12480ab46f.ctex"]
+source_file="res://assets/buttons/big_button_pressed.png"
+dest_files=["res://.godot/imported/big_button_pressed.png-9f1b8fdb489439e5934a5c4cf5f294ad.ctex"]
 
 [params]
 
