@@ -1,0 +1,12 @@
+[style name="default_style"]
+Welcome to the accuracy and precision challenge!
+
+Accuracy is how close your shots are to the center of the target.
+Precision is how close your shots are to each other.
+
+- High Accuracy: Your shots are near the center.
+- Low Accuracy: Your shots are far from the center.
+- High Precision: Your shots are clustered together.
+- Low Precision: Your shots are spread out.
+
+Let's begin!

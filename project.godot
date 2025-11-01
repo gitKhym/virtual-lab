@@ -28,6 +28,15 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "QuizStartMenu": "res://scenes/simulations/quiz/quiz_ppe/QuizStartMenu.dtl",
+"accuracy_correct": "res://dialogic/dialogs/measurement/accuracy_correct.dtl",
+"accuracy_finished": "res://dialogic/dialogs/measurement/accuracy_finished.dtl",
+"accuracy_incorrect": "res://dialogic/dialogs/measurement/accuracy_incorrect.dtl",
+"accuracy_intro": "res://dialogic/dialogs/measurement/accuracy_intro.dtl",
+"accuracy_right_acc": "res://dialogic/dialogs/measurement/accuracy_right_acc.dtl",
+"accuracy_right_prec": "res://dialogic/dialogs/measurement/accuracy_right_prec.dtl",
+"accuracy_start": "res://dialogic/dialogs/measurement/accuracy_start.dtl",
+"accuracy_wrong_acc": "res://dialogic/dialogs/measurement/accuracy_wrong_acc.dtl",
+"accuracy_wrong_prec": "res://dialogic/dialogs/measurement/accuracy_wrong_prec.dtl",
 "all_parts_clicked": "res://dialogic/dialogs/simulations/microscope/all_parts_clicked.dtl",
 "congratsmenu": "res://scenes/simulations/quiz/quiz_ppe/congratsmenu.dtl",
 "introduction": "res://dialogic/dialogs/testing/introduction.dtl",
