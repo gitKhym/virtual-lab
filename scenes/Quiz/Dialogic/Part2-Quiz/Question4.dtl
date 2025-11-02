@@ -1,0 +1,8 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: True or False. The fine adjustment knob is used at high magnification.
+- True
+	HarveyTheKangaroo: Correct!
+	jump Question5/
+- False
+	HarveyTheKangaroo: That one is true, try again!
+	jump

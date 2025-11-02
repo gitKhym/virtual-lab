@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://cq4uc4l75owv0"]
+
+[ext_resource type="Texture2D" uid="uid://bqon43hp23m01" path="res://Assets/text_boxes/speech_box.png" id="1_m6n3j"]
+
+[resource]
+content_margin_left = 25.0
+content_margin_top = 15.0
+content_margin_right = 25.0
+content_margin_bottom = 15.0
+texture = ExtResource("1_m6n3j")

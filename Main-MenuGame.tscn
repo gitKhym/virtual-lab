@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://dpiwwv867vp1y"]
+
+[ext_resource type="Script" uid="uid://d2mvbem4qjqc" path="res://main_menu_game.gd" id="1_twp14"]
+[ext_resource type="Texture2D" uid="uid://8kbt7dw4cqsp" path="res://assets/backgrounds/Quiz-2_Background.png" id="2_fnjer"]
+[ext_resource type="FontFile" uid="uid://drb66rshqh6ft" path="res://font/VCR_OSD_MONO_1.001.ttf" id="3_kxq3r"]
+[ext_resource type="Texture2D" uid="uid://dw5dfyaopnq1m" path="res://assets/buttons/big_button.png" id="4_q50cm"]
+[ext_resource type="Texture2D" uid="uid://6cfbps6eh044" path="res://assets/buttons/big_button_pressed.png" id="5_0h1ej"]
+[ext_resource type="Texture2D" uid="uid://cchvqyrwd1cxg" path="res://assets/buttons/big_button_hover.png" id="6_f0if3"]
+[ext_resource type="FontFile" uid="uid://d35n2ag4cnf5o" path="res://font/fs-pixel-sans-unicode-regular.ttf" id="7_m7h3m"]
+
+[node name="Main-menuGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_twp14")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(180.00002, 91)
+scale = Vector2(0.23307289, 0.1716308)
+texture = ExtResource("2_fnjer")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 8.0
+offset_top = 18.0
+offset_right = -4.0
+offset_bottom = 37.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_kxq3r")
+theme_override_font_sizes/font_size = 21
+text = "Food Microbiology Academy"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.636
+anchor_right = 0.5
+anchor_bottom = 0.636
+offset_left = -44.0
+offset_top = -27.76
+offset_right = 47.0
+offset_bottom = 51.24
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="START" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_q50cm")
+texture_pressed = ExtResource("5_0h1ej")
+texture_hover = ExtResource("6_f0if3")
+
+[node name="Label" type="Label" parent="VBoxContainer/START"]
+layout_mode = 0
+offset_left = 32.5
+offset_top = 3.2800064
+offset_right = 72.5
+offset_bottom = 26.280006
+theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
+theme_override_fonts/font = ExtResource("7_m7h3m")
+text = "START"

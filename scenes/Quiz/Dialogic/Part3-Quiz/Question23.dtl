@@ -1,0 +1,11 @@
+[style name="QuizModeStyle"]
+If a washer measures 2.5 centimetres, what’s that in millimetres?
+- 25
+	Right on, mate!
+	jump Question24/
+- 250
+	Thats quite a jump! but no.
+	jump 
+- 0.25
+	Remember 10mm is equals to 1cm.  
+	jump 

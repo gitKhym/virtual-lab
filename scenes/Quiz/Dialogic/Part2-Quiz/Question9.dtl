@@ -1,0 +1,8 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: True or False. The shortest objective lens is the lowest power.
+- True
+	HarveyTheKangaroo: Correct!
+	jump Question10/
+- False
+	HarveyTheKangaroo: That one is true!
+	jump

@@ -1,0 +1,11 @@
+join HarveryTheRoo left [animation="Slide In Left"]
+G’day, mate!  Welcome to the Basic Measurement Quiz, this is  your chance to finally show what you know about measurement and unit conversion.
+There are 10 quick questions ahead, a mix of multiple-choice and true-or-false.
+Whether you aced it or picked up a few new tips along the way, you’re now one step closer to mastering your lab skills.
+Ready to give it a crack?
+- Yes!
+	jump Question21/
+- No
+	jump 
+Let’s jump in!
+leave 

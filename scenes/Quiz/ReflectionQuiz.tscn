@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfmjupy2qi7sg"]
+
+[ext_resource type="Script" uid="uid://b6u11jmovaoj" path="res://Scenes/reflection_quiz.gd" id="1_ags1v"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ags1v")

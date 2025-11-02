@@ -1,0 +1,51 @@
+[style name="default_style"]
+if {Simulations.PPE.selected_item_id} == "apron":
+	Close, but fire aprons are mainly for flammable tasks...
+	...Not for typical lab experiments.
+if {Simulations.PPE.selected_item_id} == "lab_coat":
+	Great choice!
+	When spills or sharp objects are present...
+	A long-sleeved lab coat protects your skin.
+if {Simulations.PPE.selected_item_id} == "hazmat":
+	Not quite!
+	Hazmat suits are overkill for general lab work.
+	It can be cumbersome for everyday experiments.
+if {Simulations.PPE.selected_item_id} == "safety_goggles":
+	Exactly!
+	Goggles protect your eyes from chemicals and broken glass.
+if {Simulations.PPE.selected_item_id} == "sunglasses":
+	Incorrect.
+	Sunglasses don’t provide full coverage from splashes or particles.
+	It may in fact limit your ability to see!
+	Because Sunglasses dim your surroundings...
+	...There could be repurcussions from not being able to properly see when in the lab.
+if {Simulations.PPE.selected_item_id} == "prescription_glasses":
+	Not a bad answer!
+	While prescription glasses are in fact quite necessary to see, it's important to wear protection over them.
+	Particles launching at your glasses can lead to serious injuries as glass can shatter in your eye!
+if {Simulations.PPE.selected_item_id} == "nitrile_gloves":
+	Perfect!
+	Nitrile gloves shield your hands from chemicals, contamination, and minor cuts.
+	Always ensure they fit snugly to maximize protection.
+if {Simulations.PPE.selected_item_id} == "wool_gloves":
+	Not ideal!
+	Wool gloves offer warmth but no protection against chemicals or sharp objects.
+	They can absorb hazardous liquids, making them unsafe in the lab.
+if {Simulations.PPE.selected_item_id} == "rawdog":
+	Definitely not!
+	Exposing bare hands to chemicals or broken glass is extremely dangerous.
+	Always use proper gloves to prevent serious injuries.
+if {Simulations.PPE.selected_item_id} == "sneakers":
+	Right on!
+	Sneakers cover most of your foot, but be careful as they can let liquids seep through if not waterproof.
+	Perfect! you’re suited up correctly. \
+Lab coat\: check. Goggles\: check. Nitrile gloves\: check. Sneakers\: check.\
+Remember ; safety is always the first priority in every lab. Never forget that.
+if {Simulations.PPE.selected_item_id} == "sandals":
+	Incorrect!
+	Sandals leave your feet exposed to spills, broken glass, or dropped equipment.
+	Never wear them in a lab setting.
+if {Simulations.PPE.selected_item_id} == "high_heels":
+	Definitely not!
+	High heels are unsafe in the lab.
+	They limit mobility and increase the risk of accidents with chemicals or heavy objects.

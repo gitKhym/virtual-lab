@@ -1,0 +1,13 @@
+join HarveryTheRoo leftmost [animation="Slide In Left"]
+HarveryTheRoo: True or False\: Food is allowed in designated lab areas.
+
+- A. True
+	HarveryTheRoo: Not a chance, mate, that’s a health hazard.
+	jump 
+
+- B. False
+	HarveryTheRoo: You beauty, nailed it!
+	[wait time="0.5"]
+	HarveryTheRoo: Eating or drinking in the lab risks contamination and chemical ingestion.
+	HarveryTheRoo: Okie dokie, Question 6 coming up.
+	jump question6/

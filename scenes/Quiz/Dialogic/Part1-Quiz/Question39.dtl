@@ -1,0 +1,8 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: True or False — A normal jacket can replace a lab coat.
+- A. True
+	HarveyTheKangaroo: That’s how ya ruin your clothes and your day. Try again.
+	jump 
+- B. False
+	HarveyTheKangaroo: Right on! Lab coats exist for a reason.
+	jump Question40/

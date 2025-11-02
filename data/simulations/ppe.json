@@ -1,0 +1,96 @@
+{
+  "phases": [
+    {
+      "items": [
+        {
+          "id": "lab_coat",
+          "item_name": "Lab Coat",
+          "description": "A long-sleeved protective garment worn over clothing in scientific and medical settings.",
+          "is_correct": true
+        },
+        {
+          "id": "hazmat",
+          "item_name": "Hazmat Suit",
+          "description": "A full-body suit designed to protect against hazardous substances and environments.",
+          "is_correct": false
+        },
+        {
+          "id": "apron",
+          "item_name": "Fire Apron",
+          "description": "A heavy apron made from flame-resistant material used in high-heat conditions.",
+          "is_correct": false
+        }
+      ],
+      "tip": "Did you know? Lab coats are flame-resistant and protect against minor chemical splashes."
+    },
+    {
+      "items": [
+        {
+          "id": "safety_goggles",
+          "item_name": "Safety Goggles",
+          "description": "Protective eyewear designed to shield the eyes from liquids, dust, and debris.",
+          "is_correct": true
+        },
+        {
+          "id": "sunglasses",
+          "item_name": "Sunglasses",
+          "description": "Eyewear that reduces sunlight glare and protects from UV rays.",
+          "is_correct": false
+        },
+        {
+          "id": "prescription_glasses",
+          "item_name": "Prescription Glasses",
+          "description": "Glasses worn to correct vision deficiencies.",
+          "is_correct": false
+        }
+      ],
+      "tip": "Safety goggles are designed with side shields, preventing liquid splashes from reaching your eyes."
+    },
+    {
+      "items": [
+        {
+          "id": "nitrile_gloves",
+          "item_name": "Latex/Nitrile Gloves",
+          "description": "Disposable gloves made of latex or nitrile, used to cover the hands.",
+          "is_correct": true
+        },
+        {
+          "id": "wool_gloves",
+          "item_name": "Wool Gloves",
+          "description": "Gloves made from wool, typically used for warmth in cold conditions.",
+          "is_correct": false
+        },
+        {
+          "id": "rawdog",
+          "item_name": "No Gloves",
+          "description": "The absence of hand coverings.",
+          "is_correct": false
+        }
+      ],
+      "tip": "Nitrile gloves resist punctures better than latex and are less likely to cause allergies."
+    },
+    {
+      "items": [
+        {
+          "id": "sneakers",
+          "item_name": "Sneakers",
+          "description": "Closed-toe shoes often used for casual or athletic purposes.",
+          "is_correct": true
+        },
+        {
+          "id": "sandals",
+          "item_name": "Open-Toed Sandals",
+          "description": "Footwear that exposes the toes, usually worn in warm weather.",
+          "is_correct": false
+        },
+        {
+          "id": "high_heels",
+          "item_name": "High Heels",
+          "description": "Shoes with elevated heels commonly worn for fashion purposes.",
+          "is_correct": false
+        }
+      ],
+      "tip": "Closed footwear should be made from non-absorbent materials."
+    }
+  ]
+}

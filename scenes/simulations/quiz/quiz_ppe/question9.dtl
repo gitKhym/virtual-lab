@@ -1,0 +1,13 @@
+join HarveryTheRoo leftmost [animation="Slide In Left"]
+HarveryTheRoo: True or False\: Personal fashion jackets can replace lab coats.
+
+- A. True
+	HarveryTheRoo: Wrong, mate, that jacket won’t save you from a spill.
+	jump 
+
+- B. False
+	HarveryTheRoo: You beauty, correct!
+	[wait time="0.5"]
+	HarveryTheRoo: Only lab coats are designed to protect against chemical spills and fire.
+	HarveryTheRoo: Okie dokie, Question 10 up next.
+	jump question10/

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn7xew4y171aj"]
+
+[ext_resource type="Script" uid="uid://ca5liv4781e5x" path="res://scenes/Quiz/Dialogic/Part2-Quiz/quiz_intro_scene_ms.gd" id="1_elm24"]
+[ext_resource type="Texture2D" uid="uid://b3sgougjw263y" path="res://assets/backgrounds/PPE_LAB_BG.png" id="2_elm24"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_elm24")
+
+[node name="BG" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.4745098)
+position = Vector2(179.5, 91.5)
+scale = Vector2(0.99722224, 0.9722222)
+texture = ExtResource("2_elm24")
