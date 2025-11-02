@@ -11,20 +11,171 @@ config_version=5
 [application]
 
 config/name="virtual_lab"
-run/main_scene="uid://cfra3nne1g3ed"
-config/features=PackedStringArray("4.4", "Forward Plus")
+run/main_scene="uid://dpiwwv867vp1y"
+config/features=PackedStringArray("4.5", "Forward Plus")
+
+[autoload]
+
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+SceneTransistion="*res://scenes/simulations/transistion/scene_transistion.tscn"
+SceneReset="*res://scenes/Reset/scene_reset.tscn"
+SaveManager="*res://scenes/Save_Manager/SaveManager.gd"
+
+[dialogic]
+
+directories/dch_directory={
+"HarveryTheRoo": "res://assets/characters/harvey/HarveryTheRoo.dch",
+"henry": "res://assets/characters/Henry/henry.dch",
+"unit_test_character": "res://Tests/Resources/unit_test_character.dch"
+}
+directories/dtl_directory={
+"Main_Menu2": "res://dialogic/dialogs/Main Menu/Main_Menu2.dtl",
+"MeasurementIntroduction": "res://dialogic/dialogs/measurement/MeasurementIntroduction.dtl",
+"Part2-Quiz/Quiz-Intro": "res://scenes/Quiz/Dialogic/Part2-Quiz/Quiz-Intro.dtl",
+"Question1": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question1.dtl",
+"Question10": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question10.dtl",
+"Question2": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question2.dtl",
+"Question21": "res://scenes/Quiz/Dialogic/Part3-Quiz/Question21.dtl",
+"Question22": "res://scenes/Quiz/Dialogic/Part3-Quiz/Question22.dtl",
+"Question23": "res://scenes/Quiz/Dialogic/Part3-Quiz/Question23.dtl",
+"Question24": "res://scenes/Quiz/Dialogic/Part3-Quiz/Question24.dtl",
+"Question25": "res://scenes/Quiz/Dialogic/Part3-Quiz/Question25.dtl",
+"Question26": "res://scenes/Quiz/Dialogic/Part3-Quiz/Question26.dtl",
+"Question27": "res://scenes/Quiz/Dialogic/Part3-Quiz/Question27.dtl",
+"Question28": "res://scenes/Quiz/Dialogic/Part3-Quiz/Question28.dtl",
+"Question29": "res://scenes/Quiz/Dialogic/Part3-Quiz/Question29.dtl",
+"Question3": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question3.dtl",
+"Question30": "res://scenes/Quiz/Dialogic/Part3-Quiz/Question30.dtl",
+"Question31": "res://scenes/Quiz/Dialogic/Part1-Quiz/Question31.dtl",
+"Question32": "res://scenes/Quiz/Dialogic/Part1-Quiz/Question32.dtl",
+"Question33": "res://scenes/Quiz/Dialogic/Part1-Quiz/Question33.dtl",
+"Question34": "res://scenes/Quiz/Dialogic/Part1-Quiz/Question34.dtl",
+"Question35": "res://scenes/Quiz/Dialogic/Part1-Quiz/Question35.dtl",
+"Question36": "res://scenes/Quiz/Dialogic/Part1-Quiz/Question36.dtl",
+"Question37": "res://scenes/Quiz/Dialogic/Part1-Quiz/Question37.dtl",
+"Question38": "res://scenes/Quiz/Dialogic/Part1-Quiz/Question38.dtl",
+"Question39": "res://scenes/Quiz/Dialogic/Part1-Quiz/Question39.dtl",
+"Question4": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question4.dtl",
+"Question40": "res://scenes/Quiz/Dialogic/Part1-Quiz/Question40.dtl",
+"Question5": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question5.dtl",
+"Question6": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question6.dtl",
+"Question7": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question7.dtl",
+"Question8": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question8.dtl",
+"Question9": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question9.dtl",
+"Quiz-Intro": "res://scenes/Quiz/Dialogic/Part1-Quiz/Quiz-Intro.dtl",
+"Quiz/Quiz-Intro": "res://scenes/Quiz/Quiz-Intro.dtl",
+"QuizCongrats-BasicMeasure": "res://scenes/Quiz/Dialogic/Part3-Quiz/QuizCongrats-BasicMeasure.dtl",
+"QuizCongratulations-Part1": "res://scenes/Quiz/Dialogic/Part1-Quiz/QuizCongratulations-Part1.dtl",
+"QuizCongratulations-Part2": "res://scenes/Quiz/Dialogic/Part2-Quiz/QuizCongratulations-Part2.dtl",
+"QuizIntro-3": "res://scenes/Quiz/Dialogic/Part3-Quiz/QuizIntro-3.dtl",
+"QuizStartMenu": "res://scenes/simulations/quiz/quiz_ppe/QuizStartMenu.dtl",
+"accuracy_correct": "res://dialogic/dialogs/measurement/accuracy_correct.dtl",
+"accuracy_finished": "res://dialogic/dialogs/measurement/accuracy_finished.dtl",
+"accuracy_incorrect": "res://dialogic/dialogs/measurement/accuracy_incorrect.dtl",
+"accuracy_intro": "res://dialogic/dialogs/measurement/accuracy_intro.dtl",
+"accuracy_right_acc": "res://dialogic/dialogs/measurement/accuracy_right_acc.dtl",
+"accuracy_right_prec": "res://dialogic/dialogs/measurement/accuracy_right_prec.dtl",
+"accuracy_start": "res://dialogic/dialogs/measurement/accuracy_start.dtl",
+"accuracy_wrong_acc": "res://dialogic/dialogs/measurement/accuracy_wrong_acc.dtl",
+"accuracy_wrong_prec": "res://dialogic/dialogs/measurement/accuracy_wrong_prec.dtl",
+"all_parts_clicked": "res://dialogic/dialogs/simulations/microscope/all_parts_clicked.dtl",
+"congratsmenu": "res://scenes/simulations/quiz/quiz_ppe/congratsmenu.dtl",
+"introduction": "res://dialogic/dialogs/testing/introduction.dtl",
+"measuring_volume_finished": "res://dialogic/dialogs/measurement/measuring_volume_finished.dtl",
+"measuring_volume_good": "res://dialogic/dialogs/measurement/measuring_volume_good.dtl",
+"measuring_volume_intro": "res://dialogic/dialogs/measurement/measuring_volume_intro.dtl",
+"measuring_volume_needs_practice": "res://dialogic/dialogs/measurement/measuring_volume_needs_practice.dtl",
+"microscope_parts": "res://dialogic/dialogs/simulations/microscope/microscope_parts.dtl",
+"microscope_practice_130x_intro": "res://dialogic/dialogs/simulations/microscope/microscope_practice_130x_intro.dtl",
+"microscope_practice_40x_intro": "res://dialogic/dialogs/simulations/microscope/microscope_practice_40x_intro.dtl",
+"microscope_practice_90x_intro": "res://dialogic/dialogs/simulations/microscope/microscope_practice_90x_intro.dtl",
+"microscope_practice_complete": "res://dialogic/dialogs/simulations/microscope/microscope_practice_complete.dtl",
+"microscope_practice_focus_130x": "res://dialogic/dialogs/simulations/microscope/microscope_practice_focus_130x.dtl",
+"microscope_practice_focus_40x": "res://dialogic/dialogs/simulations/microscope/microscope_practice_focus_40x.dtl",
+"microscope_practice_focus_90x": "res://dialogic/dialogs/simulations/microscope/microscope_practice_focus_90x.dtl",
+"microscope_practice_focus_incorrect": "res://dialogic/dialogs/simulations/microscope/microscope_practice_focus_incorrect.dtl",
+"microscope_practice_start": "res://dialogic/dialogs/simulations/microscope/microscope_practice_start.dtl",
+"microscope_stage_start": "res://dialogic/dialogs/simulations/microscope/microscope_stage_start.dtl",
+"pipette_filled": "res://dialogic/dialogs/measurement/pipette_filled.dtl",
+"pipette_intro": "res://dialogic/dialogs/simulations/pipette_intro.dtl",
+"pipette_not_filled_fully": "res://dialogic/dialogs/measurement/pipette_not_filled_fully.dtl",
+"pipette_volume_finished": "res://dialogic/dialogs/measurement/pipette_volume_finished.dtl",
+"pipette_volume_good": "res://dialogic/dialogs/measurement/pipette_volume_good.dtl",
+"pipette_volume_intro": "res://dialogic/dialogs/measurement/pipette_volume_intro.dtl",
+"pipette_volume_needs_practice": "res://dialogic/dialogs/measurement/pipette_volume_needs_practice.dtl",
+"ppe_scenario_1file": "res://dialogic/dialogs/testing/ppe_scenario_1file.dtl",
+"ppe_selection_dialog": "res://dialogic/dialogs/simulations/ppe/ppe_selection_dialog.dtl",
+"question1": "res://scenes/simulations/quiz/quiz_ppe/question1.dtl",
+"question10": "res://scenes/simulations/quiz/quiz_ppe/question10.dtl",
+"question2": "res://scenes/simulations/quiz/quiz_ppe/question2.dtl",
+"question3": "res://scenes/simulations/quiz/quiz_ppe/question3.dtl",
+"question4": "res://scenes/simulations/quiz/quiz_ppe/question4.dtl",
+"question5": "res://scenes/simulations/quiz/quiz_ppe/question5.dtl",
+"question6": "res://scenes/simulations/quiz/quiz_ppe/question6.dtl",
+"question7": "res://scenes/simulations/quiz/quiz_ppe/question7.dtl",
+"question8": "res://scenes/simulations/quiz/quiz_ppe/question8.dtl",
+"question9": "res://scenes/simulations/quiz/quiz_ppe/question9.dtl",
+"sample_secured": "res://dialogic/dialogs/simulations/microscope/sample_secured.dtl",
+"slide_prepared": "res://dialogic/dialogs/simulations/microscope/slide_prepared.dtl",
+"timeline": "res://timeline.dtl"
+}
+glossary/default_case_sensitive=true
+layout/style_list=["res://dialogic/small_dialog_style.tres", "res://dialogic/test.tres", "res://dialogic/default_style.tres", ""]
+layout/default_style="res://dialogic/default_style.tres"
+variables={
+"Reflection": "",
+"Simulations": {
+"Measurement": {
+"measured_ml": 0
+},
+"PPE": {
+"selected_item_id": ""
+}
+},
+"quiz": {
+"quiz_ppe": {
+"current_q": 1,
+"score": 0
+}
+}
+}
+extensions_folder="res://addons/dialogic_additions"
+text/letter_speed=0.01
+text/initial_text_reveal_skippable=true
+text/text_reveal_skip_delay=0.1
+text/advance_delay=0.1
+text/autoadvance_per_character_delay=0.1
+text/autoadvance_ignored_characters_enabled=true
+audio/max_channels=4.0
+animations/join_default_length=0.5
+animations/join_default_wait=true
+animations/leave_default_length=0.5
+animations/leave_default_wait=true
+animations/cross_fade_default_length=0.5
+choices/autofocus_first=false
+choices/delay=0.2
+choices/reveal_delay=0
+choices/reveal_by_input=false
+save/autosave_delay=60.0
+save/encryption_on_exports_only=true
+text/autopauses={}
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_width=360
+window/size/viewport_height=180
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
 
 [dotnet]
 
 project/assembly_name="virtual_lab"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 [input]
 
@@ -34,7 +185,22 @@ interact={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
+dialogic_default_action={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194309,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":88,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+]
+}
+left_click={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+2d/snap/snap_2d_transforms_to_pixel=true

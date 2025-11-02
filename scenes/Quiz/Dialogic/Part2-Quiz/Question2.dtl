@@ -1,0 +1,14 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: What is the first step in focusing a microscope?
+- A. Start with high power
+	HarveyTheKangaroo: Not quite, start lower!
+	jump 
+- B. Look through eyepiece and crank down lens
+	HarveyTheKangaroo: Careful, that will crack your slide!
+	jump 
+- C. Start with low power, then coarse focus
+	HarveyTheKangaroo: Correct, nice work!
+	jump Question3/
+- D. Use diaphragm only
+	HarveyTheKangaroo: That controls light, not focus!
+	jump

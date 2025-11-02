@@ -1,0 +1,14 @@
+[style name="QuizModeStyle"]
+Fire alarm goes off — what’s the first move?
+- A. Pack your belongings
+	You can buy new stuff, mate. Try again.
+	jump 
+- B. Continue the experiment
+	Science can wait — safety can’t. Try again.
+	jump 
+- C. Shut down equipment (if safe) and evacuate immediately
+	Legend! That’s proper lab safety!
+	[end_timeline]
+- D. Call a friend
+	Ain’t the time for a yarn, champ. Try again.
+	jump 

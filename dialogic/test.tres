@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=12 format=3 uid="uid://cfblxbpee55eb"]
+
+[ext_resource type="Script" uid="uid://cvi1vlluegdut" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_phjq2"]
+[ext_resource type="Script" uid="uid://c4jaqmghy6sgn" path="res://addons/dialogic/Resources/dialogic_style.gd" id="2_3gbif"]
+[ext_resource type="PackedScene" uid="uid://d4jjqqhu2ssji" path="res://dialogic/QuizTextBox/custom_quiz_textbox.tscn" id="2_px7hy"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="3_px7hy"]
+[ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="4_kyhvr"]
+[ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="5_s56pl"]
+
+[sub_resource type="Resource" id="Resource_px7hy"]
+script = ExtResource("1_phjq2")
+
+[sub_resource type="Resource" id="Resource_kyhvr"]
+script = ExtResource("1_phjq2")
+scene = ExtResource("2_px7hy")
+overrides = {
+"box_animation_in": "0",
+"box_animation_new_text": "1",
+"box_animation_out": "0",
+"next_indicator_enabled": "false",
+"text_custom_color": "Color(0, 0, 0, 1)"
+}
+
+[sub_resource type="Resource" id="Resource_s56pl"]
+script = ExtResource("1_phjq2")
+scene = ExtResource("3_px7hy")
+
+[sub_resource type="Resource" id="Resource_3hfjo"]
+script = ExtResource("1_phjq2")
+scene = ExtResource("4_kyhvr")
+
+[sub_resource type="Resource" id="Resource_bsukn"]
+script = ExtResource("1_phjq2")
+scene = ExtResource("5_s56pl")
+
+[resource]
+script = ExtResource("2_3gbif")
+name = "test"
+layer_list = Array[String](["12", "11", "10", "13"])
+layer_info = {
+"": SubResource("Resource_px7hy"),
+"10": SubResource("Resource_kyhvr"),
+"11": SubResource("Resource_s56pl"),
+"12": SubResource("Resource_3hfjo"),
+"13": SubResource("Resource_bsukn")
+}
+metadata/_latest_layer = "10"

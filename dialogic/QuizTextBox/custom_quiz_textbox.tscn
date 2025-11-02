@@ -1,0 +1,563 @@
+[gd_scene load_steps=21 format=3 uid="uid://d4jjqqhu2ssji"]
+
+[ext_resource type="Script" uid="uid://cthnaxelo5o1o" path="res://dialogic/VisualNovelTextbox/vn_textbox_layer.gd" id="1_j5o1i"]
+[ext_resource type="Script" uid="uid://s77tpq60w0la" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/animations.gd" id="2_wqu8y"]
+[ext_resource type="Texture2D" uid="uid://bfp0u8du34nww" path="res://assets/gui/quiz/chalkboard.png" id="3_j5o1i"]
+[ext_resource type="FontFile" uid="uid://d35n2ag4cnf5o" path="res://font/fs-pixel-sans-unicode-regular.ttf" id="4_deil1"]
+[ext_resource type="Script" uid="uid://dswfasvr0xbev" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="5_v4rdu"]
+[ext_resource type="Script" uid="uid://cip5bbem0ihsv" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="6_bku74"]
+[ext_resource type="Script" uid="uid://646d5eocx5tk" path="res://addons/dialogic/Modules/Text/node_next_indicator.gd" id="7_18h01"]
+[ext_resource type="Texture2D" uid="uid://b0rpqfg4fhebk" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/next.svg" id="8_wag56"]
+[ext_resource type="Script" uid="uid://dtrm1hcnbhjbl" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/autoadvance_indicator.gd" id="9_wkqbt"]
+[ext_resource type="StyleBox" uid="uid://m7gyepkysu83" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_name_label_panel.tres" id="10_pqx4l"]
+[ext_resource type="Script" uid="uid://c0niw4syt2kv6" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="11_828ch"]
+[ext_resource type="Script" uid="uid://ded7hsutepvps" path="res://addons/dialogic/Modules/Choice/node_choice_button.gd" id="12_ndqe8"]
+[ext_resource type="Texture2D" uid="uid://dji5eah22v1wq" path="res://assets/gui/quiz/quiz_button.png" id="13_j5o1i"]
+
+[sub_resource type="Animation" id="Animation_au0a2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anchor/AnimationParent:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Anchor/AnimationParent:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Anchor/AnimationParent:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Anchor/AnimationParent:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Anchor/AnimationParent/Sizer/DialogTextPanel:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_6kbwc"]
+resource_name = "new_text"
+length = 0.4
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anchor/AnimationParent/Sizer/DialogTextPanel:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(3, 3, 3, 3, 3),
+"points": PackedFloat32Array(0, -0.025, 0, 0.025, 0, 0.005, -0.025, 0, 0.025, 0, -0.005, -0.025, 0, 0.025, 0, 0.005, -0.025, 0, 0.025, 0, 0, -0.025, 0, 0.025, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4)
+}
+
+[sub_resource type="Animation" id="Animation_g6k55"]
+resource_name = "textbox_fade_up"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anchor/AnimationParent:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 50), Vector2(0, 19.6793), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Anchor/AnimationParent:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Anchor/AnimationParent:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Anchor/AnimationParent:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_htbgc"]
+resource_name = "textbox_pop"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anchor/AnimationParent:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Anchor/AnimationParent:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.0899883, 0.0258223, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Anchor/AnimationParent:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.793957, 0.778082), Vector2(0.937299, 1.14248), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Anchor/AnimationParent:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c14kh"]
+_data = {
+&"RESET": SubResource("Animation_au0a2"),
+&"new_text": SubResource("Animation_6kbwc"),
+&"textbox_fade_up": SubResource("Animation_g6k55"),
+&"textbox_pop": SubResource("Animation_htbgc")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5g6th"]
+content_margin_left = 7.0
+content_margin_right = 10.0
+texture = ExtResource("3_j5o1i")
+
+[sub_resource type="FontVariation" id="FontVariation_v8y64"]
+
+[node name="VN_TextboxLayer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_j5o1i")
+box_panel = "res://dialogic/VisualNovelTextbox/vn_textbox_default_panel.tres"
+name_label_box_panel = "res://dialogic/VisualNovelTextbox/vn_textbox_name_label_panel.tres"
+name_label_box_modulate = Color(0, 0, 0, 1)
+
+[node name="Animations" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_c14kh")
+}
+autoplay = "RESET"
+script = ExtResource("2_wqu8y")
+
+[node name="Anchor" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.497222
+anchor_top = 1.0
+anchor_right = 0.505556
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationParent" type="Control" parent="Anchor"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1.5001144
+offset_right = -1.5001144
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Sizer" type="Control" parent="Anchor/AnimationParent"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -179.0
+offset_top = -178.0
+offset_right = 180.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="DialogTextPanel" type="PanelContainer" parent="Anchor/AnimationParent/Sizer"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -163.5
+offset_top = -159.0
+offset_right = 164.5
+offset_bottom = -103.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_5g6th")
+metadata/_edit_layout_mode = 1
+
+[node name="DialogicNode_DialogText" type="RichTextLabel" parent="Anchor/AnimationParent/Sizer/DialogTextPanel" node_paths=PackedStringArray("textbox_root")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+theme_override_constants/line_separation = -4
+theme_override_fonts/normal_font = ExtResource("4_deil1")
+bbcode_enabled = true
+text = "Some default text"
+visible_characters_behavior = 1
+script = ExtResource("5_v4rdu")
+textbox_root = NodePath("..")
+
+[node name="DialogicNode_TypeSounds" type="AudioStreamPlayer" parent="Anchor/AnimationParent/Sizer/DialogTextPanel/DialogicNode_DialogText"]
+unique_name_in_owner = true
+script = ExtResource("6_bku74")
+play_every_character = 0
+
+[node name="NextIndicator" type="Control" parent="Anchor/AnimationParent/Sizer/DialogTextPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 2
+script = ExtResource("7_18h01")
+show_on_questions = true
+texture = ExtResource("8_wag56")
+metadata/_edit_layout_mode = 1
+
+[node name="AutoAdvanceProgressbar" type="ProgressBar" parent="Anchor/AnimationParent/Sizer/DialogTextPanel"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.188235)
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 2
+max_value = 1.0
+step = 0.001
+value = 0.5
+show_percentage = false
+script = ExtResource("9_wkqbt")
+
+[node name="NameLabelHolder" type="Control" parent="Anchor/AnimationParent/Sizer/DialogTextPanel"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="NameLabelPanel" type="PanelContainer" parent="Anchor/AnimationParent/Sizer/DialogTextPanel/NameLabelHolder"]
+unique_name_in_owner = true
+self_modulate = Color(0.00784314, 0.00784314, 0.00784314, 0.843137)
+layout_mode = 1
+offset_left = 339.99997
+offset_top = 40.0
+offset_right = 368.99997
+offset_bottom = 72.0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("10_pqx4l")
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="DialogicNode_NameLabel" type="Label" parent="Anchor/AnimationParent/Sizer/DialogTextPanel/NameLabelHolder/NameLabelPanel" node_paths=PackedStringArray("name_label_root")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_v8y64")
+theme_override_font_sizes/font_size = 15
+text = "S"
+script = ExtResource("11_828ch")
+name_label_root = NodePath("..")
+
+[node name="Control" type="Control" parent="Anchor/AnimationParent/Sizer"]
+clip_contents = true
+layout_mode = 1
+anchor_left = 0.492
+anchor_top = 0.661
+anchor_right = 0.492
+anchor_bottom = 0.661
+offset_left = -170.62804
+offset_top = -42.980003
+offset_right = 170.37196
+offset_bottom = 43.019997
+
+[node name="DialogicNode_ChoiceButton1" type="Button" parent="Anchor/AnimationParent/Sizer/Control" node_paths=PackedStringArray("text_node")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0234604
+anchor_top = 0.046511628
+anchor_right = 0.492669
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_deil1")
+theme_override_font_sizes/font_size = 6
+action_mode = 0
+flat = true
+alignment = 0
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("12_ndqe8")
+text_node = NodePath("RichTextLabel")
+metadata/_custom_type_script = "uid://ded7hsutepvps"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Anchor/AnimationParent/Sizer/Control/DialogicNode_ChoiceButton1"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 155.0
+offset_bottom = 24.0
+texture = ExtResource("13_j5o1i")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Anchor/AnimationParent/Sizer/Control/DialogicNode_ChoiceButton1"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.000004
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_deil1")
+theme_override_font_sizes/normal_font_size = 16
+text = "Glasses only protect from dust"
+fit_content = true
+scroll_active = false
+tab_size = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DialogicNode_ChoiceButton2" type="Button" parent="Anchor/AnimationParent/Sizer/Control" node_paths=PackedStringArray("text_node")]
+layout_mode = 0
+anchor_left = 0.513196
+anchor_top = 0.0348837
+anchor_right = 0.982405
+anchor_bottom = 0.406977
+theme_override_fonts/font = ExtResource("4_deil1")
+theme_override_font_sizes/font_size = 6
+action_mode = 0
+flat = true
+alignment = 0
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("12_ndqe8")
+text_node = NodePath("RichTextLabel")
+metadata/_custom_type_script = "uid://ded7hsutepvps"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Anchor/AnimationParent/Sizer/Control/DialogicNode_ChoiceButton2"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 155.0
+offset_bottom = 24.0
+texture = ExtResource("13_j5o1i")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Anchor/AnimationParent/Sizer/Control/DialogicNode_ChoiceButton2"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.000168
+offset_top = 1.9999962
+offset_right = -2.9998322
+offset_bottom = 1.9999733
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_deil1")
+text = "Glasses only protect from dust"
+fit_content = true
+scroll_active = false
+tab_size = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DialogicNode_ChoiceButton3" type="Button" parent="Anchor/AnimationParent/Sizer/Control" node_paths=PackedStringArray("text_node")]
+layout_mode = 0
+offset_left = 8.4999695
+offset_top = 43.0
+offset_right = 168.49997
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("4_deil1")
+theme_override_font_sizes/font_size = 6
+action_mode = 0
+flat = true
+alignment = 0
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("12_ndqe8")
+text_node = NodePath("RichTextLabel")
+metadata/_custom_type_script = "uid://ded7hsutepvps"
+
+[node name="TextureRect" type="TextureRect" parent="Anchor/AnimationParent/Sizer/Control/DialogicNode_ChoiceButton3"]
+layout_mode = 0
+offset_left = 4.4999695
+offset_top = 9.0
+offset_right = 154.49997
+offset_bottom = 29.0
+texture = ExtResource("13_j5o1i")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Anchor/AnimationParent/Sizer/Control/DialogicNode_ChoiceButton3"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.5000305
+offset_top = 7.0
+offset_right = -4.4999695
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_deil1")
+text = "Glasses only protect from dust"
+scroll_active = false
+tab_size = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DialogicNode_ChoiceButton4" type="Button" parent="Anchor/AnimationParent/Sizer/Control" node_paths=PackedStringArray("text_node")]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 50.0
+offset_right = 335.0
+offset_bottom = 92.0
+theme_override_fonts/font = ExtResource("4_deil1")
+theme_override_font_sizes/font_size = 6
+action_mode = 0
+flat = true
+alignment = 0
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("12_ndqe8")
+text_node = NodePath("RichTextLabel")
+metadata/_custom_type_script = "uid://ded7hsutepvps"
+
+[node name="TextureRect" type="TextureRect" parent="Anchor/AnimationParent/Sizer/Control/DialogicNode_ChoiceButton4"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 155.0
+offset_bottom = 24.0
+texture = ExtResource("13_j5o1i")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Anchor/AnimationParent/Sizer/Control/DialogicNode_ChoiceButton4"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.4999695
+offset_top = 3.0
+offset_right = -2.5000305
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_deil1")
+text = "what"
+fit_content = true
+scroll_active = false
+tab_size = 2
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c88ay1vfpj3bp"]
+
+[ext_resource type="Script" uid="uid://8ojjmsatj5dy" path="res://scenes/simulations/quiz/quiz_ppe/main_menu_quiz.gd" id="1_p8057"]
+[ext_resource type="Texture2D" uid="uid://x80nkapyi7xb" path="res://assets/backgrounds/PPE_scenarios2.png" id="2_5m7en"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wvoy3"]
+texture = ExtResource("2_5m7en")
+
+[node name="MainMenuQuiz" type="Node2D"]
+script = ExtResource("1_p8057")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0.505344, 0.505344, 0.505344, 1)
+offset_right = 359.0
+offset_bottom = 180.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wvoy3")

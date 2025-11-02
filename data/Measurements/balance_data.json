@@ -1,0 +1,8 @@
+{
+  "washers": {
+	"washersmall": { "mass_g": 2.35 },
+	"washermedium": { "mass_g": 3.10 },
+	"washerstacked": { "mass_g": 4.70 },
+	"weight": { "mass_g": 0.01 }
+  }
+}

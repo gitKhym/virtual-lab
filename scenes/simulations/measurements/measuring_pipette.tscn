@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://byxw3rddpjlxm"]
+
+[ext_resource type="Texture2D" uid="uid://dw5dfyaopnq1m" path="res://assets/gui/buttons/big_button.png" id="1_1s305"]
+[ext_resource type="Texture2D" uid="uid://csq6jxdmsw2" path="res://assets/simulations/measurement/pipette.png" id="1_hjuiw"]
+[ext_resource type="Texture2D" uid="uid://6cfbps6eh044" path="res://assets/gui/buttons/big_button_pressed.png" id="2_cssvd"]
+[ext_resource type="Script" uid="uid://ual1it80xgse" path="res://scenes/simulations/measurements/pipette.gd" id="2_ntncv"]
+[ext_resource type="Texture2D" uid="uid://cchvqyrwd1cxg" path="res://assets/gui/buttons/big_button_hover.png" id="3_5ch5l"]
+[ext_resource type="Shader" uid="uid://b42xb05iohff5" path="res://scenes/simulations/measurements/water_mask_shader.gdshader" id="3_6dxa7"]
+[ext_resource type="Texture2D" uid="uid://c1qldbasx2sf7" path="res://assets/simulations/measurement/pipette_water.png" id="3_386t4"]
+[ext_resource type="Texture2D" uid="uid://bsdgqbvsf3hx8" path="res://assets/simulations/measurement/bg.png" id="4_6dxa7"]
+[ext_resource type="Texture2D" uid="uid://bf0vscpwl5h3h" path="res://assets/gui/text_boxes/title_box.png" id="5_386t4"]
+[ext_resource type="FontFile" uid="uid://d35n2ag4cnf5o" path="res://font/fs-pixel-sans-unicode-regular.ttf" id="6_6dxa7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6dxa7"]
+shader = ExtResource("3_6dxa7")
+shader_parameter/fill_amount = 0.0
+shader_parameter/water_texture = ExtResource("3_386t4")
+
+[node name="MeasuringPipette" type="Node2D"]
+metadata/_edit_group_ = true
+
+[node name="CheckButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+offset_left = 194.60675
+offset_top = 148.43181
+offset_right = 294.60675
+offset_bottom = 172.43182
+texture_normal = ExtResource("1_1s305")
+texture_pressed = ExtResource("2_cssvd")
+texture_hover = ExtResource("3_5ch5l")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CheckButton"]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 100.0
+offset_bottom = 20.0
+theme_override_fonts/font = ExtResource("6_6dxa7")
+text = "Check"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Pipette" type="Sprite2D" parent="."]
+position = Vector2(179, 107)
+texture = ExtResource("1_hjuiw")
+script = ExtResource("2_ntncv")
+
+[node name="PipetteBulbButton" type="TextureButton" parent="Pipette"]
+unique_name_in_owner = true
+offset_left = -5.0
+offset_top = -66.0
+offset_right = 6.0
+offset_bottom = -52.0
+
+[node name="Water" type="TextureRect" parent="Pipette"]
+unique_name_in_owner = true
+z_index = -1
+material = SubResource("ShaderMaterial_6dxa7")
+offset_left = -4.0
+offset_top = -44.0
+offset_right = 5.0
+offset_bottom = 66.0
+texture = ExtResource("3_386t4")
+
+[node name="Bg" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(180, 90)
+scale = Vector2(1.011236, 1.0227273)
+texture = ExtResource("4_6dxa7")
+
+[node name="GoalLabelBox" type="Sprite2D" parent="."]
+position = Vector2(180, 22)
+texture = ExtResource("5_386t4")
+
+[node name="GoalLabel" type="Label" parent="GoalLabelBox"]
+unique_name_in_owner = true
+offset_left = -75.0
+offset_top = -9.0
+offset_right = 75.0
+offset_bottom = 9.0
+theme_override_fonts/font = ExtResource("6_6dxa7")
+text = "Measure: "
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

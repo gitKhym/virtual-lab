@@ -1,0 +1,11 @@
+join HarveryTheRoo left [animation="Slide In Left"]
+G’day again, legend! Welcome to the Basic Measurement Quiz
+These 10 questions will check not just what you remember, but how you think like a real lab technician.
+Some are quick picks, some need your own reasoning. No pressure — just give your best answer.
+Ready to show what you’ve learned?
+- Yep, let’s do it!
+	jump Question21/
+- Not yet
+	jump 
+Alrighty — let’s get stuck in!
+leave 

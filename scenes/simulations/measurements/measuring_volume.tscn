@@ -1,0 +1,124 @@
+[gd_scene load_steps=12 format=3 uid="uid://bnq1f5iwaqvwg"]
+
+[ext_resource type="Texture2D" uid="uid://j03iii42nwoc" path="res://assets/simulations/measurements/graduated_cylinder.png" id="1_4rr0w"]
+[ext_resource type="Script" uid="uid://cj4k4duuuglrn" path="res://scenes/simulations/measurements/graduated_cylinder.gd" id="2_tnr77"]
+[ext_resource type="Shader" uid="uid://b42xb05iohff5" path="res://scenes/simulations/measurements/water_mask_shader.gdshader" id="3_shader"]
+[ext_resource type="Texture2D" uid="uid://bm3km6wtmpch8" path="res://assets/simulations/measurements/water.png" id="4_3cr57"]
+[ext_resource type="Texture2D" uid="uid://dw5dfyaopnq1m" path="res://assets/gui/buttons/big_button.png" id="6_730vy"]
+[ext_resource type="Texture2D" uid="uid://6cfbps6eh044" path="res://assets/gui/buttons/big_button_pressed.png" id="7_4rr0w"]
+[ext_resource type="Texture2D" uid="uid://cchvqyrwd1cxg" path="res://assets/gui/buttons/big_button_hover.png" id="8_0pb2d"]
+[ext_resource type="FontFile" uid="uid://d35n2ag4cnf5o" path="res://font/fs-pixel-sans-unicode-regular.ttf" id="9_6jkw1"]
+[ext_resource type="Texture2D" uid="uid://bf0vscpwl5h3h" path="res://assets/gui/text_boxes/title_box.png" id="9_730vy"]
+[ext_resource type="Texture2D" uid="uid://bsdgqbvsf3hx8" path="res://assets/simulations/measurements/bg.png" id="10_4rr0w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_water"]
+shader = ExtResource("3_shader")
+shader_parameter/fill_amount = 0.0
+shader_parameter/water_texture = ExtResource("4_3cr57")
+
+[node name="MeasuringVolume" type="Node2D"]
+position = Vector2(96, 0)
+
+[node name="GraduatedCylinder" type="Sprite2D" parent="."]
+position = Vector2(26, 109)
+texture = ExtResource("1_4rr0w")
+script = ExtResource("2_tnr77")
+
+[node name="Water" type="TextureRect" parent="GraduatedCylinder"]
+z_index = -1
+material = SubResource("ShaderMaterial_water")
+clip_contents = true
+offset_left = -11.0
+offset_top = -41.0
+offset_right = 11.0
+offset_bottom = 60.0
+texture = ExtResource("4_3cr57")
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+offset_left = 54.0
+offset_top = 151.0
+offset_right = 154.0
+offset_bottom = 175.0
+texture_normal = ExtResource("6_730vy")
+texture_pressed = ExtResource("7_4rr0w")
+texture_hover = ExtResource("8_0pb2d")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CheckButton"]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 100.0
+offset_bottom = 20.0
+theme_override_fonts/font = ExtResource("9_6jkw1")
+text = "Check"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PourOutButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+offset_left = 54.0
+offset_top = 117.0
+offset_right = 154.0
+offset_bottom = 141.0
+texture_normal = ExtResource("6_730vy")
+texture_pressed = ExtResource("7_4rr0w")
+texture_hover = ExtResource("8_0pb2d")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="PourOutButton"]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 100.0
+offset_bottom = 20.0
+theme_override_fonts/font = ExtResource("9_6jkw1")
+text = "Pour Out"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PourButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+offset_left = 54.0
+offset_top = 90.0
+offset_right = 154.0
+offset_bottom = 114.0
+texture_normal = ExtResource("6_730vy")
+texture_pressed = ExtResource("7_4rr0w")
+texture_hover = ExtResource("8_0pb2d")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="PourButton"]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 100.0
+offset_bottom = 20.0
+theme_override_fonts/font = ExtResource("9_6jkw1")
+text = "Pour Water"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="GoalLabelBox" type="Sprite2D" parent="."]
+position = Vector2(85, 19)
+texture = ExtResource("9_730vy")
+
+[node name="GoalLabel" type="Label" parent="GoalLabelBox"]
+unique_name_in_owner = true
+offset_left = -75.0
+offset_top = -9.0
+offset_right = 75.0
+offset_bottom = 9.0
+theme_override_fonts/font = ExtResource("9_6jkw1")
+text = "Measure: "
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Bg" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(84, 90)
+scale = Vector2(1.011236, 1.0227273)
+texture = ExtResource("10_4rr0w")

@@ -1,0 +1,17 @@
+join HarveryTheRoo leftmost [animation="Slide In Left"]
+Why should safety goggles be used instead of regular glasses?
+- Goggles look more professional
+	Are you sure? Maybe give it another crack.
+	jump question2/
+- Glasses only protect from dust
+	Are you sure? Maybe give it another crack.
+	jump question2/
+- Goggles fully cover the eyes and sides from splashes
+	Too easy, mate, nailed it!
+	[wait time="0.5"]
+	Regular glasses leave gaps; goggles seal around the eyes to block chemical splashes and flying particles.
+	Strap in, it’s time for Question 3, champ.
+	jump question3/
+- Regular glasses are harder to clean
+	Are you sure? Maybe give it another crack.
+	jump question2/

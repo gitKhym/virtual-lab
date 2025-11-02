@@ -1,0 +1,361 @@
+[gd_scene load_steps=24 format=3 uid="uid://dda07e467jbcq"]
+
+[ext_resource type="Script" uid="uid://bo1pea4sm6f2" path="res://scenes/simulations/ppe_simulation/scripts/load_data.gd" id="1_a4dyk"]
+[ext_resource type="Texture2D" uid="uid://dr0o2sf7anoo" path="res://assets/simulations/ppe/clothings/hazmat_suit.png" id="1_yildi"]
+[ext_resource type="Texture2D" uid="uid://bup11w13oh71d" path="res://assets/simulations/ppe/clothings/lab_coat.png" id="2_3j1er"]
+[ext_resource type="Texture2D" uid="uid://cnf2npq26dywm" path="res://assets/backgrounds/PPE_LABv2.png" id="2_3yf2l"]
+[ext_resource type="Script" uid="uid://bmpt7pih6tp7v" path="res://scenes/simulations/ppe_simulation/phase_controller.gd" id="2_7ecp0"]
+[ext_resource type="Script" uid="uid://diswfh2txe0tr" path="res://scenes/simulations/ppe_simulation/scripts/ppe_selection.gd" id="3_luosq"]
+[ext_resource type="Texture2D" uid="uid://bi2f523xjt5bb" path="res://assets/simulations/ppe/clothings/apron.png" id="4_rd6jv"]
+[ext_resource type="Texture2D" uid="uid://bf0vscpwl5h3h" path="res://assets/gui/text_boxes/title_box.png" id="5_luosq"]
+[ext_resource type="FontFile" uid="uid://d35n2ag4cnf5o" path="res://font/fs-pixel-sans-unicode-regular.ttf" id="6_a4dyk"]
+[ext_resource type="Script" uid="uid://cx04y20cf0v8m" path="res://scenes/simulations/ppe_simulation/scripts/ui.gd" id="6_fey03"]
+[ext_resource type="Texture2D" uid="uid://ch3w76nhxpw2y" path="res://assets/gui/text_boxes/description_box.png" id="6_rd6jv"]
+[ext_resource type="Texture2D" uid="uid://xp4qyc8inj3t" path="res://assets/simulations/ppe/clothings/gogglesv2.png" id="8_r8uru"]
+[ext_resource type="Texture2D" uid="uid://cdbygcqnhsl68" path="res://assets/simulations/ppe/clothings/sunglassessv2.png" id="9_fpg8d"]
+[ext_resource type="Texture2D" uid="uid://b3s0uehuqmip0" path="res://assets/simulations/ppe/clothings/glassessv2.png" id="10_pryj2"]
+[ext_resource type="Texture2D" uid="uid://bw6em2j2vud71" path="res://assets/simulations/ppe/clothings/nitritegloves.png" id="11_bmfpy"]
+[ext_resource type="Texture2D" uid="uid://l6rqb5557sw" path="res://assets/simulations/ppe/clothings/woolgloves.png" id="12_wyquq"]
+[ext_resource type="Texture2D" uid="uid://d33h2yv74obr5" path="res://assets/simulations/ppe/clothings/nogloves.png" id="13_h3r7c"]
+[ext_resource type="Texture2D" uid="uid://inhrx8jel0yv" path="res://assets/simulations/ppe/clothings/sneakers.png" id="14_bmfpy"]
+[ext_resource type="Texture2D" uid="uid://c0b6yhu611d06" path="res://assets/simulations/ppe/clothings/sandals.png" id="15_wyquq"]
+[ext_resource type="Texture2D" uid="uid://c1dbecqqu31s8" path="res://assets/simulations/ppe/clothings/high heels.png" id="16_h3r7c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rd6jv"]
+size = Vector2(45, 45.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4dyk"]
+size = Vector2(48, 46.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3j1er"]
+size = Vector2(48.5, 45.5)
+
+[node name="PpeSimulation" type="Node2D"]
+script = ExtResource("1_a4dyk")
+
+[node name="background" type="Sprite2D" parent="."]
+modulate = Color(0.462291, 0.462291, 0.462291, 1)
+position = Vector2(179, 86)
+texture = ExtResource("2_3yf2l")
+
+[node name="Phases" type="Node2D" parent="." node_paths=PackedStringArray("phases")]
+unique_name_in_owner = true
+script = ExtResource("2_7ecp0")
+phases = [NodePath("Phase1"), NodePath("Phase2"), NodePath("Phase3"), NodePath("Phase4")]
+
+[node name="Phase1" type="Control" parent="Phases"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 5.0
+offset_bottom = 5.0
+
+[node name="Apron" type="Area2D" parent="Phases/Phase1"]
+position = Vector2(-32, -31)
+script = ExtResource("3_luosq")
+id = "apron"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase1/Apron"]
+position = Vector2(68.5, 130.25)
+shape = SubResource("RectangleShape2D_rd6jv")
+
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase1/Apron"]
+position = Vector2(66.5646, 124.5)
+scale = Vector2(1.58503, 1.59375)
+texture = ExtResource("4_rd6jv")
+
+[node name="Hazmat" type="Area2D" parent="Phases/Phase1"]
+position = Vector2(82, 94)
+script = ExtResource("3_luosq")
+id = "hazmat"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase1/Hazmat"]
+position = Vector2(6, 0.5)
+shape = SubResource("RectangleShape2D_a4dyk")
+
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase1/Hazmat"]
+position = Vector2(5, 1)
+scale = Vector2(1.25, 1.18182)
+texture = ExtResource("1_yildi")
+
+[node name="LabCoat" type="Area2D" parent="Phases/Phase1"]
+position = Vector2(-40, -34)
+script = ExtResource("3_luosq")
+id = "lab_coat"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase1/LabCoat"]
+position = Vector2(181.5, 124.5)
+shape = SubResource("RectangleShape2D_3j1er")
+
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase1/LabCoat"]
+position = Vector2(181, 125)
+scale = Vector2(1.32258, 1.5625)
+texture = ExtResource("2_3j1er")
+
+[node name="Phase2" type="Control" parent="Phases"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = -49.0
+offset_right = 6.0
+offset_bottom = -44.0
+
+[node name="SafetyGoggles" type="Area2D" parent="Phases/Phase2"]
+position = Vector2(-32, -31)
+script = ExtResource("3_luosq")
+id = "safety_goggles"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase2/SafetyGoggles"]
+position = Vector2(67, 169.625)
+shape = SubResource("RectangleShape2D_rd6jv")
+
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase2/SafetyGoggles"]
+position = Vector2(67, 170)
+scale = Vector2(0.279297, 0.333333)
+texture = ExtResource("8_r8uru")
+
+[node name="Sunglasses" type="Area2D" parent="Phases/Phase2"]
+position = Vector2(82, 94)
+script = ExtResource("3_luosq")
+id = "sunglasses"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase2/Sunglasses"]
+position = Vector2(4, 44.75)
+shape = SubResource("RectangleShape2D_a4dyk")
+
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase2/Sunglasses"]
+position = Vector2(7, 44)
+scale = Vector2(0.340909, 0.270149)
+texture = ExtResource("9_fpg8d")
+
+[node name="PrescriptionGlasses" type="Area2D" parent="Phases/Phase2"]
+position = Vector2(-40, -34)
+script = ExtResource("3_luosq")
+id = "prescription_glasses"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase2/PrescriptionGlasses"]
+position = Vector2(183, 172.75)
+shape = SubResource("RectangleShape2D_3j1er")
+
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase2/PrescriptionGlasses"]
+position = Vector2(184, 173)
+scale = Vector2(0.316176, 0.348485)
+texture = ExtResource("10_pryj2")
+
+[node name="Phase3" type="Control" parent="Phases"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 41.0
+offset_right = 9.0
+offset_bottom = 46.0
+
+[node name="NitrileGloves" type="Area2D" parent="Phases/Phase3"]
+position = Vector2(-32, -31)
+script = ExtResource("3_luosq")
+id = "nitrile_gloves"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase3/NitrileGloves"]
+position = Vector2(60.5, 85)
+shape = SubResource("RectangleShape2D_rd6jv")
+
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase3/NitrileGloves"]
+position = Vector2(62, 85)
+scale = Vector2(0.414236, 0.25)
+texture = ExtResource("11_bmfpy")
+
+[node name="WoolGloves" type="Area2D" parent="Phases/Phase3"]
+position = Vector2(82, 94)
+script = ExtResource("3_luosq")
+id = "wool_gloves"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase3/WoolGloves"]
+position = Vector2(3, -41)
+shape = SubResource("RectangleShape2D_a4dyk")
+
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase3/WoolGloves"]
+position = Vector2(1.35754, -39)
+scale = Vector2(0.477374, 0.245614)
+texture = ExtResource("12_wyquq")
+
+[node name="Rawdog" type="Area2D" parent="Phases/Phase3"]
+position = Vector2(-40, -34)
+script = ExtResource("3_luosq")
+id = "rawdog"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase3/Rawdog"]
+position = Vector2(183.75, 88)
+shape = SubResource("RectangleShape2D_3j1er")
+
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase3/Rawdog"]
+position = Vector2(181, 86)
+scale = Vector2(0.35093, 0.267442)
+texture = ExtResource("13_h3r7c")
+
+[node name="Phase4" type="Control" parent="Phases"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 24.0
+offset_top = -49.0
+offset_right = 29.0
+offset_bottom = -44.0
+
+[node name="Sneakers" type="Area2D" parent="Phases/Phase4"]
+position = Vector2(-32, -31)
+script = ExtResource("3_luosq")
+id = "sneakers"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase4/Sneakers"]
+position = Vector2(41, 170)
+shape = SubResource("RectangleShape2D_rd6jv")
+
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase4/Sneakers"]
+position = Vector2(42, 173)
+scale = Vector2(0.340354, 0.22807)
+texture = ExtResource("14_bmfpy")
+
+[node name="Sandals" type="Area2D" parent="Phases/Phase4"]
+position = Vector2(82, 94)
+script = ExtResource("3_luosq")
+id = "sandals"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase4/Sandals"]
+position = Vector2(-16, 45)
+shape = SubResource("RectangleShape2D_a4dyk")
+
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase4/Sandals"]
+position = Vector2(-16, 47)
+scale = Vector2(0.415323, 0.303571)
+texture = ExtResource("15_wyquq")
+
+[node name="HighHeels" type="Area2D" parent="Phases/Phase4"]
+position = Vector2(-40, -34)
+script = ExtResource("3_luosq")
+id = "high_heels"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phases/Phase4/HighHeels"]
+position = Vector2(164, 174)
+shape = SubResource("RectangleShape2D_3j1er")
+
+[node name="Sprite" type="Sprite2D" parent="Phases/Phase4/HighHeels"]
+position = Vector2(163, 177)
+scale = Vector2(0.30395, 0.263889)
+texture = ExtResource("16_h3r7c")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 6.0
+offset_bottom = 5.0
+script = ExtResource("6_fey03")
+
+[node name="TitleDescriptionContainer" type="VBoxContainer" parent="CanvasLayer/UI"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 195.0
+offset_top = 5.5
+offset_right = 345.0
+offset_bottom = 118.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Title" type="Control" parent="CanvasLayer/UI/TitleDescriptionContainer"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+
+[node name="TitleBox" type="Sprite2D" parent="CanvasLayer/UI/TitleDescriptionContainer/Title"]
+position = Vector2(75, 9)
+texture = ExtResource("5_luosq")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI/TitleDescriptionContainer/Title/TitleBox"]
+offset_left = -75.0
+offset_top = -9.0
+offset_right = 75.0
+offset_bottom = 9.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 3
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/UI/TitleDescriptionContainer/Title/TitleBox/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -6
+theme_override_constants/paragraph_spacing = 0
+theme_override_fonts/font = ExtResource("6_a4dyk")
+text = "Hover over an item"
+metadata/_edit_use_anchors_ = true
+
+[node name="Description" type="Control" parent="CanvasLayer/UI/TitleDescriptionContainer"]
+custom_minimum_size = Vector2(0, 91)
+layout_mode = 2
+
+[node name="DescriptionBox" type="Sprite2D" parent="CanvasLayer/UI/TitleDescriptionContainer/Description"]
+position = Vector2(75, 45)
+texture = ExtResource("6_rd6jv")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI/TitleDescriptionContainer/Description/DescriptionBox"]
+offset_left = -74.0
+offset_top = -45.0
+offset_right = 75.0
+offset_bottom = 46.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="DescriptionLabel" type="Label" parent="CanvasLayer/UI/TitleDescriptionContainer/Description/DescriptionBox/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 85)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -6
+theme_override_constants/paragraph_spacing = 0
+theme_override_fonts/font = ExtResource("6_a4dyk")
+text = "..."
+autowrap_mode = 2
+max_lines_visible = 10
+
+[connection signal="input_event" from="Phases/Phase1/Apron" to="Phases/Phase1/Apron" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase1/Apron" to="Phases/Phase1/Apron" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase1/Apron" to="Phases/Phase1/Apron" method="_on_mouse_exited"]
+[connection signal="input_event" from="Phases/Phase1/Hazmat" to="Phases/Phase1/Hazmat" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase1/Hazmat" to="Phases/Phase1/Hazmat" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase1/Hazmat" to="Phases/Phase1/Hazmat" method="_on_mouse_exited"]
+[connection signal="input_event" from="Phases/Phase1/LabCoat" to="Phases/Phase1/LabCoat" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase1/LabCoat" to="Phases/Phase1/LabCoat" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase1/LabCoat" to="Phases/Phase1/LabCoat" method="_on_mouse_exited"]
+[connection signal="input_event" from="Phases/Phase2/SafetyGoggles" to="Phases/Phase2/SafetyGoggles" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase2/SafetyGoggles" to="Phases/Phase2/SafetyGoggles" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase2/SafetyGoggles" to="Phases/Phase2/SafetyGoggles" method="_on_mouse_exited"]
+[connection signal="input_event" from="Phases/Phase2/Sunglasses" to="Phases/Phase2/Sunglasses" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase2/Sunglasses" to="Phases/Phase2/Sunglasses" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase2/Sunglasses" to="Phases/Phase2/Sunglasses" method="_on_mouse_exited"]
+[connection signal="input_event" from="Phases/Phase2/PrescriptionGlasses" to="Phases/Phase2/PrescriptionGlasses" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase2/PrescriptionGlasses" to="Phases/Phase2/PrescriptionGlasses" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase2/PrescriptionGlasses" to="Phases/Phase2/PrescriptionGlasses" method="_on_mouse_exited"]
+[connection signal="input_event" from="Phases/Phase3/NitrileGloves" to="Phases/Phase3/NitrileGloves" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase3/NitrileGloves" to="Phases/Phase3/NitrileGloves" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase3/NitrileGloves" to="Phases/Phase3/NitrileGloves" method="_on_mouse_exited"]
+[connection signal="input_event" from="Phases/Phase3/WoolGloves" to="Phases/Phase3/WoolGloves" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase3/WoolGloves" to="Phases/Phase3/WoolGloves" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase3/WoolGloves" to="Phases/Phase3/WoolGloves" method="_on_mouse_exited"]
+[connection signal="input_event" from="Phases/Phase3/Rawdog" to="Phases/Phase3/Rawdog" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase3/Rawdog" to="Phases/Phase3/Rawdog" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase3/Rawdog" to="Phases/Phase3/Rawdog" method="_on_mouse_exited"]
+[connection signal="input_event" from="Phases/Phase4/Sneakers" to="Phases/Phase4/Sneakers" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase4/Sneakers" to="Phases/Phase4/Sneakers" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase4/Sneakers" to="Phases/Phase4/Sneakers" method="_on_mouse_exited"]
+[connection signal="input_event" from="Phases/Phase4/Sandals" to="Phases/Phase4/Sandals" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase4/Sandals" to="Phases/Phase4/Sandals" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase4/Sandals" to="Phases/Phase4/Sandals" method="_on_mouse_exited"]
+[connection signal="input_event" from="Phases/Phase4/HighHeels" to="Phases/Phase4/HighHeels" method="_on_input_event"]
+[connection signal="mouse_entered" from="Phases/Phase4/HighHeels" to="Phases/Phase4/HighHeels" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Phases/Phase4/HighHeels" to="Phases/Phase4/HighHeels" method="_on_mouse_exited"]

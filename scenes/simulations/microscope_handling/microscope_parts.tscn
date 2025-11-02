@@ -1,0 +1,219 @@
+[gd_scene load_steps=19 format=3 uid="uid://7kvsbok0k88u"]
+
+[ext_resource type="Script" uid="uid://cqtblxfw7e5fv" path="res://scenes/simulations/microscope_handling/scripts/microscope_parts.gd" id="1_gq2wj"]
+[ext_resource type="FontFile" uid="uid://d35n2ag4cnf5o" path="res://font/fs-pixel-sans-unicode-regular.ttf" id="2_7ei0r"]
+[ext_resource type="Texture2D" uid="uid://b3sgougjw263y" path="res://assets/backgrounds/PPE_LAB_BG.png" id="2_una1a"]
+[ext_resource type="Texture2D" uid="uid://vye2ewpxupfq" path="res://assets/simulations/microscope/microscope_pieces/eyepiece_lens.png" id="3_it64u"]
+[ext_resource type="Texture2D" uid="uid://bnnphlcdht701" path="res://assets/simulations/microscope/microscope_pieces/arm.png" id="3_salvc"]
+[ext_resource type="Texture2D" uid="uid://bhu2ejt51lw70" path="res://assets/simulations/microscope/microscope_pieces/base.png" id="4_it64u"]
+[ext_resource type="Texture2D" uid="uid://dxr3w8jvp0i6y" path="res://assets/simulations/microscope/microscope_pieces/coarse_adjustment_knob.png" id="5_rgifg"]
+[ext_resource type="Texture2D" uid="uid://6ndl8jtufp7l" path="res://assets/simulations/microscope/microscope_pieces/illuminator.png" id="6_0vu5v"]
+[ext_resource type="Texture2D" uid="uid://danufeuj0mamw" path="res://assets/simulations/microscope/microscope_pieces/knob_area.png" id="7_02rsv"]
+[ext_resource type="Texture2D" uid="uid://be1xy1e6giqdo" path="res://assets/simulations/microscope/microscope_pieces/stage.png" id="8_qpsmc"]
+[ext_resource type="Texture2D" uid="uid://nybuwmg24npt" path="res://assets/simulations/microscope/microscope_pieces/tube.png" id="9_mcvqd"]
+[ext_resource type="Script" uid="uid://cx04y20cf0v8m" path="res://scenes/simulations/ppe_simulation/scripts/ui.gd" id="11_02rsv"]
+[ext_resource type="Texture2D" uid="uid://bf0vscpwl5h3h" path="res://dialogic/text_boxes/title_box.png" id="12_qpsmc"]
+[ext_resource type="Texture2D" uid="uid://ch3w76nhxpw2y" path="res://dialogic/text_boxes/description_box.png" id="13_mcvqd"]
+[ext_resource type="Texture2D" uid="uid://dw5dfyaopnq1m" path="res://assets/gui/buttons/big_button.png" id="14_15qst"]
+[ext_resource type="Texture2D" uid="uid://6cfbps6eh044" path="res://assets/gui/buttons/big_button_pressed.png" id="15_una1a"]
+[ext_resource type="Texture2D" uid="uid://cchvqyrwd1cxg" path="res://assets/gui/buttons/big_button_hover.png" id="16_r3rr4"]
+[ext_resource type="Script" uid="uid://b2c61m1c7a0kf" path="res://scenes/simulations/measurements/prepare_slide_button.gd" id="17_tjxgp"]
+
+[node name="MicroscopeParts" type="Node2D"]
+script = ExtResource("1_gq2wj")
+
+[node name="BG" type="Sprite2D" parent="."]
+self_modulate = Color(0.6025442, 0.6025442, 0.6025442, 0.19215687)
+position = Vector2(179.5, 91.5)
+scale = Vector2(0.99722224, 0.9722222)
+texture = ExtResource("2_una1a")
+
+[node name="Microscope" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-38, -32)
+
+[node name="EyepieceLens" type="Sprite2D" parent="Microscope"]
+position = Vector2(145, 47)
+texture = ExtResource("3_it64u")
+
+[node name="Area2D" type="Area2D" parent="Microscope/EyepieceLens"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Microscope/EyepieceLens/Area2D"]
+visible = false
+position = Vector2(1, 2)
+polygon = PackedVector2Array(-5, -9, -3, -9, -3, -8, -1, -8, -1, -6, 1, -6, 1, -4, 3, -4, 3, -2, 5, -2, 5, 0, 6, 0, 6, 2, 5, 2, 5, 3, 4, 3, 4, 4, 3, 4, 3, 5, 2, 5, 2, 4, 1, 4, 1, 3, 0, 3, 0, 2, -1, 2, -1, 1, -2, 1, -2, 0, -3, 0, -3, -1, -4, -1, -4, -2, -5, -2, -5, -3, -6, -3, -6, -4, -8, -4, -8, -6, -7, -6, -7, -7, -6, -7, -6, -8, -5, -8)
+
+[node name="Illuminator" type="Sprite2D" parent="Microscope" groups=["microscope_parts"]]
+position = Vector2(123, 133)
+texture = ExtResource("6_0vu5v")
+
+[node name="Area2D" type="Area2D" parent="Microscope/Illuminator"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Microscope/Illuminator/Area2D"]
+visible = false
+position = Vector2(0.5, 0)
+polygon = PackedVector2Array(-9.5, -8, -9.5, -7, -10.5, -7, -10.5, -1, -8.5, -1, -8.5, 1, -10.5, 1, -10.5, 8, 10.5, 8, 10.5, 1, 8.5, 1, 8.5, -1, 10.5, -1, 10.5, -7, 9.5, -7, 9.5, -8)
+
+[node name="KnobArea" type="Sprite2D" parent="Microscope" groups=["microscope_parts"]]
+position = Vector2(154, 124)
+texture = ExtResource("7_02rsv")
+
+[node name="Area2D" type="Area2D" parent="Microscope/KnobArea"]
+
+[node name="Stage" type="Sprite2D" parent="Microscope" groups=["microscope_parts"]]
+position = Vector2(118, 124)
+texture = ExtResource("8_qpsmc")
+
+[node name="Area2D" type="Area2D" parent="Microscope/Stage"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Microscope/Stage/Area2D"]
+visible = false
+polygon = PackedVector2Array(-20, -6, 18, -6, 18, 15, 23, 15, 23, -15, -20, -15, -20, -14, -21, -14, -21, -13, -22, -13, -22, -8, -21, -8, -21, -7, -20, -7)
+
+[node name="CoarseAdjustmentKnob" type="Sprite2D" parent="Microscope" groups=["microscope_parts"]]
+position = Vector2(154, 125)
+texture = ExtResource("5_rgifg")
+
+[node name="Area2D" type="Area2D" parent="Microscope/CoarseAdjustmentKnob"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Microscope/CoarseAdjustmentKnob/Area2D"]
+visible = false
+polygon = PackedVector2Array(-2, -9, 2, -9, 2, -8, 4, -8, 4, -7, 6, -7, 6, -6, 7, -6, 7, -4, 8, -4, 8, -2, 9, -2, 9, 2, 8, 2, 8, 4, 7, 4, 7, 6, 6, 6, 6, 7, 4, 7, 4, 8, 2, 8, 2, 9, -2, 9, -2, 8, -4, 8, -4, 7, -6, 7, -6, 6, -7, 6, -7, 4, -8, 4, -8, 2, -9, 2, -9, -2, -8, -2, -8, -4, -7, -4, -7, -6, -6, -6, -6, -7, -4, -7, -4, -8, -2, -8)
+
+[node name="Tube" type="Sprite2D" parent="Microscope" groups=["microscope_parts"]]
+position = Vector2(129, 65)
+texture = ExtResource("9_mcvqd")
+
+[node name="Area2D" type="Area2D" parent="Microscope/Tube"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Microscope/Tube/Area2D"]
+visible = false
+position = Vector2(0, 0.5)
+polygon = PackedVector2Array(-11, -7.5, -11, -6.5, -12, -6.5, -12, -5.5, -13, -5.5, -13, -4.5, -14, -4.5, -14, -3.5, -15, -3.5, -15, -2.5, -16, -2.5, -16, -1.5, -17, -1.5, -17, -0.5, -18, -0.5, -18, 0.5, -19, 0.5, -19, 9.5, -18, 9.5, -18, 10.5, -16, 10.5, -16, 11.5, -15, 11.5, -15, 12.5, -13, 12.5, -13, 13.5, -12, 13.5, -12, 14.5, -10, 14.5, -10, 15.5, -9, 15.5, -9, 16.5, -7, 16.5, -7, 17.5, -6, 17.5, -6, 18.5, -4, 18.5, -4, 19.5, -3, 19.5, -3, 20.5, -1, 20.5, -1, 21.5, 2, 21.5, 2, 17.5, 7, 17.5, 7, 0.5, 8, 0.5, 8, -0.5, 9, -0.5, 9, -1.5, 10, -1.5, 10, -2.5, 11, -2.5, 11, -3.5, 12, -3.5, 12, -4.5, 13, -4.5, 13, -5.5, 14, -5.5, 14, -6.5, 15, -6.5, 15, -7.5, 16, -7.5, 16, -8.5, 17, -8.5, 17, -9.5, 18, -9.5, 18, -10.5, 19, -10.5, 19, -12.5, 18, -12.5, 18, -13.5, 17, -13.5, 17, -14.5, 16, -14.5, 16, -15.5, 15, -15.5, 15, -16.5, 14, -16.5, 14, -17.5, 13, -17.5, 13, -18.5, 12, -18.5, 12, -19.5, 11, -19.5, 11, -20.5, 10, -20.5, 10, -21.5, 9, -21.5, 9, -20.5, 8, -20.5, 8, -19.5, 7, -19.5, 7, -18.5, 6, -18.5, 6, -17.5, 5, -17.5, 5, -16.5, 4, -16.5, 4, -15.5, 3, -15.5, 3, -14.5, 2, -14.5, 2, -13.5, 1, -13.5, 1, -12.5, 0, -12.5, 0, -11.5, -1, -11.5, -1, -10.5, -2, -10.5, -2, -9.5, -3, -9.5, -3, -8.5, -4, -8.5, -4, -7.5)
+
+[node name="Arm" type="Sprite2D" parent="Microscope" groups=["microscope_parts"]]
+position = Vector2(152, 89)
+texture = ExtResource("3_salvc")
+
+[node name="Area2D" type="Area2D" parent="Microscope/Arm"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Microscope/Arm/Area2D"]
+visible = false
+polygon = PackedVector2Array(-16, -19, -10, -19, -10, -18, -6, -18, -6, -17, -5, -17, -5, -16, -3, -16, -3, -15, -2, -15, -2, -14, -1, -14, -1, -13, 0, -13, 0, -12, 3, -12, 3, -11, 4, -11, 4, -10, 5, -10, 5, -9, 6, -9, 6, -8, 7, -8, 7, -7, 8, -7, 8, -6, 9, -6, 9, -5, 10, -5, 10, -4, 11, -4, 11, -3, 12, -3, 12, -2, 13, -2, 13, 0, 14, 0, 14, 3, 15, 3, 15, 9, 16, 9, 16, 20, -4, 20, -4, 3, -6, 3, -6, 2, -7, 2, -7, -1, -8, -1, -8, -2, -9, -2, -9, -3, -11, -3, -11, -4, -12, -4, -12, -5, -15, -5, -15, -6, -16, -6, -16, -19)
+
+[node name="Base" type="Sprite2D" parent="Microscope" groups=["microscope_parts"]]
+position = Vector2(129, 152)
+texture = ExtResource("4_it64u")
+
+[node name="Area2D" type="Area2D" parent="Microscope/Base"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Microscope/Base/Area2D"]
+visible = false
+position = Vector2(-0.0999985, 0.5)
+scale = Vector2(0.998512, 1)
+polygon = PackedVector2Array(-42, -1.5, -42, 6.5, -41, 6.5, -41, 7.5, -40, 7.5, -40, 8.5, -37, 8.5, -37, 11.5, -27, 11.5, -27, 8.5, 26, 8.5, 26, 11.5, 35, 11.5, 35, 8.5, 40, 8.5, 40, 7.5, 41, 7.5, 41, 6.5, 42, 6.5, 42, -6.5, 41, -6.5, 41, -7.5, 40, -7.5, 40, -11.5, 39, -11.5, -24, -11.5, -24, -10.5, -25, -10.5, -25, -9.5, -29, -9.5, -29, -8.5, -30, -8.5, -30, -7.5, -35, -7.5, -35, -6.5, -36, -6.5, -36, -5.5, -38, -5.5, -38, -4.5, -39, -4.5, -39, -3.5, -40, -3.5, -40, -2.5, -41, -2.5, -41, -1.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 6.0
+offset_bottom = 5.0
+script = ExtResource("11_02rsv")
+metadata/_edit_use_anchors_ = true
+
+[node name="NextButton" type="TextureButton" parent="CanvasLayer/UI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 254.0
+offset_top = 149.0
+offset_right = 354.0
+offset_bottom = 173.0
+texture_normal = ExtResource("14_15qst")
+texture_pressed = ExtResource("15_una1a")
+texture_hover = ExtResource("16_r3rr4")
+script = ExtResource("17_tjxgp")
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/NextButton"]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 100.0
+offset_bottom = 20.0
+theme_override_fonts/font = ExtResource("2_7ei0r")
+text = "Next!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TitleDescriptionContainer" type="VBoxContainer" parent="CanvasLayer/UI"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 195.0
+offset_top = 5.5
+offset_right = 345.0
+offset_bottom = 118.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Title" type="Control" parent="CanvasLayer/UI/TitleDescriptionContainer"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+
+[node name="TitleBox" type="Sprite2D" parent="CanvasLayer/UI/TitleDescriptionContainer/Title"]
+position = Vector2(75, 9)
+texture = ExtResource("12_qpsmc")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI/TitleDescriptionContainer/Title/TitleBox"]
+offset_left = -75.0
+offset_top = -9.0
+offset_right = 75.0
+offset_bottom = 9.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 3
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/UI/TitleDescriptionContainer/Title/TitleBox/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -6
+theme_override_constants/paragraph_spacing = 0
+theme_override_fonts/font = ExtResource("2_7ei0r")
+text = "Click on a part
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Description" type="Control" parent="CanvasLayer/UI/TitleDescriptionContainer"]
+custom_minimum_size = Vector2(0, 91)
+layout_mode = 2
+
+[node name="DescriptionBox" type="Sprite2D" parent="CanvasLayer/UI/TitleDescriptionContainer/Description"]
+position = Vector2(75, 45)
+texture = ExtResource("13_mcvqd")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI/TitleDescriptionContainer/Description/DescriptionBox"]
+offset_left = -74.0
+offset_top = -45.0
+offset_right = 75.0
+offset_bottom = 46.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="DescriptionLabel" type="Label" parent="CanvasLayer/UI/TitleDescriptionContainer/Description/DescriptionBox/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 85)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -6
+theme_override_constants/paragraph_spacing = 0
+theme_override_fonts/font = ExtResource("2_7ei0r")
+text = "..."
+autowrap_mode = 2
+max_lines_visible = 10
