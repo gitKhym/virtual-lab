@@ -103,10 +103,7 @@ func check_answer():
 func post_dialog_action():
 	if correct_answers >= ANSWERS_TO_WIN:
 		var dialog = Dialogic.start('accuracy_finished')
-		add_child(dialog)
-		
-		# CONNECT TO QUIZ HERE 
-		
+		SceneTransistion.change_scene("res://scenes/Quiz/Dialogic/Part3-Quiz/Quiz-IntroSceneBM.tscn")
 	else:
 		new_round()
 

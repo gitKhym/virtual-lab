@@ -31,7 +31,6 @@ directories/dch_directory={
 directories/dtl_directory={
 "Main_Menu2": "res://dialogic/dialogs/Main Menu/Main_Menu2.dtl",
 "MeasurementIntroduction": "res://dialogic/dialogs/measurement/MeasurementIntroduction.dtl",
-"Part1-Quiz/Quiz-Intro": "res://scenes/Quiz/Dialogic/Part1-Quiz/Quiz-Intro.dtl",
 "Part2-Quiz/Quiz-Intro": "res://scenes/Quiz/Dialogic/Part2-Quiz/Quiz-Intro.dtl",
 "Question1": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question1.dtl",
 "Question10": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question10.dtl",
@@ -63,7 +62,8 @@ directories/dtl_directory={
 "Question7": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question7.dtl",
 "Question8": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question8.dtl",
 "Question9": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question9.dtl",
-"Quiz-Intro": "res://scenes/Quiz/Quiz-Intro.dtl",
+"Quiz-Intro": "res://scenes/Quiz/Dialogic/Part1-Quiz/Quiz-Intro.dtl",
+"Quiz/Quiz-Intro": "res://scenes/Quiz/Quiz-Intro.dtl",
 "QuizCongrats-BasicMeasure": "res://scenes/Quiz/Dialogic/Part3-Quiz/QuizCongrats-BasicMeasure.dtl",
 "QuizCongratulations-Part1": "res://scenes/Quiz/Dialogic/Part1-Quiz/QuizCongratulations-Part1.dtl",
 "QuizCongratulations-Part2": "res://scenes/Quiz/Dialogic/Part2-Quiz/QuizCongratulations-Part2.dtl",

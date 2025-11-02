@@ -1,6 +1,11 @@
 [style name="QuizModeStyle"]
-HarveyTheKangaroo: What do you call results that keep landing close together?
-HarveyTheKangaroo: Type your answer below.
-[text_input]
-HarveyTheKangaroo: Yep, that’s precision for ya.
-jump Question26/
+What do you call results that keep landing close together?
+- Accurate
+	Not quite. Accurate means close to the true or correct value.
+	jump 
+- Precise
+	Right on, mate! Precise means the results are close to each other, even if they aren’t exactly correct.
+	jump Question26/
+- Reliable
+	Almost. Reliable means results are consistent over time.
+	jump 

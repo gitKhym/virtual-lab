@@ -1,6 +1,11 @@
 [style name="QuizModeStyle"]
-Reflection time. Which tool would you choose for preparing a critical medical solution and why?
-Type your answer below.
-[text_input text="" var="Reflection" allow_empty="true"]
-Good on ya. That’s been noted down.
-jump QuizCongrats-BasicMeasure/
+Which tool would you choose for preparing a critical medical solution and why? Hint\: which tool gives the highest accurate and precise result?
+- Pipette
+	Pipettes are designed for accuracy and precision.  Perfect for preparing medical or chemical solutions where exact amounts are vital.
+	[end_timeline]
+- Graduated cylinder
+	Almost. Graduated cylinders are more accurate than beakers, but not precise enough for critical medical solutions.
+	jump 
+- Balance Scale
+	Not quite, mate. A balance measures mass, not volume ! it’s not suitable for measuring liquid amounts accurately.
+	jump 

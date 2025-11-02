@@ -1,6 +1,11 @@
 [style name="QuizModeStyle"]
-HarveyTheKangaroo: Why do we tare a balance before weighing?
-HarveyTheKangaroo: Type your answer below.
-[text_input]
-HarveyTheKangaroo: You got it. Always zero out that container.
-jump Question25/
+Why do we tare a balance before weighing?
+- To make the balance more sensitive to smaller weights.
+	Not quite, but almost!
+	jump 
+- To protect the balance from damage
+	Taring doesn’t protect the balance
+	jump 
+- To make the balance  read zero before adding the item.
+	Correct! Taring resets the balance to zero, so the container’s weight is not included.
+	jump Question25/

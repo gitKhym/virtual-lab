@@ -1,11 +1,11 @@
 [style name="QuizModeStyle"]
-HarveyTheKangaroo: Which tool would give the best accuracy for measuring 3.6 millilitres?
+Which tool would give the best accuracy for measuring 3.6 millilitres?
 - beaker
-	HarveyTheKangaroo: Too rough for that small amount.
+	Too rough for that small amount.
 	jump 
 - cylinder
-	HarveyTheKangaroo: Closer, but not quite perfect.
+	Closer, but not quite perfect.
 	jump 
 - pipette
-	HarveyTheKangaroo: Spot on, that’s the precise one.
-	jump QuizCongrats-BasicMeasure/
+	Spot on, that’s the precise one.
+	jump Question29/

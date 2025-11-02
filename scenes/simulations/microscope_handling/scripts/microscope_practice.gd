@@ -82,7 +82,6 @@ func _on_objective_button_pressed(objective):
 func _on_coarse_knob_value_changed(value):
 	focus += value
 	focus = clamp(focus, 0.0, 1.0)
-	print(focus)
 	update_view()
 	
 func _on_next_pressed():
