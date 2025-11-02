@@ -19,22 +19,10 @@ var processing_answer: bool = false
 func _ready() -> void:
 	_load_conversion_data()
 	_start_game()
-	_hide_all_game_nodes()
 	var dlg = Dialogic.start(INTRO, "Conversion_introduction")
 	if dlg:
 		await dlg.tree_exited
-	SceneReset.play_transition('dissolve')
-	await get_tree().create_timer(1.0).timeout
-	_show_all_game_nodes()
 	
-
-func _hide_all_game_nodes() -> void:
-	if bg:
-		bg.visible = false
-
-func _show_all_game_nodes() -> void:
-	if bg:
-		bg.visible = true
 	
 func _load_conversion_data() -> void:
 	if not FileAccess.file_exists(CONVERSION_DATA_PATH):

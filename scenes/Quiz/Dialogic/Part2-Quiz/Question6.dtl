@@ -1,0 +1,14 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: Why should you never use the coarse adjustment on high power?
+- A. It is slower
+	HarveyTheKangaroo: That is not the issue!
+	jump 
+- B. It might break the slide
+	HarveyTheKangaroo: Correct!
+	jump Question7/
+- C. It is unnecessary
+	HarveyTheKangaroo: That is not quite right!
+	jump 
+- D. It makes the image too dark
+	HarveyTheKangaroo: That is not related!
+	jump

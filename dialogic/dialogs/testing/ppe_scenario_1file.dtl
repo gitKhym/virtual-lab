@@ -1,172 +1,115 @@
 label intro
 join HarveryTheRoo center [animation="Slide In Left"]
-Harvey\
-Looking like a true scientist right there, intern. Always remember; proper attire and full PPE are the first steps to safety.
-Harvey\
-Before we begin, a few ground rules. No eating or drinking in the lab like ever. Follow the protocol for all spills, even the small ones. It’s about protecting you and everyone else.
-Harvey\
-Handle every piece of equipment with the utmost care. Treat it like it’s the only one we have because sometimes, it is.
-Harvey\
-All lab rubbish, including gloves, must go into the hazardous waste bins. Don’t leave them lying around.
-Harvey\
-In case of any emergency, follow the instructor’s lead immediately. No exceptions.
-Harvey\
-Anyway, we’ll be starting shortly. Please take a moment to familiarize yourself with the lab, and do be careful.
+Harvey\: Looking like a true scientist right there, intern. Always remember; proper attire and full PPE are the first steps to safety.
+Harvey\: Before we begin, a few ground rules. No eating or drinking in the lab like ever. Follow the protocol for all spills, even the small ones. It’s about protecting you and everyone else.
+Harvey\: Handle every piece of equipment with the utmost care. Treat it like it’s the only one we have because sometimes, it is.
+Harvey\: All lab rubbish, including gloves, must go into the hazardous waste bins. Don’t leave them lying around.
+Harvey\: In case of any emergency, follow the instructor’s lead immediately. No exceptions.
+Harvey\: Anyway, we’ll be starting shortly. Please take a moment to familiarize yourself with the lab, and do be careful.
 leave HarveryTheRoo [animation="Slide Out Left"]
-Narrator\
 Across the room, you notice a fluffy figure perched quietly. Wait.. is that… a koala?
 join henry center [animation="Slide In Left"]
-???\
-Hey there, fellow intern. First day too, huh? Yeah, me too. A bit nervous… haha.
-Henry\
-Oh the name’s Henry. Nice to meet you. I hope we can be friends. Ah, hold on!!my chips!
-Player\
-Hi there----
-Henry\
-Sorry! Gotta run! Catch you later!
+???\: Hey there, fellow intern. First day too, huh? Yeah, me too. A bit nervous… haha.
+Henry\: Oh the name’s Henry. Nice to meet you. I hope we can be friends. Ah, hold on!!my chips!
+Player\: Hi there----
+Henry\: Sorry! Gotta run! Catch you later!
 leave henry [animation="Slide Out Left"]
-Narrator\
 With surprising speed, his little legs scrambling away, leaving you in silence.
-Narrator\
 But then your eyes drift back across the room. Something feels… off. The place is messy. Full of litter, tipped-over equipment, and the faint smell of a spill
-Player\
-Hmm. This room is quite a mess. There must be something I can do…
+Player\: Hmm. This room is quite a mess. There must be something I can do…
 [end_timeline]
 label scenario1 (scenario1)
-Narrator\
 The intern notices a small chemical spill near their workstation.
 label return1
-Player\
-Hmm, what’s this? Looks like a small chemical spill. It looks like paint. I better do something about it
+Player\: Hmm, what’s this? Looks like a small chemical spill. It looks like paint. I better do something about it
 - Wipe it quickly with tissues
-	Narrator\
-That seems dangerous.
-	Narrator\
-Tissues won’t neutralize chemicals and can spread  further contamination.
+	That seems dangerous.
+	Tissues won’t neutralize chemicals and can spread  further contamination.
 	jump return1
 - Inform supervisor & follow spill protocol
-	Player\
-um hello Mr Harvey! I got something here!
+	Player\: Um hello Mr Harvey! I got something here!
 	join HarveryTheRoo center [animation="Slide In Left"]
-	Harvey\
-Oh hey is everything good? *as he dashes towards you.
-	Player \
-There is a spill here, I think we should do something about it.
-	Harvey\
-Would you look at that! Thanks for notfying me. Hmm this little sign should do. 
+	Harvey\: Oh hey is everything good? *as he dashes towards you.
+	Player\: There is a spill here, I think we should do something about it.
+	Harvey\: Would you look at that! Thanks for notfying me. Hmm this little sign should do.
 	[signal arg="spill_correct"]
 	[end_timeline]
 - Do nothing
-	Narrator\
-That seems far off.  I feel like we should definitely not ignore it. 
+	That seems far off.  I feel like we should definitely not ignore it.
 	jump return1
 label scenario2 (scenario2)
-Narrator\
 Later, the intern sees a classmate about to throw used gloves into the recycling bin.
 join henry center [animation="Slide In Left"]
-Henry\
-Hmm that was a good excercise!
+Henry\: Hmm that was a good excercise!
 label return2
-Henry\
-Hmm I wonder whats for lunch? These gloves are annoying. It makes my hands clammy! *He is about to throw his gloves in the recycle bin
+Henry\: Hmm I wonder whats for lunch? These gloves are annoying. It makes my hands clammy! *He is about to throw his gloves in the recycle bin
 - Stop them and direct waste into biohazard bin
-	Player\
-Wait!! Henry!
-	Henry\
-Woah what! You just gave me a heart attack! 
-	Player\
-I am so sorry! But your gloves dosen't go over there. It should be in that red bin right over there.
-	Henry\
-Wait! Haha, my bad. I almost didnt notice it. Thanks for that! *He finally threw his gloves in the right bin.
+	Player\: Wait!! Henry!
+	Henry\: Woah what! You just gave me a heart attack!
+	Player\: I am so sorry! But your gloves dosen't go over there. It should be in that red bin right over there.
+	Henry\: Wait! Haha, my bad. I almost didnt notice it. Thanks for that! *He finally threw his gloves in the right bin.
 	[signal arg="waste_correct"]
 	[end_timeline]
 - Throw your gloves in the trash as well.
-	Narrator\
-Wait! I don think that is very wise my friend and spreads contamination even further.
+	Wait! I don think that is very wise my friend and spreads contamination even further.
 	jump return2
 - Ignore it.
-	Narrator\
-That seems far off.  I feel like we should definitely not ignore it. 
+	That seems far off.  I feel like we should definitely not ignore it.
+	jump return2
 label scenario3
-Narrator\
 There is large packet of Smiff's BBQ chips right next to your workstation
 join henry center [animation="Slide In Left"]
-Henry\
-Finally, Smiff's limited chips is in my hands! I waited for so long to finally try them
+henry\: Finally, Smiff's limited chips is in my hands! I waited for so long to finally try them
 label return3
-Narrator\
 You could see the gleam in his eyes as he is about to open the packet. But you know this is wrong.
 - Pretend not to see
-	Narrator\
-Really are we really ignore it?
+	Really are we really ignore it?
 	jump return3
 - Eat with them.
-	Narrator\
-Tempting I know, but food and labs don’t really mix. Remember cross-contamination is dangerous.
+	Tempting I know, but food and labs don’t really mix. Remember cross-contamination is dangerous.
 	jump return3
 - Politely remind them that eating is not allowed
-	Player \
-Uh Henry, I dont we should eat in the lab.
-	Henry\
-Uh what! but I am really eager to try them right now.
-	Player \
-I know its tempting but there are rules we must uphold to have a safe environment. You could always wait.
-	Henry\
-I suppose you are right. *He placed his packet of chips in his bag. 
-	Henry\
-Come on Henry! you can wait a few hours.
+	Player\: Uh Henry, I dont we should eat in the lab.
+	Henry\: What! but I am really eager to try them right now.
+	Player\: I know its tempting but there are rules we must uphold to have a safe environment. You could always wait.
+	Henry\: I suppose you are right. *He placed his packet of chips in his bag.
+	Henry\: Come on Henry! you can wait a few hours.
 	[signal arg="eat_correct"]
 	[end_timeline]
 
 label scenario4
-Narrator\
 Oh dear, look at Henry. He is carrying the microscope with one hand
 join henry center [animation="Slide In Left"]
-Henry\
 Haha look at me. I can carry this thing with one hand! I knew lifting those bamboos paid off!
 label return4
-Narrator\
-Sigh* At least he is happy but you know this is very improper in the lab. 
+Sigh* At least he is happy but you know this is very improper in the lab.
 - Try carrying it with one hand too
-	Narrator\
-Wait?! is this some weightlifting competition? One wrong move and the microscope could fall or break.
+	Wait?! is this some weightlifting competition? One wrong move and the microscope could fall or break.
 	jump return4
 - Ignore it
-	Narrator\
-Oh ho, you are doing this in purpose arent you?
+	Oh ho, you are doing this in purpose arent you?
 	jump return4
 - Tell them to use both hands, supporting the base
-	Player\
-Hey Henry. I am sure that you are very strong, but remember Microscopes are very delicate. You must hold them both at the base and at the bottom.
-	Player\
-Remember proper handling of equipment prevents damage to expensive equipment like the Microscope.
-	Henry\
-Expensive?! oh uh *He stabiliizes the microscope with both of his hands. Thanks for reminding me!
+	Player\: Hey Henry. I am sure that you are very strong, but remember Microscopes are very delicate. You must hold them both at the base and at the bottom.
+	Player\: Remember proper handling of equipment prevents damage to expensive equipment like the Microscope.
+	Henry\: Expensive?! oh uh *He stabiliizes the microscope with both of his hands. Thanks for reminding me!
 	[signal arg="handling_correct"]
 	[end_timeline]
 
 label scenario5
-Narrator\
 Suddenly, the fire alarm goes off
-Narrator\
 You can see at the teacher's desk, a large chemical reaction is overflowing!
 join HarveryTheRoo center [animation="Slide In Left"]
-Harvey\
-Woah I didnt expect that to happen! Class, Please calm yourselves!
+Harvey\: Woah I didnt expect that to happen! Class, Please calm yourselves!
 label return5
-Narrator\
 Ok, take a breather here. Remember to always follows rules and protocols in time like this
 - Grab your bag and run.
-	Narrator\
-Hold on buckeroo. I know you are fast but In emergencies, panic causes more danger.
+	Hold on buckeroo. I know you are fast but In emergencies, panic causes more danger.
 	jump return5
 - Follow evacuation protocol calmly
-	Harvey\
-Class, follow me and please do be carefull *as he opens the emegency door and gestures to students to leave one by one.
-	Harvey\
-Alright! 1, 2, 3... arlight look like everyone’s out safely. Excellent work everyone!
+	Harvey\: Class, follow me and please do be carefull *as he opens the emegency door and gestures to students to leave one by one.
+	Harvey\: Alright! 1, 2, 3... arlight look like everyone’s out safely. Excellent work everyone!
 	[end_timeline]
 - Stay inside and wait
-	Narrator\
-Yeah right, being a sitting duck can put you and others at risk!
+	Yeah right, being a sitting duck can put you and others at risk!
 	jump return5

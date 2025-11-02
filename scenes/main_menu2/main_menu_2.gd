@@ -45,21 +45,16 @@ func start_dialogic_with_dim(timeline_label: String):
 	
 	_busy = true
 	
-	# Store original background color
 	var original_modulate = background.modulate if background else Color.WHITE
-	
-	# Dim the background
 	if background:
 		var fade_tween = create_tween()
 		fade_tween.tween_property(background, "modulate", Color(0.5, 0.5, 0.5, 1.0), 0.5)
 	
-	# Start Dialogic
 	dlg = Dialogic.start("Main_Menu2", timeline_label)
 	if not Dialogic.signal_event.is_connected(_on_dialogic_signal):
 		Dialogic.signal_event.connect(_on_dialogic_signal)
 	if dlg:
 		await dlg.tree_exited
-	# Restore background color
 	if background:
 		var restore_tween = create_tween()
 		restore_tween.tween_property(background, "modulate", original_modulate, 0.5)
@@ -70,7 +65,7 @@ func start_dialogic_with_dim(timeline_label: String):
 func _on_dialogic_signal(argument: String):
 	if argument == "proceed" and next_scene_path != "":
 		SceneTransistion.change_scene(next_scene_path)
-		next_scene_path = ""  # Reset after use
+		next_scene_path = ""  
 
 func _on_ppe_input(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
@@ -85,20 +80,20 @@ func _on_ppe_input(_viewport, event, _shape_idx):
 func _on_microscope_input(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if SaveManager.is_mode_completed("completed_microscope"):
-			next_scene_path = "res://scenes/simulations/quiz/quiz_ppe/main_menu_quiz.tscn"
+			next_scene_path = "res://scenes/simulations/microscope_handling/microscope_parts.tscn"
 			start_dialogic_with_dim("microscope_introduction_start")
 		else:
-			next_scene_path = "res://scenes/simulations/quiz/quiz_ppe/main_menu_quiz.tscn"
+			next_scene_path = "res://scenes/simulations/microscope_handling/microscope_parts.tscn"
 			start_dialogic_with_dim("microscope_start")
 
 
 func _on_measurement_input(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if SaveManager.is_mode_completed("completed_measurement"):
-			next_scene_path = "res://scenes/simulations/quiz/quiz_ppe/main_menu_quiz.tscn"
+			next_scene_path = "res://scenes/simulations/measurements/part1/conversion_test.tscn"
 			start_dialogic_with_dim("measurement_introduction_completed")
 		else:
-			next_scene_path = "res://scenes/simulations/quiz/quiz_ppe/main_menu_quiz.tscn"
+			next_scene_path = "res://scenes/simulations/measurements/part1/conversion_test.tscn"
 			start_dialogic_with_dim("measurement_start")
 
 

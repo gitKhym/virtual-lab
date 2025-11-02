@@ -24,6 +24,7 @@ func _ready():
 
 	if check_button:
 		check_button.pressed.connect(_on_check_button_pressed)
+	Dialogic.start("measuring_volume_intro")
 
 func _process(delta):
 	if pour_button and pour_button.is_pressed():
@@ -57,6 +58,11 @@ func _on_check_button_pressed():
 		
 		if good_attempts_count > MAX_GOOD_ATTEMPTS:
 			dialog_name = "measuring_volume_finished"
+			var dlg = Dialogic.start(dialog_name)
+			if dlg:
+				await dlg.tree_exited
+			SceneTransistion.change_scene("res://scenes/simulations/measurements/accuracy.tscn")
+			return 
 		else:
 			dialog_name = "measuring_volume_good"
 			set_new_target()

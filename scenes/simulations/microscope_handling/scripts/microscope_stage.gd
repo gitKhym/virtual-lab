@@ -28,4 +28,4 @@ func _on_prepare_slide_button_pressed():
 	tween.tween_property(slide, "position:x", slide.position.x - 100, 1.0).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT) 
 
 func _on_next_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/simulations/microscope_handling/microscope_practice.tscn")
+	SceneTransistion.change_scene("res://scenes/simulations/microscope_handling/microscope_practice.tscn")

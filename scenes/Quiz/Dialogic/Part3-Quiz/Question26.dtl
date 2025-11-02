@@ -1,0 +1,6 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: You needed 42 millilitres but measured 45. What’s your percent error?
+HarveyTheKangaroo: Type your answer below.
+[text_input]
+HarveyTheKangaroo: Nice one, that’s about seven percent.
+jump Question27/

@@ -16,32 +16,25 @@ var snap_distance: float = 10.0
 var locked: bool = false
 var start_position: Vector2 = Vector2.ZERO
 
-# -------------------------------------------------------------
+
 func _ready() -> void:
 	_initialize_washers()
 	set_process_input(true)
 
-# -------------------------------------------------------------
 func _initialize_washers() -> void:
-	if washer_names.is_empty():
-		push_error("No washer names defined in washer_names array.")
-		return
-
-	# Get first washer
 	washer = get_node_or_null(washer_names[current_index])
 	if washer:
 		start_position = washer.global_position
 	else:
 		push_error("Missing washer node: %s" % washer_names[current_index])
 
-	# Hide all others
 	for i in range(1, washer_names.size()):
 		var next_node = get_node_or_null(washer_names[i])
 		if next_node:
 			next_node.visible = false
 			next_node.modulate.a = 0.0
 
-# -------------------------------------------------------------
+
 func _input(event: InputEvent) -> void:
 	if locked or not washer:
 		return
@@ -58,7 +51,7 @@ func _input(event: InputEvent) -> void:
 	elif event is InputEventMouseMotion and is_dragging:
 		washer.global_position = event.position + offset
 
-# -------------------------------------------------------------
+
 func _is_mouse_over_washer(mouse_pos: Vector2) -> bool:
 	if not washer or not washer.texture:
 		return false
@@ -68,7 +61,7 @@ func _is_mouse_over_washer(mouse_pos: Vector2) -> bool:
 	var rect := Rect2(top_left, tex_size)
 	return rect.has_point(mouse_pos)
 
-# -------------------------------------------------------------
+
 func _check_for_snap() -> void:
 	if not hitmarker or not washer:
 		return
@@ -77,7 +70,7 @@ func _check_for_snap() -> void:
 	if dist <= snap_distance:
 		_snap_to_hitmarker()
 
-# -------------------------------------------------------------
+
 func _snap_to_hitmarker() -> void:
 	if not washer or not hitmarker:
 		return
@@ -91,7 +84,7 @@ func _snap_to_hitmarker() -> void:
 
 	get_parent().call_deferred("_on_washer_dropped")
 
-# -------------------------------------------------------------
+
 func slide_off_and_disappear() -> void:
 	if not washer:
 		return
@@ -113,10 +106,10 @@ func slide_off_and_disappear() -> void:
 
 	await _spawn_next_washer()
 
-# -------------------------------------------------------------
+
 func _spawn_next_washer() -> void:
 	if current_index + 1 >= washer_names.size():
-		print("All washers completed.")
+		print("All  completed.")
 		return
 
 	current_index += 1
@@ -135,7 +128,6 @@ func _spawn_next_washer() -> void:
 
 	_switch_to_next_washer()
 
-# -------------------------------------------------------------
 func _switch_to_next_washer() -> void:
 	if not next_washer:
 		push_warning("No next washer to switch to.")
@@ -146,7 +138,6 @@ func _switch_to_next_washer() -> void:
 	start_position = washer.global_position
 	locked = false
 
-# -------------------------------------------------------------
 func reset_position() -> void:
 	if not washer:
 		return

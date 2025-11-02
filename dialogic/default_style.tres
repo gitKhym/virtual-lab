@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogicStyle" load_steps=13 format=3 uid="uid://my2qd6ddt161"]
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=15 format=3 uid="uid://my2qd6ddt161"]
 
 [ext_resource type="PackedScene" uid="uid://cqpb3ie51rwl5" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_Default/default_layout_base.tscn" id="1_6ct5k"]
 [ext_resource type="Script" uid="uid://cvi1vlluegdut" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_031iu"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="4_4lsy2"]
 [ext_resource type="PackedScene" uid="uid://cqfxgxpa34gmm" path="res://dialogic/VisualNovelTextbox/custom_visual_novel_textbox.tscn" id="4_78gf5"]
 [ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="7_a05uk"]
+[ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="7_t7dxl"]
 [ext_resource type="Script" uid="uid://c4jaqmghy6sgn" path="res://addons/dialogic/Resources/dialogic_style.gd" id="10_uitln"]
 
 [sub_resource type="Resource" id="Resource_qwa44"]
@@ -43,15 +44,20 @@ overrides = {
 script = ExtResource("1_031iu")
 scene = ExtResource("7_a05uk")
 
+[sub_resource type="Resource" id="Resource_d1dfh"]
+script = ExtResource("1_031iu")
+scene = ExtResource("7_t7dxl")
+
 [resource]
 script = ExtResource("10_uitln")
 name = "default_style"
-layer_list = Array[String](["10", "12", "13", "15"])
+layer_list = Array[String](["10", "12", "13", "15", "11"])
 layer_info = {
 "": SubResource("Resource_qwa44"),
 "10": SubResource("Resource_17pf1"),
+"11": SubResource("Resource_d1dfh"),
 "12": SubResource("Resource_gjx4u"),
 "13": SubResource("Resource_cw1ig"),
 "15": SubResource("Resource_fabki")
 }
-metadata/_latest_layer = "13"
+metadata/_latest_layer = "11"

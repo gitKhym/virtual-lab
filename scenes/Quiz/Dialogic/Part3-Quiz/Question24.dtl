@@ -1,0 +1,6 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: Why do we tare a balance before weighing?
+HarveyTheKangaroo: Type your answer below.
+[text_input]
+HarveyTheKangaroo: You got it. Always zero out that container.
+jump Question25/

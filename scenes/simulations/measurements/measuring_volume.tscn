@@ -1,17 +1,15 @@
 [gd_scene load_steps=12 format=3 uid="uid://bnq1f5iwaqvwg"]
 
+[ext_resource type="Texture2D" uid="uid://j03iii42nwoc" path="res://assets/simulations/measurements/graduated_cylinder.png" id="1_4rr0w"]
 [ext_resource type="Script" uid="uid://cj4k4duuuglrn" path="res://scenes/simulations/measurements/graduated_cylinder.gd" id="2_tnr77"]
 [ext_resource type="Shader" uid="uid://b42xb05iohff5" path="res://scenes/simulations/measurements/water_mask_shader.gdshader" id="3_shader"]
-[ext_resource type="Texture2D" uid="uid://bm3km6wtmpch8" path="res://assets/simulations/measurement/water.png" id="4_3cr57"]
+[ext_resource type="Texture2D" uid="uid://bm3km6wtmpch8" path="res://assets/simulations/measurements/water.png" id="4_3cr57"]
 [ext_resource type="Texture2D" uid="uid://dw5dfyaopnq1m" path="res://assets/gui/buttons/big_button.png" id="6_730vy"]
 [ext_resource type="Texture2D" uid="uid://6cfbps6eh044" path="res://assets/gui/buttons/big_button_pressed.png" id="7_4rr0w"]
 [ext_resource type="Texture2D" uid="uid://cchvqyrwd1cxg" path="res://assets/gui/buttons/big_button_hover.png" id="8_0pb2d"]
 [ext_resource type="FontFile" uid="uid://d35n2ag4cnf5o" path="res://font/fs-pixel-sans-unicode-regular.ttf" id="9_6jkw1"]
 [ext_resource type="Texture2D" uid="uid://bf0vscpwl5h3h" path="res://assets/gui/text_boxes/title_box.png" id="9_730vy"]
-[ext_resource type="Texture2D" uid="uid://bsdgqbvsf3hx8" path="res://assets/simulations/measurement/bg.png" id="10_4rr0w"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_730vy"]
-load_path = "res://.godot/imported/graduated_cylinder.png-f18d7d787883b92228a6cacf953782c4.ctex"
+[ext_resource type="Texture2D" uid="uid://bsdgqbvsf3hx8" path="res://assets/simulations/measurements/bg.png" id="10_4rr0w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_water"]
 shader = ExtResource("3_shader")
@@ -23,7 +21,7 @@ position = Vector2(96, 0)
 
 [node name="GraduatedCylinder" type="Sprite2D" parent="."]
 position = Vector2(26, 109)
-texture = SubResource("CompressedTexture2D_730vy")
+texture = ExtResource("1_4rr0w")
 script = ExtResource("2_tnr77")
 
 [node name="Water" type="TextureRect" parent="GraduatedCylinder"]

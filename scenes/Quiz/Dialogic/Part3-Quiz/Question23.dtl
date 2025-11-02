@@ -1,0 +1,6 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: If a washer measures 2.5 centimetres, what’s that in millimetres?
+HarveyTheKangaroo: Type your answer below.
+[text_input var="answer_q23"]
+HarveyTheKangaroo: Bang on, quick maths.
+jump Question24/

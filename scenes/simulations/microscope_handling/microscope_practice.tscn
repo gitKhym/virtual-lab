@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://r2c5r5pnaqj"]
+[gd_scene load_steps=23 format=3 uid="uid://r2c5r5pnaqj"]
 
 [ext_resource type="Script" uid="uid://dxj6tlxnx6an2" path="res://scenes/simulations/microscope_handling/scripts/microscope_practice.gd" id="1_abcde"]
+[ext_resource type="Texture2D" uid="uid://b3sgougjw263y" path="res://assets/backgrounds/PPE_LAB_BG.png" id="2_3hwnd"]
 [ext_resource type="Shader" uid="uid://bptoyrkxehbus" path="res://scenes/simulations/microscope_handling/blur_shader.gdshader" id="3_abcde"]
 [ext_resource type="Texture2D" uid="uid://dxr3w8jvp0i6y" path="res://assets/simulations/microscope/microscope_pieces/coarse_adjustment_knob.png" id="4_abcde"]
 [ext_resource type="Script" uid="uid://cp5e3ugdgtjca" path="res://scenes/simulations/microscope_handling/scripts/knob_control.gd" id="5_abcde"]
@@ -17,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cchvqyrwd1cxg" path="res://assets/gui/buttons/big_button_hover.png" id="16_5d3qx"]
 [ext_resource type="FontFile" uid="uid://d35n2ag4cnf5o" path="res://font/fs-pixel-sans-unicode-regular.ttf" id="18_bfvxr"]
 [ext_resource type="Texture2D" uid="uid://ci6vpgohheqli" path="res://assets/simulations/microscope/microscope_practice/40x_specimen.png" id="19_40x"]
+[ext_resource type="Texture2D" uid="uid://bxprm1sbdk3m" path="res://assets/simulations/measurements/downward.png" id="20_5d3qx"]
 [ext_resource type="Texture2D" uid="uid://ce0s3wrddyk31" path="res://assets/simulations/microscope/microscope_practice/90x_specimen.png" id="20_90x"]
 [ext_resource type="Texture2D" uid="uid://cmuepu7n4d3o6" path="res://assets/simulations/microscope/microscope_practice/130x_specimen.png" id="21_130x"]
 
@@ -26,6 +28,12 @@ shader_parameter/blur_amount = 0.0
 
 [node name="MicroscopePractice" type="Node2D"]
 script = ExtResource("1_abcde")
+
+[node name="BG" type="Sprite2D" parent="."]
+self_modulate = Color(0.98039216, 0.98039216, 0.98039216, 0.19215687)
+position = Vector2(179.5, 91.5)
+scale = Vector2(0.99722224, 0.9722222)
+texture = ExtResource("2_3hwnd")
 
 [node name="Sample40x" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_abcde")
@@ -182,7 +190,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="130xButton" type="TextureButton" parent="."]
-visible = false
 offset_left = 248.0
 offset_top = 102.0
 offset_right = 348.0
@@ -239,5 +246,29 @@ theme_override_fonts/font = ExtResource("18_bfvxr")
 text = "Next"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Quiz" type="TextureButton" parent="."]
+offset_left = 248.0
+offset_top = 145.0
+offset_right = 348.0
+offset_bottom = 169.0
+texture_normal = ExtResource("14_cd2sy")
+texture_pressed = ExtResource("15_bg5b6")
+texture_hover = ExtResource("16_5d3qx")
+
+[node name="Label" type="Label" parent="Quiz"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 2.0
+offset_right = 98.0
+offset_bottom = 20.0
+theme_override_fonts/font = ExtResource("18_bfvxr")
+text = "Quiz"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="arrow" type="Sprite2D" parent="."]
+position = Vector2(223, 72)
+texture = ExtResource("20_5d3qx")
 
 [connection signal="value_changed" from="CoarseAdjustmentKnob" to="." method="_on_coarse_knob_value_changed"]

@@ -16,8 +16,8 @@ func _gui_input(event):
 				is_dragging = false
 
 	if event is InputEventMouseMotion and is_dragging:
-		var drag_delta = get_global_mouse_position().y - drag_start_y
-		var rotation_amount = drag_delta * 0.35
+		var drag_delta = event.relative.y
+		var rotation_amount = drag_delta * 1.5
 		var value_change = drag_delta * 0.001
 
 		rotation_degrees += rotation_amount

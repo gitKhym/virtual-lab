@@ -24,36 +24,15 @@ var washer_data: Dictionary = {}
 var active_washer_name: String = "washer"
 var completed_conversions: Array[String] = []
 
-# -------------------------------------------------------------
 func _ready() -> void:
 	_validate_nodes()
 	_initialize_ui()
 	_connect_signals()
 	_load_washer_data()
-	_hide_all_game_nodes()
 	var dlg = Dialogic.start(INTRO, "Balance_introduction")
 	if dlg:
 		await dlg.tree_exited
-	SceneReset.play_transition('dissolve')
-	await get_tree().create_timer(1.0).timeout
-	_show_all_game_nodes()
 
-
-func _hide_all_game_nodes() -> void:
-	if UI:
-		UI.visible = false
-	if IC:
-		IC.visible = false
-	if S:
-		S.visible = false
-
-func _show_all_game_nodes() -> void:
-	if UI:
-		UI.visible = true
-	if IC:
-		IC.visible = true
-	if S:
-		S.visible = true
 		
 func _validate_nodes() -> void:
 	var critical_nodes := [scale_display, tare_button, instruction_label, feedback_label, item_container, washer, hitmarker, ui_handler]
@@ -75,7 +54,6 @@ func _connect_signals() -> void:
 	if tare_button and not tare_button.pressed.is_connected(_on_tare_pressed):
 		tare_button.pressed.connect(_on_tare_pressed)
 
-# -------------------------------------------------------------
 func _load_washer_data() -> void:
 	if not FileAccess.file_exists(BALANCE_DATA_PATH):
 		push_error("Data file not found: %s" % BALANCE_DATA_PATH)
@@ -93,13 +71,12 @@ func _load_washer_data() -> void:
 	
 	washer_data = json.washers
 
-# -------------------------------------------------------------
+
 func _on_tare_pressed() -> void:
 	if ui_handler and ui_handler.conversion_complete:
 		await _handle_completion_reset()
 		return
 
-	# Normal tare behavior
 	tare_applied = true
 	current_mass_g = 0.0
 	scale_display.text = "0.00 g"
@@ -123,7 +100,7 @@ func _handle_completion_reset() -> void:
 	feedback_label.text = ""
 	instruction_label.text = "Click the Tare button to reset the balance."
 
-# -------------------------------------------------------------
+
 func _on_washer_dropped() -> void:
 	await get_tree().process_frame
 	_update_active_washer_name()
@@ -155,7 +132,7 @@ func _get_current_mass() -> float:
 	push_warning("Item mass not found for: " + active_washer_name)
 	return 0.0
 
-# -------------------------------------------------------------
+
 func mark_conversion_complete(washer_name: String) -> void:
 	if not washer_name in completed_conversions:
 		completed_conversions.append(washer_name)
@@ -173,6 +150,7 @@ func _check_all_conversions_complete() -> void:
 	
 	if all_completed:
 		await get_tree().create_timer(1.0).timeout
+		SceneTransistion.change_scene("res://scenes/simulations/measurements/measuring_pipette.tscn")
 
 
 func reset_all_progress() -> void:

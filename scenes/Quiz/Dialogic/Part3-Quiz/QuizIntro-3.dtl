@@ -1,0 +1,11 @@
+join HarveyTheKangaroo left
+HarveyTheKangaroo: G’day again, legend! Welcome to Part 6\: Reflection Quiz.
+HarveyTheKangaroo: These 10 questions will check not just what you remember, but how you think like a real lab technician.
+HarveyTheKangaroo: Some are quick picks, some need your own reasoning. No pressure — just give your best answer.
+HarveyTheKangaroo: Ready to show what you’ve learned?
+- Yep, let’s do it!
+	jump Question21/
+- Not yet
+	jump 
+HarveyTheKangaroo: Alrighty — let’s get stuck in!
+leave HarveyTheKangaroo

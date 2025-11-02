@@ -1,0 +1,14 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: What’s the correct footwear for the lab, mate?
+- A. Open-toe sandals
+	HarveyTheKangaroo: Nah nah nah — we’re not at Bondi Beach! Try again.
+	jump 
+- B. Flip-flops
+	HarveyTheKangaroo: You’ll lose a toe, champ. Try again.
+	jump 
+- C. Closed-toe shoes (sneakers or lab-safe shoes)
+	HarveyTheKangaroo: Bang on! Safety first, hey!
+	jump Question32/
+- D. Barefoot
+	HarveyTheKangaroo: What are ya tryna do, join the wildlife? Try again.
+	jump

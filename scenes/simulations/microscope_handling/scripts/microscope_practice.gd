@@ -10,6 +10,8 @@ extends Node2D
 @onready var observe_sample_button = $ObserveSampleButton
 @onready var specimen_border = $SpecimenBorder
 @onready var next_button = $Next
+@onready var quiz_button = $Quiz
+@onready var arrow = $arrow
 
 var current_objective = ""
 var focus = 0.0
@@ -21,6 +23,7 @@ func _ready():
 	button90x.pressed.connect(_on_objective_button_pressed.bind("90x"))
 	button130x.pressed.connect(_on_objective_button_pressed.bind("130x"))
 	next_button.pressed.connect(_on_next_pressed)
+	quiz_button.pressed.connect(_on_quiz_pressed)
 
 	sample40x.visible = false
 	sample90x.visible = false
@@ -32,6 +35,8 @@ func _ready():
 	
 	specimen_border.visible = false
 	next_button.visible = false
+	quiz_button.visible = false
+	arrow.visible = false
 
 	update_view()
 	Dialogic.start("microscope_practice_start")
@@ -42,6 +47,7 @@ func _input(event):
 
 func _on_observe_sample_pressed():
 	observe_sample_button.visible = false
+	arrow.visible = true
 	sample40x.visible = true
 	specimen_border.visible = true
 	next_button.visible = true
@@ -96,9 +102,12 @@ func _on_next_pressed():
 				focus = 0
 				next_button.visible = false
 				Dialogic.start("microscope_practice_complete")
+				
 				button40x.visible = true
 				button90x.visible = true	
 				button130x.visible = true
+				quiz_button.visible = true
+				
 	else:
 		Dialogic.start("microscope_practice_focus_incorrect")
 
@@ -110,3 +119,6 @@ func update_view():
 	sample40x.material.set_shader_parameter("blur_amount", blur_amount)
 	sample90x.material.set_shader_parameter("blur_amount", blur_amount)
 	sample130x.material.set_shader_parameter("blur_amount", blur_amount)
+	
+func _on_quiz_pressed():
+	SceneTransistion.change_scene("res://scenes/Quiz/Dialogic/Part2-Quiz/Quiz-IntroSceneMS.tscn")

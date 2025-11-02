@@ -1,0 +1,14 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: Which part connects the eyepiece to the objectives on a microscope?
+- A. Arm
+	HarveyTheKangaroo: Give it another crack!
+	jump 
+- B. Tube
+	HarveyTheKangaroo: Spot on, legend!
+	jump Question2/
+- C. Base
+	HarveyTheKangaroo: Try again!
+	jump 
+- D. Stage
+	HarveyTheKangaroo: Nope, wrong one mate!
+	jump

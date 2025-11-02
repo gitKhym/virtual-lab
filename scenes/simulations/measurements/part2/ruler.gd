@@ -13,15 +13,15 @@ var hover := false
 var last_measurement := 0.0
 var can_drag := true 
 
-# -------------------------------------------------------------
+
 func _ready() -> void:
 	if ui_label:
-		ui_label.visible = true  # keep it visible always
+		ui_label.visible = true 
 		ui_label.text = "Measured: 0.00 cm"
 	else:
-		push_warning("⚠MeasurementLabel not found in UI.")
+		push_warning("MeasurementLabel not found in UI.")
 
-# -------------------------------------------------------------
+
 func _process(_delta: float) -> void:
 	if not asset.texture or not ui_label:
 		return

@@ -1,0 +1,6 @@
+[style name="QuizModeStyle"]
+Reflection time. Which tool would you choose for preparing a critical medical solution and why?
+Type your answer below.
+[text_input text="" var="Reflection" allow_empty="true"]
+Good on ya. That’s been noted down.
+jump QuizCongrats-BasicMeasure/

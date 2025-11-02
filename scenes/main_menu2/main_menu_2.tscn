@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3vv6ludj1ewf"]
+[gd_scene load_steps=7 format=3 uid="uid://c3vv6ludj1ewf"]
 
 [ext_resource type="Script" uid="uid://cvtiks52pu6qj" path="res://scenes/main_menu2/main_menu_2.gd" id="1_7aj3u"]
 [ext_resource type="Texture2D" uid="uid://ckq3717nsrphh" path="res://assets/main_menu/Checklist_mainmenu.png" id="1_ujxi7"]
+[ext_resource type="Texture2D" uid="uid://8kbt7dw4cqsp" path="res://assets/backgrounds/Quiz-2_Background.png" id="2_5wtvm"]
 [ext_resource type="Script" uid="uid://bf8etdh6agjf" path="res://scenes/main_menu2/hover.gd" id="3_uuxmy"]
 [ext_resource type="Texture2D" uid="uid://gimo2cjncn1e" path="res://assets/main_menu/Confirm.png" id="4_uuxmy"]
 
@@ -10,6 +11,11 @@ size = Vector2(134.297, 28.3929)
 
 [node name="MainMenu2" type="Node2D"]
 script = ExtResource("1_7aj3u")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(179.99997, 90.62498)
+scale = Vector2(0.23307288, 0.17456058)
+texture = ExtResource("2_5wtvm")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(178.5, 92)

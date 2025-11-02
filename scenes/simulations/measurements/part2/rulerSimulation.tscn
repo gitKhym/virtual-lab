@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://brgooc1nrrc3n" path="res://assets/simulations/measurements/ruler.png" id="3_jwtf2"]
 [ext_resource type="FontFile" uid="uid://d35n2ag4cnf5o" path="res://font/fs-pixel-sans-unicode-regular.ttf" id="3_u3xh1"]
 [ext_resource type="Texture2D" uid="uid://dw5dfyaopnq1m" path="res://assets/gui/buttons/big_button.png" id="4_xa3xp"]
-[ext_resource type="Texture2D" uid="uid://ch3w76nhxpw2y" path="res://assets/gui/text_boxes/description_box.png" id="5_t3avr"]
+[ext_resource type="Texture2D" uid="uid://ch3w76nhxpw2y" path="res://dialogic/text_boxes/description_box.png" id="5_t3avr"]
 [ext_resource type="FontFile" uid="uid://drb66rshqh6ft" path="res://font/VCR_OSD_MONO_1.001.ttf" id="6_6xuku"]
 [ext_resource type="Texture2D" uid="uid://bxprm1sbdk3m" path="res://assets/simulations/measurements/downward.png" id="6_b1hgu"]
 [ext_resource type="Texture2D" uid="uid://6cfbps6eh044" path="res://assets/gui/buttons/big_button_pressed.png" id="7_0i7d1"]

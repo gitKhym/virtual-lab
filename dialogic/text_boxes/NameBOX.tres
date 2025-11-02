@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://df010ayftb50j"]
+
+[ext_resource type="Texture2D" uid="uid://be3hn4on1ist6" path="res://Assets/text_boxes/name_title-removebg-preview.png" id="1_fwshc"]
+
+[resource]
+content_margin_left = 10.0
+content_margin_top = 13.0
+content_margin_right = 10.0
+content_margin_bottom = 15.0
+texture = ExtResource("1_fwshc")
