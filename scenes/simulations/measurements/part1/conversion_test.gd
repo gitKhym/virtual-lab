@@ -1,7 +1,7 @@
 extends Node2D
 const CONVERSION_DATA_PATH: String = "res://data/Measurements/conversion_data.json"
 const INTRO: String = "res://dialogic/dialogs/measurement/MeasurementIntroduction.dtl"
-# --- Node References ---
+
 @onready var bg: CanvasLayer = $UI
 @onready var question_label: Label = $UI/uibackground/questionlabel
 @onready var feedback_label: Label = $UI/uibackground/feedbacklabel
@@ -9,13 +9,12 @@ const INTRO: String = "res://dialogic/dialogs/measurement/MeasurementIntroductio
 @onready var choice_boxes: Array[Sprite2D] = [
 	$UI/choicebox, $UI/choicebox2, $UI/choicebox3
 ]
-# --- Game State ---
 var questions: Array = []
 var current_index: int = 0
 var current_question: Dictionary = {}
 var processing_answer: bool = false
 
-# -------------------------------------------------------------
+
 func _ready() -> void:
 	_load_conversion_data()
 	_start_game()
@@ -92,7 +91,7 @@ func _next_question() -> void:
 	await get_tree().create_timer(0.5).timeout
 	_show_question(current_index)
 
-# -------------------------------------------------------------
+
 func _process(_delta: float) -> void:
 	if processing_answer:
 		return

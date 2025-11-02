@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dqpotu2srcdlc" path="res://scenes/simulations/measurements/part1/conversion_test.gd" id="1_6e8ej"]
 [ext_resource type="Texture2D" uid="uid://c8pngyjxmjn55" path="res://assets/backgrounds/bg.png" id="2_yqxe8"]
-[ext_resource type="Texture2D" uid="uid://ch3w76nhxpw2y" path="res://assets/gui/text_boxes/description_box.png" id="3_ffc38"]
+[ext_resource type="Texture2D" uid="uid://ch3w76nhxpw2y" path="res://dialogic/text_boxes/description_box.png" id="3_ffc38"]
 [ext_resource type="Texture2D" uid="uid://6cfbps6eh044" path="res://assets/gui/buttons/big_button_pressed.png" id="4_4qdkk"]
 [ext_resource type="FontFile" uid="uid://d35n2ag4cnf5o" path="res://font/fs-pixel-sans-unicode-regular.ttf" id="4_yqxe8"]
 [ext_resource type="Texture2D" uid="uid://cfbwib5c1gne0" path="res://assets/buttons/ScaleButton.png" id="5_y3jfp"]
