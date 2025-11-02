@@ -17,6 +17,10 @@ scene = ExtResource("1_6ct5k")
 script = ExtResource("1_031iu")
 scene = ExtResource("2_xc323")
 
+[sub_resource type="Resource" id="Resource_d1dfh"]
+script = ExtResource("1_031iu")
+scene = ExtResource("7_t7dxl")
+
 [sub_resource type="Resource" id="Resource_gjx4u"]
 script = ExtResource("1_031iu")
 scene = ExtResource("4_4lsy2")
@@ -43,10 +47,6 @@ overrides = {
 [sub_resource type="Resource" id="Resource_fabki"]
 script = ExtResource("1_031iu")
 scene = ExtResource("7_a05uk")
-
-[sub_resource type="Resource" id="Resource_d1dfh"]
-script = ExtResource("1_031iu")
-scene = ExtResource("7_t7dxl")
 
 [resource]
 script = ExtResource("10_uitln")
