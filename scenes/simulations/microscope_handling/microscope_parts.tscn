@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://7kvsbok0k88u"]
+[gd_scene load_steps=19 format=3 uid="uid://7kvsbok0k88u"]
 
 [ext_resource type="Script" uid="uid://cqtblxfw7e5fv" path="res://scenes/simulations/microscope_handling/scripts/microscope_parts.gd" id="1_gq2wj"]
 [ext_resource type="FontFile" uid="uid://d35n2ag4cnf5o" path="res://font/fs-pixel-sans-unicode-regular.ttf" id="2_7ei0r"]
+[ext_resource type="Texture2D" uid="uid://b3sgougjw263y" path="res://assets/backgrounds/PPE_LAB_BG.png" id="2_una1a"]
 [ext_resource type="Texture2D" uid="uid://vye2ewpxupfq" path="res://assets/simulations/microscope/microscope_pieces/eyepiece_lens.png" id="3_it64u"]
 [ext_resource type="Texture2D" uid="uid://bnnphlcdht701" path="res://assets/simulations/microscope/microscope_pieces/arm.png" id="3_salvc"]
 [ext_resource type="Texture2D" uid="uid://bhu2ejt51lw70" path="res://assets/simulations/microscope/microscope_pieces/base.png" id="4_it64u"]
@@ -11,8 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://be1xy1e6giqdo" path="res://assets/simulations/microscope/microscope_pieces/stage.png" id="8_qpsmc"]
 [ext_resource type="Texture2D" uid="uid://nybuwmg24npt" path="res://assets/simulations/microscope/microscope_pieces/tube.png" id="9_mcvqd"]
 [ext_resource type="Script" uid="uid://cx04y20cf0v8m" path="res://scenes/simulations/ppe_simulation/scripts/ui.gd" id="11_02rsv"]
-[ext_resource type="Texture2D" uid="uid://bf0vscpwl5h3h" path="res://assets/gui/text_boxes/title_box.png" id="12_qpsmc"]
-[ext_resource type="Texture2D" uid="uid://ch3w76nhxpw2y" path="res://assets/gui/text_boxes/description_box.png" id="13_mcvqd"]
+[ext_resource type="Texture2D" uid="uid://bf0vscpwl5h3h" path="res://dialogic/text_boxes/title_box.png" id="12_qpsmc"]
+[ext_resource type="Texture2D" uid="uid://ch3w76nhxpw2y" path="res://dialogic/text_boxes/description_box.png" id="13_mcvqd"]
 [ext_resource type="Texture2D" uid="uid://dw5dfyaopnq1m" path="res://assets/gui/buttons/big_button.png" id="14_15qst"]
 [ext_resource type="Texture2D" uid="uid://6cfbps6eh044" path="res://assets/gui/buttons/big_button_pressed.png" id="15_una1a"]
 [ext_resource type="Texture2D" uid="uid://cchvqyrwd1cxg" path="res://assets/gui/buttons/big_button_hover.png" id="16_r3rr4"]
@@ -20,6 +21,12 @@
 
 [node name="MicroscopeParts" type="Node2D"]
 script = ExtResource("1_gq2wj")
+
+[node name="BG" type="Sprite2D" parent="."]
+self_modulate = Color(0.6025442, 0.6025442, 0.6025442, 0.19215687)
+position = Vector2(179.5, 91.5)
+scale = Vector2(0.99722224, 0.9722222)
+texture = ExtResource("2_una1a")
 
 [node name="Microscope" type="Node2D" parent="."]
 unique_name_in_owner = true

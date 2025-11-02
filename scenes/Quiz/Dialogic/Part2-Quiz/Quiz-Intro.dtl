@@ -1,0 +1,11 @@
+join HarveryTheRoo left [animation="Slide In Right"]
+G’day, mate!  Welcome to the Microscope Quiz your chance to show what you know about microscopes.
+There are 10 quick questions ahead, a mix of multiple-choice and true-or-false.
+Whether you aced it or picked up a few new tips along the way, you’re now one step closer to mastering your lab skills.
+Ready to give it a crack?
+- Yes!
+	jump Question1/
+- No
+	jump 
+Let’s jump in!
+leave 

@@ -1,0 +1,14 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: What’s the safest way to carry a microscope?
+- A. By the eyepiece
+	HarveyTheKangaroo: That’ll end in tears. Try again.
+	jump 
+- B. Holding the base only
+	HarveyTheKangaroo: Getting warmer — but still no. Try again.
+	jump 
+- C. Holding the arm and supporting the base with both hands
+	HarveyTheKangaroo: Textbook perfect! Good stuff!
+	jump Question37/
+- D. By the stage clip
+	HarveyTheKangaroo: Brother no. Try again.
+	jump

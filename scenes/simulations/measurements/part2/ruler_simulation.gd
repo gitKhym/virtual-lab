@@ -21,43 +21,23 @@ const CONVERSION_TOLERANCE: float = 0.001
 @onready var confirm_button: TextureButton = $UI/Confirm
 @onready var meters_input: LineEdit = $UI/Meters/MetersLabel
 @onready var mm_input: LineEdit = $UI/Millimetres/MillimetresLabel
-# --- Game state ---
+
 var washer_order: Array[String] = ["washersmall", "washermedium", "washerlarge"]
 var current_index: int = 0
 var locked: bool = false
 var washer_data: Dictionary = {}
 var measured_values: Dictionary = {}
 var ruler_start_pos: Vector2 = Vector2.ZERO
-# -------------------------------------------------------------
+
 func _ready() -> void:
 	_validate_critical_nodes()
 	_initialize_ui()
 	_initialize_washers_visibility()
 	_connect_signals()
 	_load_washer_data()
-	_hide_all_game_nodes()
 	var dlg = Dialogic.start(INTRO, "Ruler_Introduction")
 	if dlg:
 		await dlg.tree_exited
-	SceneReset.play_transition('dissolve')
-	await get_tree().create_timer(1.0).timeout
-	_show_all_game_nodes()
-
-func _hide_all_game_nodes() -> void:
-	if UI:
-		UI.visible = false
-	if WC:
-		WC.visible = false
-	if R:
-		R.visible = false
-
-func _show_all_game_nodes() -> void:
-	if UI:
-		UI.visible = true
-	if WC:
-		WC.visible = true
-	if R:
-		R.visible = true
 	
 func _validate_critical_nodes() -> void:
 	var critical_nodes := [washer_marker, down_arrow, ruler_zero, feedback, instruction, ruler, confirm_button]
@@ -88,7 +68,7 @@ func _connect_signals() -> void:
 	if confirm_button and not confirm_button.pressed.is_connected(_on_confirm_pressed):
 		confirm_button.pressed.connect(_on_confirm_pressed)
 
-# -------------------------------------------------------------
+
 func _process(_delta: float) -> void:
 	if locked or not _are_marker_nodes_valid():
 		return
@@ -99,7 +79,7 @@ func _process(_delta: float) -> void:
 func _are_marker_nodes_valid() -> bool:
 	return washer_marker and ruler_zero and is_instance_valid(washer_marker) and is_instance_valid(ruler_zero)
 
-# -------------------------------------------------------------
+
 func snap_to_marker() -> void:
 	locked = true
 	
@@ -156,7 +136,7 @@ func _show_conversion_ui() -> void:
 	if cm_label:
 		cm_label.text = "Measured: %.1f cm" % measured_values.size_cm
 
-# -------------------------------------------------------------
+
 func _on_confirm_pressed() -> void:
 	if not _validate_inputs():
 		feedback.text = "Please enter valid numbers in both boxes."
@@ -189,7 +169,7 @@ func _handle_conversion_result(m_correct: bool, mm_correct: bool) -> void:
 	else:
 		feedback.text = "Both conversion values are incorrect.\nHint: For CM to MM: ×10 (decimal right 1)\nFor CM to M: ÷100 (decimal left 2)"
 
-# -------------------------------------------------------------
+
 func _advance_to_next_washer() -> void:
 	if current_index + 1 >= washer_order.size():
 		feedback.text = "All washers completed!"
@@ -268,7 +248,7 @@ func _reset_ui_state() -> void:
 	meters_input.text = ""
 	mm_input.text = ""
 
-# -------------------------------------------------------------
+
 func _load_washer_data() -> void:
 	if not FileAccess.file_exists(WASHER_DATA_PATH):
 		push_error("Washer data file not found: %s" % WASHER_DATA_PATH)

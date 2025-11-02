@@ -1,0 +1,14 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: There’s been a spill. What do ya do first?
+- A. Leave it and continue working
+	HarveyTheKangaroo: Bold. Very wrong. Try again.
+	jump 
+- B. Clean it with bare hands
+	HarveyTheKangaroo: Mate what. No. Try again.
+	jump 
+- C. Inform others and follow spill protocol
+	HarveyTheKangaroo: You’re on fire today! (Not literally, thankfully.)
+	jump Question39/
+- D. Ignore it if it’s small
+	HarveyTheKangaroo: Small spill, big drama. Try again.
+	jump

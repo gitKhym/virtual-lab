@@ -1,0 +1,14 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: What is the function of the condenser lens?
+- A. Magnifies the image
+	HarveyTheKangaroo: That is what the objective does!
+	jump 
+- B. Focuses light onto specimen
+	HarveyTheKangaroo: Correct!
+	jump Question6/
+- C. Moves stage
+	HarveyTheKangaroo: Not that one!
+	jump 
+- D. Supports microscope
+	HarveyTheKangaroo: That is the base!
+	jump

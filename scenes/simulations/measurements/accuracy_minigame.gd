@@ -37,6 +37,10 @@ func _ready():
 	new_round()
 
 func new_round():
+	for n in get_children():
+		if n is Sprite2D and n.texture.resource_path == "res://assets/simulations/measurement/pin.png":
+			n.queue_free()
+			
 	current_accuracy = ACCURACY.values()[randi() % 2]
 	current_precision = PRECISION.values()[randi() % 2]
 
@@ -90,16 +94,16 @@ func check_answer():
 		correct_answers += 1
 		var dialog = Dialogic.start('accuracy_correct')
 		add_child(dialog)
-		dialog.connect("timeline_ended", Callable(self, "post_dialog_action"))
+		dialog.connect("tree_exited", Callable(self, "post_dialog_action"))
 	else:
 		var dialog = Dialogic.start('accuracy_incorrect')
 		add_child(dialog)
-		dialog.connect("timeline_ended", Callable(self, "post_dialog_action"))
+		dialog.connect("tree_exited", Callable(self, "post_dialog_action"))
 
 func post_dialog_action():
 	if correct_answers >= ANSWERS_TO_WIN:
 		var dialog = Dialogic.start('accuracy_finished')
-		add_child(dialog)
+		SceneTransistion.change_scene("res://scenes/Quiz/Dialogic/Part3-Quiz/Quiz-IntroSceneBM.tscn")
 	else:
 		new_round()
 

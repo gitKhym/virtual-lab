@@ -57,7 +57,7 @@ func _ready():
 			area2d.connect("input_event", _on_input_event.bind(area))
 
 func _on_NextButton_pressed():
-	get_tree().change_scene_to_file("res://scenes/simulations/microscope_handling/microscope_stage.tscn")
+	SceneTransistion.change_scene("res://scenes/simulations/microscope_handling/microscope_stage.tscn")
 
 func _on_input_event(viewport, event, shape_idx, area):
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1:

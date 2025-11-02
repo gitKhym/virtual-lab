@@ -1,9 +1,9 @@
 extends CanvasLayer
 
-# --- Constants ---
+#Constants
 const BALANCE_DATA_PATH: String = "res://data/Measurements/balance_data.json"
 
-# --- Node references ---
+# Node references
 @onready var kg_container: Sprite2D = $Kilograms
 @onready var mg_container: Sprite2D = $Milligrams
 @onready var confirm_button: TextureButton = $Confirm
@@ -12,16 +12,15 @@ const BALANCE_DATA_PATH: String = "res://data/Measurements/balance_data.json"
 @onready var kg_input: LineEdit = $Kilograms/Kilogramslabel
 @onready var mg_input: LineEdit = $Milligrams/Milligramslabel
 
-# --- UI Elements ---
+# UI Elements
 @onready var ui_elements: Array = [kg_container, mg_container, confirm_button]
 
-# --- Data ---
+# Data 
 var washer_data: Dictionary = {}
 var current_mass: Dictionary = {}
 var current_washer_name: String = "washer"
 var conversion_complete: bool = false
 
-# -------------------------------------------------------------
 func _ready() -> void:
 	_initialize_ui_hidden()
 	_connect_signals()

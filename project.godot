@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 SceneTransistion="*res://scenes/simulations/transistion/scene_transistion.tscn"
 SceneReset="*res://scenes/Reset/scene_reset.tscn"
+SaveManager="*res://scenes/Save_Manager/SaveManager.gd"
 
 [dialogic]
 
@@ -30,6 +31,43 @@ directories/dch_directory={
 directories/dtl_directory={
 "Main_Menu2": "res://dialogic/dialogs/Main Menu/Main_Menu2.dtl",
 "MeasurementIntroduction": "res://dialogic/dialogs/measurement/MeasurementIntroduction.dtl",
+"Part2-Quiz/Quiz-Intro": "res://scenes/Quiz/Dialogic/Part2-Quiz/Quiz-Intro.dtl",
+"Question1": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question1.dtl",
+"Question10": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question10.dtl",
+"Question2": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question2.dtl",
+"Question21": "res://scenes/Quiz/Dialogic/Part3-Quiz/Question21.dtl",
+"Question22": "res://scenes/Quiz/Dialogic/Part3-Quiz/Question22.dtl",
+"Question23": "res://scenes/Quiz/Dialogic/Part3-Quiz/Question23.dtl",
+"Question24": "res://scenes/Quiz/Dialogic/Part3-Quiz/Question24.dtl",
+"Question25": "res://scenes/Quiz/Dialogic/Part3-Quiz/Question25.dtl",
+"Question26": "res://scenes/Quiz/Dialogic/Part3-Quiz/Question26.dtl",
+"Question27": "res://scenes/Quiz/Dialogic/Part3-Quiz/Question27.dtl",
+"Question28": "res://scenes/Quiz/Dialogic/Part3-Quiz/Question28.dtl",
+"Question29": "res://scenes/Quiz/Dialogic/Part3-Quiz/Question29.dtl",
+"Question3": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question3.dtl",
+"Question30": "res://scenes/Quiz/Dialogic/Part3-Quiz/Question30.dtl",
+"Question31": "res://scenes/Quiz/Dialogic/Part1-Quiz/Question31.dtl",
+"Question32": "res://scenes/Quiz/Dialogic/Part1-Quiz/Question32.dtl",
+"Question33": "res://scenes/Quiz/Dialogic/Part1-Quiz/Question33.dtl",
+"Question34": "res://scenes/Quiz/Dialogic/Part1-Quiz/Question34.dtl",
+"Question35": "res://scenes/Quiz/Dialogic/Part1-Quiz/Question35.dtl",
+"Question36": "res://scenes/Quiz/Dialogic/Part1-Quiz/Question36.dtl",
+"Question37": "res://scenes/Quiz/Dialogic/Part1-Quiz/Question37.dtl",
+"Question38": "res://scenes/Quiz/Dialogic/Part1-Quiz/Question38.dtl",
+"Question39": "res://scenes/Quiz/Dialogic/Part1-Quiz/Question39.dtl",
+"Question4": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question4.dtl",
+"Question40": "res://scenes/Quiz/Dialogic/Part1-Quiz/Question40.dtl",
+"Question5": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question5.dtl",
+"Question6": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question6.dtl",
+"Question7": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question7.dtl",
+"Question8": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question8.dtl",
+"Question9": "res://scenes/Quiz/Dialogic/Part2-Quiz/Question9.dtl",
+"Quiz-Intro": "res://scenes/Quiz/Dialogic/Part1-Quiz/Quiz-Intro.dtl",
+"Quiz/Quiz-Intro": "res://scenes/Quiz/Quiz-Intro.dtl",
+"QuizCongrats-BasicMeasure": "res://scenes/Quiz/Dialogic/Part3-Quiz/QuizCongrats-BasicMeasure.dtl",
+"QuizCongratulations-Part1": "res://scenes/Quiz/Dialogic/Part1-Quiz/QuizCongratulations-Part1.dtl",
+"QuizCongratulations-Part2": "res://scenes/Quiz/Dialogic/Part2-Quiz/QuizCongratulations-Part2.dtl",
+"QuizIntro-3": "res://scenes/Quiz/Dialogic/Part3-Quiz/QuizIntro-3.dtl",
 "QuizStartMenu": "res://scenes/simulations/quiz/quiz_ppe/QuizStartMenu.dtl",
 "accuracy_correct": "res://dialogic/dialogs/measurement/accuracy_correct.dtl",
 "accuracy_finished": "res://dialogic/dialogs/measurement/accuracy_finished.dtl",
@@ -82,9 +120,10 @@ directories/dtl_directory={
 "timeline": "res://timeline.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://dialogic/small_dialog_style.tres", "res://dialogic/test.tres", "res://dialogic/default_style.tres"]
+layout/style_list=["res://dialogic/small_dialog_style.tres", "res://dialogic/test.tres", "res://dialogic/default_style.tres", ""]
 layout/default_style="res://dialogic/default_style.tres"
 variables={
+"Reflection": "",
 "Simulations": {
 "Measurement": {
 "measured_ml": 0

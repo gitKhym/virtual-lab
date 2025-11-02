@@ -146,7 +146,7 @@ func _start_finale() -> void:
 	var finale_dlg = Dialogic.start("res://dialogic/dialogs/testing/ppe_scenario_1file.dtl", "scenario5")
 	if finale_dlg:
 		await finale_dlg.tree_exited
-		var next_scene_path = "res://scenes/simulations/quiz/quiz_ppe/main_menu_quiz.tscn"
+		var next_scene_path = "res://scenes/Quiz/Dialogic/Part1-Quiz/Quiz-IntroScenePPE.tscn"
 		SceneTransistion.change_scene(next_scene_path)
 
 func _zoom_to_finale() -> void:

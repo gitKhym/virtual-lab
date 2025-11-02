@@ -1,0 +1,8 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: True or False. You should read the meniscus from the top of the curve.
+- True
+	HarveyTheKangaroo: Nah, that’ll throw you off. Try again.
+	jump 
+- False
+	HarveyTheKangaroo: Correct, always read from the bottom of the curve.
+	jump Question28/

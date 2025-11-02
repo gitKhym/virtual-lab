@@ -94,20 +94,28 @@ func _on_check_button_pressed():
 	const MAX_GOOD_ATTEMPTS = 3
 	var dialog_name = ""
 
+	Dialogic.VAR.Simulations.Measurement.measured_ml = total_ml_excreted
+
 	if difference <= 0.3:
 		good_attempts_count += 1
 		
-		if good_attempts_count > MAX_GOOD_ATTEMPTS:
+		if good_attempts_count >= MAX_GOOD_ATTEMPTS:
 			dialog_name = "pipette_volume_finished"
+			var dlg = Dialogic.start(dialog_name)
+			if dlg:
+				await dlg.tree_exited
+			SceneTransistion.change_scene("res://scenes/simulations/measurements/measuring_volume.tscn")
+			return 
 		else:
 			dialog_name = "pipette_volume_good"
 			set_new_target()
 			
-	elif difference > 0.3:
+	else:  
 		dialog_name = "pipette_volume_needs_practice"
-		
-	Dialogic.VAR.Simulations.Measurement.measured_ml = total_ml_excreted
+	
+
 	Dialogic.start(dialog_name)
+	
 
 	total_ml_excreted = 0
 	water_mask_value = 0.0

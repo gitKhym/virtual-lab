@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://fb8t2f0fl8tp"]
 
 [ext_resource type="Script" uid="uid://by08m7xm4g4qk" path="res://scenes/simulations/measurements/accuracy_minigame.gd" id="1_5k5kv"]
-[ext_resource type="Texture2D" uid="uid://bsdgqbvsf3hx8" path="res://assets/simulations/measurement/bg.png" id="2_gxua6"]
+[ext_resource type="Texture2D" uid="uid://bsdgqbvsf3hx8" path="res://assets/simulations/measurements/bg.png" id="2_gxua6"]
 [ext_resource type="Texture2D" uid="uid://bytjbl1f2uvnx" path="res://assets/simulations/measurement/target.png" id="3_lunag"]
 [ext_resource type="Texture2D" uid="uid://dw5dfyaopnq1m" path="res://assets/gui/buttons/big_button.png" id="4_csld5"]
 [ext_resource type="Texture2D" uid="uid://6cfbps6eh044" path="res://assets/gui/buttons/big_button_pressed.png" id="5_ihojm"]

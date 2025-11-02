@@ -1,0 +1,14 @@
+[style name="QuizModeStyle"]
+HarveyTheKangaroo: Where do used gloves go after you're done?
+- A. Recycling bin
+	HarveyTheKangaroo: Would be nice, but nah. Try again.
+	jump 
+- B. General trash can
+	HarveyTheKangaroo: Not safe enough, mate. Try again.
+	jump 
+- C. Designated biohazard/chemical waste bin
+	HarveyTheKangaroo: Nailed it! Too easy.
+	jump Question35/
+- D. Desk drawer
+	HarveyTheKangaroo: That’s how ya get fired. Try again.
+	jump

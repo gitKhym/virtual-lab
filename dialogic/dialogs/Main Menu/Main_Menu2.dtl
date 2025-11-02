@@ -1,42 +1,36 @@
 label ppe_start
-P.P.E Simulation!\
-In this training, you’ll learn how to correctly wear personal protective equipment before entering the lab.
+P.P.E Simulation!, you’ll learn how to correctly wear personal protective equipment before entering the lab.
 Your task will be to select and equip the correct safety gear — including your lab coat, gloves, and goggles.\
 Each item must be worn in the correct order to ensure proper protection.
 As part of this training, you’ll enforce lab safety standards.  That means disposing of waste properly, keeping food and drinks out, and following all protective procedures.
 [signal arg="proceed"]
 [end_timeline]
 label PPE_introduction_completed
-P.P.E Simulation!\
-In this training, you’ll learn how to correctly wear personal protective equipment before entering the lab.
+P.P.E Simulation!, you’ll learn how to correctly wear personal protective equipment before entering the lab.
 Your task will be to select and equip the correct safety gear — including your lab coat, gloves, and goggles.\
 Each item must be worn in the correct order to ensure proper protection.
 As part of this training, you’ll enforce lab safety standards.  That means disposing of waste properly, keeping food and drinks out, and following all protective procedures.
 jump completed_simulation
 label microscope_start
-Microscope Handling Simulation!\
-In this activity, you’ll learn about the parts, functions, and safe handling of a compound microscope.
+Microscope Handling Simulation!, you’ll learn about the parts, functions, and safe handling of a compound microscope.
 You’ll begin with a guided walkthrough where you can click on each microscope part to explore its purpose and learn helpful tips.
 Then, you’ll move on to an interactive practice session — where you’ll carry, set up, and focus the microscope just like in a real lab!
 [signal arg="proceed"]
 [end_timeline]
 label microscope_introduction_start
-Welcome to the Microscope Handling Simulation!\
-In this activity, you’ll learn about the parts, functions, and safe handling of a compound microscope.
+Microscope Handling Simulation!, you’ll learn about the parts, functions, and safe handling of a compound microscope.
 You’ll begin with a guided walkthrough where you can click on each microscope part to explore its purpose and learn helpful tips.
 Then, you’ll move on to an interactive practice session, where you’ll carry, set up, and focus the microscope just like in a real lab!
 jump completed_simulation
 label measurement_start
-Measurement Simulation!\
-In this activity, you’ll learn how to measure length, mass, and volume using virtual lab tools.
+Measurement Simulation!, you’ll learn how to measure length, mass, and volume using virtual lab tools.
 You’ll also  practice unit conversions, apply correct measuring techniques, and understand the difference between accuracy and precision.
 you’ll explore how to take consistent measurements, avoid common mistakes, and improve your lab skills step by step.\
 By the end, you’ll be able to record and convert data confidently just like a real lab technician!
 [signal arg="proceed"]
 [end_timeline]
 label measurement_introduction_completed
-Measurement Simulation!\
-In this activity, you’ll learn how to measure length, mass, and volume using virtual lab tools.
+Measurement Simulation!, you’ll learn how to measure length, mass, and volume using virtual lab tools.
 You’ll also  practice unit conversions, apply correct measuring techniques, and understand the difference between accuracy and precision.
 you’ll explore how to take consistent measurements, avoid common mistakes, and improve your lab skills step by step.\
 By the end, you’ll be able to record and convert data confidently just like a real lab technician!
